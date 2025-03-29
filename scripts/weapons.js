@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 		
 		rows.slice(0, -1).forEach(row => {
-			if (!isRowFilled(row) && !isRowFilled(row.nextElementSibling))
+			if (!isRowFilled(row) && section !== container.lastElementChild)
 			{
 			    row.classList.add('removing');
 				setTimeout(() => row.remove(), 300);

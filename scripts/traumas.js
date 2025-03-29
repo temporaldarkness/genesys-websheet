@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 		
 		sections.slice(0, -1).forEach(section => {
-			if (isSectionEmpty(section) && isSectionEmpty(section.nextElementSibling))
+			if (isSectionEmpty(section) && section !== container.lastElementChild)
 			{
 			    section.classList.add('removing');
 				setTimeout(() => section.remove(), 300);
