@@ -1,6 +1,5 @@
 function createPyramidTalent(level)
 {
-    console.log(level, level-1)
     container = document.querySelectorAll('#pyramid .level')[level-1];
     
     let section = document.createElement('div');
