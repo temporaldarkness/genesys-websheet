@@ -300,6 +300,7 @@ function setIndex(data)
 	data['injuries'].forEach(msg => {
 	    trauma = createTrauma();
 	    trauma.querySelector('.misc-textarea').value = msg['misc'];
+		trauma.classList.add('filled');
 	    
 	    let selector = trauma.querySelector('.rank-selector');
 	    
@@ -307,7 +308,7 @@ function setIndex(data)
 	    selector.dispatchEvent(new CustomEvent('update', {
 			detail: {},
 			bubbles: true
-		}))
+		}));
 	});
 	
 	createTrauma();
@@ -361,6 +362,7 @@ function setEquipment(data)
 	
 	data['weapons'].forEach(msg => {
 	    weapon = createWeapon();
+		weapon.classList.add('filled');
 	    weapon.querySelector('.name').firstElementChild.value = msg['name'];
 	    weapon.querySelector('.skill').firstElementChild.value = msg['skill'];
 	    weapon.querySelector('.damage').firstElementChild.value = msg['damage'];
@@ -379,6 +381,7 @@ function setTalents(data)
 	
 	data.forEach(msg => {
 	    talent = createTalent();
+		talent.classList.add('filled');
 	    talent.querySelector('input').value = msg['name'];
 	    talent.querySelector('textarea').value = msg['misc'];
 	});
@@ -395,10 +398,11 @@ function setPyramid(data)
 	    level.replaceChildren();
 	    
 	    data['level-' + inc].forEach(msg => {
-	       talent = createPyramidTalent(inc);
-	       talent.querySelector('.talent-name').value = msg['name'];
-	       talent.querySelector('.talent-active').checked = msg['set'];
-	       talent.querySelector('.talent-desc').value = msg['desc'];
+	        talent = createPyramidTalent(inc);
+    	    talent.classList.add('filled');
+	        talent.querySelector('.talent-name').value = msg['name'];
+	        talent.querySelector('.talent-active').checked = msg['set'];
+	        talent.querySelector('.talent-desc').value = msg['desc'];
 	    });
 	    
 	    createPyramidTalent(inc);
@@ -425,6 +429,7 @@ function setNotes(data)
 	
 	data.forEach(msg => {
 	    note = createNote();
+    	note.classList.add('filled');
 	    note.firstElementChild.value = msg;
 	});
 	
