@@ -81,7 +81,7 @@ function generateHTML(data)
 async function loadSkillsData() 
 {
     try {
-        const response = await fetch('https://temporaldarkness.ru/genesys/data/skills.json');
+        const response = await fetch('./data/skills.json');
         if (!response.ok)
             throw new Error(`Ошибка загрузки данных: ${response.status}`);
 		
