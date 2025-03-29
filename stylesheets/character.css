@@ -1,0 +1,88 @@
+.character-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.character-image-block {
+    flex: 0 0 300px;
+}
+
+.image-placeholder, #character-image {
+    width: 100%;
+    height: 400px;
+    background: white;
+    border-radius: 8px;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	overflow: hidden;
+}
+
+#character-image {
+    color: #999;
+    font-style: italic;
+	border: 0px transparent;
+	object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .character-container {
+        flex-direction: column;
+    }
+
+    .character-image-block {
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .image-placeholder {
+        height: 300px;
+    }
+}
+
+.desc-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.motivation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.motivation-cell {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.motivation-large-input {
+    height: 100px;
+}
+
+@media (max-width: 768px) {
+    .motivation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .motivation-cell {
+        padding: 12px;
+    }
+
+    .motivation-large-input {
+        height: 80px;
+    }
+}
+
+.nomargin {
+	margin-bottom: 0;
+}

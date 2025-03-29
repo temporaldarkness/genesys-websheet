@@ -1,0 +1,181 @@
+.weapons-block, .equipment-section {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: transparent;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.weapons-table {
+    display: grid;
+    background: transparent;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.weapon-header {
+    display: contents;
+}
+
+.weapon-header .weapon-cell {
+    background: transparent;
+    color: #666;
+    padding: 12px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.weapon-row {
+    display: contents;
+}
+
+.weapon-cell {
+    background: white;
+    padding: 5px;
+    opacity: inherit;
+    transform: inherit;
+    transition: inherit;
+}
+
+@media (max-width: 768px) {
+    .weapons-table {
+        grid-template-columns: 1fr;
+        background: transparent;
+        gap: 10px;
+    }
+
+    .weapon-header { display: none; }
+
+    .weapon-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        background: white;
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .weapon-cell {
+        padding: 5px;
+        min-height: auto;
+    }
+
+    .weapon-cell::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #666;
+        font-size: 12px;
+    }
+
+    .weapon-cell.name {
+        grid-column: 1 / -1;
+        font-weight: bold;
+    }
+
+    .weapon-cell.skill { grid-column: 1; }
+    .weapon-cell.damage { grid-column: 2; }
+    .weapon-cell.crit { grid-column: 1; }
+    .weapon-cell.range { grid-column: 2; }
+    .weapon-cell.special { grid-column: 1 / -1; }
+
+    .weapon-cell.skill::before { content: "Навык: "; }
+    .weapon-cell.damage::before { content: "Урон: "; }
+    .weapon-cell.crit::before { content: "Крит: "; }
+    .weapon-cell.range::before { content: "Дистанция: "; }
+    .weapon-cell.special::before { content: "Особенности: "; }
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.equipment-column {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.equipment-subtitle {
+    color: #666;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.equipment-input.large {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.money-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 12px 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-top: 10px;
+}
+
+.money-label {
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.money-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.equipment-input:focus, .money-input:focus {
+    outline: none;
+    border-color: #666;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .equipment-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .equipment-input.large {
+        height: 100px;
+    }
+
+    .money-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .money-input {
+        width: 100%;
+    }
+}
+
+.noresize {
+    resize: none;
+}

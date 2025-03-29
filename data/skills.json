@@ -1,0 +1,253 @@
+[
+  {
+    "category": "Общие навыки",
+	"display": true,
+    "skills": [
+      {
+        "name": "Алхимия",
+        "attribute": "Инт",
+		"display": true
+      },
+      {
+        "name": "Атлетика",
+        "attribute": "Сила",
+		"display": true
+      },
+      {
+        "name": "Бдительность",
+        "attribute": "Воля",
+		"display": true
+      },
+      {
+        "name": "Верховая езда",
+        "attribute": "Лов",
+		"display": true
+      },
+      {
+        "name": "Внимание",
+        "attribute": "Сме",
+		"display": true
+      },
+      {
+        "name": "Вождение",
+        "attribute": "Лов",
+		"display": true
+      },
+      {
+        "name": "Выдержка",
+        "attribute": "Воля",
+		"display": true
+      },
+      {
+        "name": "Выживание",
+        "attribute": "Сме",
+		"display": true
+      }
+    ]
+  },
+  {
+    "category": "Общие навыки",
+	"display": true,
+    "skills": [
+      {
+        "name": "Жульничество",
+        "attribute": "Сме",
+		"display": true
+      },
+      {
+        "name": "Координация",
+        "attribute": "Лов",
+		"display": true
+      },
+      {
+        "name": "Медицина",
+        "attribute": "Инт",
+		"display": true
+      },
+      {
+        "name": "Скрытность",
+        "attribute": "Лов",
+		"display": true
+      },
+      {
+        "name": "Стойкость",
+        "attribute": "Сила",
+		"display": true
+      },
+      {
+        "name": "Уличная интуиция",
+        "attribute": "Сме",
+		"display": true
+      },
+      {
+        "name": "Управление",
+        "attribute": "Инт",
+		"display": true
+      },
+      {
+        "name": "Хладнокровие",
+        "attribute": "Хар",
+		"display": true
+      }
+    ]
+  },
+  {
+    "category": "Боевые навыки",
+	"display": true,
+    "skills": [
+      {
+        "name": "Артиллерия",
+        "attribute": "Лов",
+		"display": true
+      },
+      {
+        "name": "Ближний бой (Лёгкое)",
+        "attribute": "Сила",
+		"display": true
+      },
+      {
+        "name": "Ближний бой (Тяжёлое)",
+        "attribute": "Сила",
+		"display": true
+      },
+      {
+        "name": "Грубая сила",
+        "attribute": "Сила",
+		"display": true
+      },
+      {
+        "name": "Дальний бой",
+        "attribute": "Лов",
+		"display": true
+      }
+    ]
+  },
+  {
+    "category": "Навыки знаний",
+	"display": true,
+    "skills": [
+      {
+        "name": "Культура",
+        "attribute": "Инт",
+		"display": true
+      },
+	  {
+        "name": "Природа",
+        "attribute": "Инт",
+		"display": true
+      },
+	  {
+        "name": "Пределы",
+        "attribute": "Инт",
+		"display": true
+      }
+    ]
+  },
+  {
+    "category": "Социальные навыки",
+	"display": true,
+    "skills": [
+      {
+        "name": "Запугивание",
+        "attribute": "Воля",
+		"display": true
+      },
+      {
+        "name": "Лидерство",
+        "attribute": "Хар",
+		"display": true
+      },
+      {
+        "name": "Обаяние",
+        "attribute": "Хар",
+		"display": true
+      },
+      {
+        "name": "Обман",
+        "attribute": "Хар",
+		"display": true
+      },
+      {
+        "name": "Переговоры",
+        "attribute": "Хар",
+		"display": true
+      }
+    ]
+  },
+  {
+    "category": "Магические навыки",
+	"display": true,
+    "skills": [
+	  {
+        "name": "Внутренний Аспект",
+        "attribute": "Воля",
+		"display": true
+      },
+	  {
+        "name": "Внешний Аспект",
+        "attribute": "Воля",
+		"display": true
+      },
+	  {
+        "name": "Аспект Бездны",
+        "attribute": "Воля",
+		"display": false
+      },
+	  {
+        "name": "Аспект Бури",
+        "attribute": "Воля",
+		"display": false
+      },
+      {
+        "name": "Аспект Грота",
+        "attribute": "Инт",
+		"display": false
+      },
+      {
+        "name": "Аспект Дюн",
+        "attribute": "Инт",
+		"display": false
+      },
+      {
+        "name": "Аспект Замка",
+        "attribute": "Инт",
+		"display": false
+      },
+      {
+        "name": "Аспект Инфина",
+        "attribute": "Инт",
+		"display": false
+      },
+      {
+        "name": "Аспект Катакомб",
+        "attribute": "Инт",
+		"display": false
+      },
+      {
+        "name": "Аспект Кратера",
+        "attribute": "Инт",
+		"display": false
+      },
+      {
+        "name": "Аспект Мадеры",
+        "attribute": "Инт",
+		"display": false
+      },
+      {
+        "name": "Аспект Маяка",
+        "attribute": "Инт",
+		"display": false
+      },
+      {
+        "name": "Аспект Тайги",
+        "attribute": "Инт",
+		"display": false
+      },
+      {
+        "name": "Аспект Тумана",
+        "attribute": "Инт",
+		"display": false
+      }
+    ]
+  }
+]

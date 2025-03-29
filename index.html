@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Генезис - Лист персонажа</title>
+	<link rel="stylesheet" href="./stylesheets/common.css">
+	<link rel="stylesheet" href="./stylesheets/index.css">
+	<link rel="stylesheet" href="./stylesheets/character.css">
+	<link rel="stylesheet" href="./stylesheets/equipment.css">
+	<link rel="stylesheet" href="./stylesheets/pyramid.css">
+	<link rel="stylesheet" href="./stylesheets/skills.css">
+	<link rel="stylesheet" href="./stylesheets/talents.css">
+	<link rel="stylesheet" href="./stylesheets/notes.css">
+	<script type="text/javascript" src="./scripts/navigation.js"></script>
+	<script type="text/javascript" src="./scripts/rank.js"></script>
+	<script type="text/javascript" src="./scripts/traumas.js"></script>
+	<script type="text/javascript" src="./scripts/character-image.js"></script>
+	<script type="text/javascript" src="./scripts/weapons.js"></script>
+	<script type="text/javascript" src="./scripts/talents.js"></script>
+	<script type="text/javascript" src="./scripts/pyramid.js"></script>
+	<script type="text/javascript" src="./scripts/notes.js"></script>
+	<script type="text/javascript" src="./scripts/skills.js"></script>
+	<script type="text/javascript" src="./scripts/storage.js"></script>
+</head>
+<body>
+	<div class="windowContainer">
+		<nav class="sidebar">
+			<div class="nav-item link" id="nav-index">Основное</div>
+			<div class="nav-item link" id="nav-character">Биография</div>
+			<div class="nav-item link" id="nav-equipment">Снаряжение</div>
+			<div class="nav-item link" id="nav-notes">Заметки</div>
+			<div class="nav-item link" id="nav-skills">Навыки</div>
+			<div class="nav-item link" id="nav-talents">Таланты</div>
+			<div class="nav-item link" id="nav-pyramid">Пирамида</div>
+			<div class="nav-item" id="nav-download" onclick="downloadData()">Выгрузить</div>
+			<div class="nav-item" id="nav-upload" onclick="uploadData()">Загрузить</div>
+			<input type="file" accept=".json" id="uploadinput">
+			
+		</nav>
+		<div class="content">
+			<div id="index" class="document-section active">
+				<h3 class="section-title">Персонаж</h3>
+				<div class="section">
+					<div class="field bottomline">
+						<label for="charname">Имя Персонажа : </label>
+						<input type="text" id="charname" placeholder="Введите имя">
+					</div>
+					<div class="field bottomline">
+						<label for="archetype">Архетип : </label>
+						<input type="text" id="archetype" placeholder="Введите архетип">
+					</div>
+					<div class="field bottomline">
+						<label for="career">Карьера : </label>
+						<input type="text" id="career" placeholder="Введите карьеру">
+					</div>
+					<div class="field bottomline">
+						<label for="player">Игрок : </label>
+						<input type="text" id="player" placeholder="Введите игрока">
+					</div>
+				</div>
+
+				<h3 class="section-title">Боевые показатели</h3>
+				<div class="grid statsgrid characteristics-block">
+					<div class="stat-item">
+						<h4>Поглощение</h4>
+						<div class="input-group">
+							<input type="number" id="absorption" class="inp" value="0">
+						</div>
+					</div>
+					<div class="stat-item">
+						<h4>Раны</h4>
+						<div class="input-group">
+							<input type="number" id="wounds-max" class="inp" value="0">
+							<input type="number" id="wounds-current" class="inp" value="0">
+						</div>
+						<div class="input-caption">Порог / Текущие</div>
+					</div>
+					<div class="stat-item">
+						<h4>Усталость</h4>
+						<div class="input-group">
+							<input type="number" id="fatigue-max" class="inp" value="0">
+							<input type="number" id="fatigue-current" class="inp" value="0">
+						</div>
+						<div class="input-caption">Порог / Текущая</div>
+					</div>
+					<div class="stat-item">
+						<h4>Защита</h4>
+						<div class="input-group">
+							<input type="number" id="defense-melee" class="inp" value="0">
+							<input type="number" id="defense-ranged" class="inp" value="0">
+						</div>
+						<div class="input-caption">Ближняя / Дальняя</div>
+					</div>
+				</div>
+
+				<h3 class="section-title">Характеристики</h3>
+				<div class="characteristics-block">
+					<div class="grid chargrid">
+						<div class="stat-item">
+							<h4>Сила</h4>
+							<input type="number" id="strength" class="inp charinput" value="0">
+						</div>
+						<div class="stat-item">
+							<h4>Ловкость</h4>
+							<input type="number" id="agility" class="inp charinput" value="0">
+						</div>
+						<div class="stat-item">
+							<h4>Интеллект</h4>
+							<input type="number" id="intelligence" class="inp charinput" value="0">
+						</div>
+						<div class="stat-item">
+							<h4>Смекалка</h4>
+							<input type="number" id="wits" class="inp charinput" value="0">
+						</div>
+						<div class="stat-item">
+							<h4>Воля</h4>
+							<input type="number" id="willpower" class="inp charinput" value="0">
+						</div>
+						<div class="stat-item">
+							<h4>Харизма</h4>
+							<input type="number" id="charisma" class="inp charinput" value="0">
+						</div>
+					</div>
+				</div>
+
+				<h3 class="section-title">Критические травмы</h3>
+				<div class="critical-injuries" id="injuries">
+					<div class="section removable">
+						<div class="field bottomline">
+							<label>Тяжесть : </label>
+							<div class="rank-selector" data-rank="0">
+								<div class="rank-dot" data-value="0"></div>
+								<div class="rank-dot" data-value="1"></div>
+								<div class="rank-dot" data-value="2"></div>
+							</div>
+						</div>
+						<div class="field">
+							<label for="desc">Результат : </label>
+						</div>
+						<div class="field misc-field">
+							<textarea placeholder="Введите результат" class="misc-textarea"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="character" class="document-section">
+				<h3 class="section-title">Биография</h3>
+				<div class="character-container">
+					<div class="character-image-block">
+						<h4 class="block-subtitle">Изображение персонажа</h4>
+						<div class="image-placeholder">
+							<img id="character-image" src="#" alt="Добавьте изображение"  style="max-width: 100%;">
+						</div>
+						<input type="file" id="character-image-input" accept="image/*">
+					</div>
+					<div class="desc-container">
+						<h4 class="block-subtitle">Описание персонажа</h4>
+						<div class="section nomargin">
+							<div class="field bottomline">
+								<label for="gender">Пол : </label>
+								<input type="text" id="gender" placeholder="Введите пол">
+							</div>
+							<div class="field bottomline">
+								<label for="age">Возраст : </label>
+								<input type="text" id="age" placeholder="Введите возраст">
+							</div>
+							<div class="field bottomline">
+								<label for="height">Рост : </label>
+								<input type="text" id="height" placeholder="Введите рост">
+							</div>
+							<div class="field bottomline">
+								<label for="constitution">Телосложение : </label>
+								<input type="text" id="constitution" placeholder="Введите телосложение">
+							</div>
+							<div class="field bottomline">
+								<label for="hair">Волосы : </label>
+								<input type="text" id="hair" placeholder="Введите цвет волос">
+							</div>
+							<div class="field bottomline">
+								<label for="eyes">Глаза : </label>
+								<input type="text" id="eyes" placeholder="Введите цвет глаз">
+							</div>
+							<div class="field">
+								<label for="misc">Примечательные особенности : </label>
+							</div>
+							<div class="field misc-field">
+								<textarea id="description-misc" placeholder="Введите особенности" class="misc-textarea"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="motivation-section">
+					<h3 class="section-title">Мотивация</h3>
+					<div class="motivation-grid">
+						<div class="motivation-cell">
+							<div class="field">
+								<label for="benefit">Достоинство : </label>
+								<input type="text" id="benefit" placeholder="Название">
+							</div>
+							<textarea class="misc-textarea motivation-large-input"></textarea>
+						</div>
+						<div class="motivation-cell">
+							<div class="field">
+								<label for="loss">Недостаток : </label>
+								<input type="text" id="loss" placeholder="Название">
+							</div>
+							<textarea class="misc-textarea motivation-large-input"></textarea>
+						</div>
+						<div class="motivation-cell">
+							<div class="field">
+								<label for="wish">Желание : </label>
+								<input type="text" id="wish" placeholder="Название">
+							</div>
+							<textarea class="misc-textarea motivation-large-input"></textarea>
+						</div>
+						<div class="motivation-cell">
+							<div class="field">
+								<label for="fear">Страх : </label>
+								<input type="text" id="fear" placeholder="Название">
+							</div>
+							<textarea class="misc-textarea motivation-large-input"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="equipment" class="document-section">
+				<h3 class="section-title">Оружие</h3>
+				<div class="weapons-block">
+					<div class="weapons-table" id="weapons-table">
+						<div class="weapon-header">
+							<div class="weapon-cell name">Оружие</div>
+							<div class="weapon-cell skill">Навык</div>
+							<div class="weapon-cell damage">Урон</div>
+							<div class="weapon-cell crit">Крит</div>
+							<div class="weapon-cell range">Дистанция</div>
+							<div class="weapon-cell special">Особенности</div>
+						</div>
+
+						<div class="weapon-row removable">
+							<div class="weapon-cell name">
+								<textarea class="misc-textarea noresize">Короткий меч</textarea>
+							</div>
+							<div class="weapon-cell skill">
+								<textarea class="misc-textarea noresize">Ближний бой (лёгкое)</textarea>
+							</div>
+							<div class="weapon-cell damage">
+								<textarea class="misc-textarea noresize">1d6+2</textarea>
+							</div>
+							<div class="weapon-cell crit">
+								<textarea class="misc-textarea noresize">19-20/x2</textarea>
+							</div>
+							<div class="weapon-cell range">
+								<textarea class="misc-textarea noresize">Ближняя</textarea>
+							</div>
+							<div class="weapon-cell special">
+								<textarea class="misc-textarea">Лёгкое, проникающее</textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<h3 class="section-title">Снаряжение</h3>
+				<div class="equipment-section">
+					<div class="section">
+						<div class="field bottomline">
+							<label for="text-armor">Оружие и броня</label>
+						</div>
+						<div class="field misc-field">
+							<textarea id="text-armor" class="misc-textarea"></textarea>
+						</div>
+					</div>
+					<div class="section">
+						<div class="field bottomline">
+							<label for="text-equipment">Другая экипировка</label>
+						</div>
+						<div class="field misc-field">
+							<textarea id="text-equipment" class="misc-textarea"></textarea>
+						</div>
+					</div>
+					<div class="section">
+						<div class="field bottomline">
+							<label for="text-money">Деньги : </label>
+							<input type="text" id="text-money" placeholder="0">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="notes" class="document-section">
+				<h3 class="section-title">Заметки</h3>
+				<div id="notesContainer">
+					<div class="section removable">
+						<textarea class="misc-textarea" placeholder="Введите ваши заметки..."></textarea>
+					</div>
+				</div>
+			</div>
+			<div id="pyramid" class="document-section">
+				<h3 class="section-title">Пирамида Талантов</h3>
+				<h4 class="block-subtitle">Уровень 1 (5 опыта)</h4>
+				<div class="level">
+					<div class="section removable">
+						<div class="field bottomline">
+							<label>Название : </label>
+							<input type="text" class="talent-name" placeholder="Введите название">
+							<input type="checkbox" class="talent-active">
+							<label class="activelabel">Активный ? </label>
+						</div>
+						<div class="field">
+							<label>Описание : </label>
+						</div>
+						<div class="field misc-field">
+							<textarea placeholder="Введите описание" class="misc-textarea talent-desc"></textarea>
+						</div>
+					</div>
+				</div>
+				<h4 class="block-subtitle">Уровень 2 (10 опыта)</h4>
+				<div class="level">
+					<div class="section removable">
+						<div class="field bottomline">
+							<label>Название : </label>
+							<input type="text" class="talent-name" placeholder="Введите название">
+							<input type="checkbox" class="talent-active">
+							<label class="activelabel">Активный ? </label>
+						</div>
+						<div class="field">
+							<label>Описание : </label>
+						</div>
+						<div class="field misc-field">
+							<textarea placeholder="Введите описание" class="misc-textarea talent-desc"></textarea>
+						</div>
+					</div>
+				</div>
+				<h4 class="block-subtitle">Уровень 3 (15 опыта)</h4>
+				<div class="level">
+					<div class="section removable">
+						<div class="field bottomline">
+							<label>Название : </label>
+							<input type="text" class="talent-name" placeholder="Введите название">
+							<input type="checkbox" class="talent-active">
+							<label class="activelabel">Активный ? </label>
+						</div>
+						<div class="field">
+							<label>Описание : </label>
+						</div>
+						<div class="field misc-field">
+							<textarea placeholder="Введите описание" class="misc-textarea talent-desc"></textarea>
+						</div>
+					</div>
+				</div>
+				<h4 class="block-subtitle">Уровень 4 (20 опыта)</h4>
+				<div class="level">
+					<div class="section removable">
+						<div class="field bottomline">
+							<label>Название : </label>
+							<input type="text" class="talent-name" placeholder="Введите название">
+							<input type="checkbox" class="talent-active">
+							<label class="activelabel">Активный ? </label>
+						</div>
+						<div class="field">
+							<label>Описание : </label>
+						</div>
+						<div class="field misc-field">
+							<textarea placeholder="Введите описание" class="misc-textarea talent-desc"></textarea>
+						</div>
+					</div>
+				</div>
+				<h4 class="block-subtitle">Уровень 5 (25 опыта)</h4>
+				<div class="level">
+					<div class="section removable">
+						<div class="field bottomline">
+							<label>Название : </label>
+							<input type="text" class="talent-name" placeholder="Введите название">
+							<input type="checkbox" class="talent-active">
+							<label class="activelabel">Активный ? </label>
+						</div>
+						<div class="field">
+							<label>Описание : </label>
+						</div>
+						<div class="field misc-field">
+							<textarea placeholder="Введите описание" class="misc-textarea talent-desc"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="skills" class="document-section">
+				<h3 class="section-title">Навыки</h3>
+				<div class="skills-block">
+					<div class="skills-container" id="skills-container"></div>
+				</div>
+
+				<div class="experience-container">
+					<div class="experience-counter">
+						<input type="number" value="0" class="experience-input" id="exp-total">
+						<div class="experience-label">Итоговый опыт</div>
+					</div>
+					<div class="experience-counter">
+						<input type="number" value="0" class="experience-input" id="exp-available">
+						<div class="experience-label">Доступный опыт</div>
+					</div>
+				</div>
+			</div>
+			<div id="talents" class="document-section">
+				<h3 class="section-title">Таланты и особые способности</h3>
+				<div class="talents">
+					<div class="section removable">
+						<div class="field  bottomline">
+							<label>Название : </label>
+							<input type="text" class="talent-name" placeholder="Введите название">
+						</div>
+						<div class="field">
+							<label>Описание : </label>
+					 	</div>
+						<div class="field misc-field">
+							<textarea placeholder="Введите описание" class="misc-textarea talent-desc"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
