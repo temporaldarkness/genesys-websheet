@@ -190,6 +190,8 @@ function collectBio()
 		data[field] = document.getElementById(field).value;
 	});
 	
+	data['character-image'] = document.getElementById('character-image').src;
+	
 	specifics = document.querySelectorAll('.motivation-large-input');
 	data['specific'] = {
 		'benefit': specifics[0].value,
@@ -390,6 +392,8 @@ function setBio(data)
 	bioIDs.forEach(field => {
 		document.getElementById(field).value = data[field];
 	});
+	
+	document.getElementById('character-image').src = data['character-image'];
 	
 	specifics = document.querySelectorAll('.motivation-large-input');
 	specifics[0].value = data['specific']['benefit'];
