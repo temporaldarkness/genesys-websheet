@@ -19,6 +19,7 @@ function generateHTML(data, categories)
 	        return;
 	    category = document.createElement('div');
 		category.classList.add('skill-category');
+		category.dataset.categoryId = categoryId;
 		
 		header = document.createElement('div');
 		header.classList.add('skill-header', 'bottomline');
@@ -35,6 +36,7 @@ function generateHTML(data, categories)
     	skills.forEach(skill => {
     	    item = document.createElement('div');
 			item.classList.add('skill-item');
+		    item.dataset.skillId = skill.id;
 			item.innerHTML = `
 				<span class="skill-name">${skill.name} (${skill.attribute})</span>
 				<input type="checkbox">
