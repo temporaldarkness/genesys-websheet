@@ -101,26 +101,15 @@ function collectSkills()
 		data[field] = document.getElementById(field).value;
 	});
 	
-	const categories = document.getElementById('skills-container')
-								.querySelectorAll('.skill-category');
-	
-	data['categories'] = [];
-	categories.forEach(category => {
-		catData = {};
-		
-		catData['name'] = category.querySelector('.skill-header').firstElementChild.innerHTML;
-		catData['skillList'] = [];
-		
-		skills = category.querySelectorAll('.skill-item');
-		skills.forEach(skill => {
-			catData['skillList'].push({
-				'name': skill.querySelector('.skill-name').innerHTML,
-				'set': skill.querySelector('input').checked,
-				'rank': skill.querySelector('.rank-selector').dataset.rank
-			});
+	data['skills'] = [];
+	const skills = document.getElementById('skills-container')
+								.querySelectorAll('.skill-item');
+	skills.forEach(skill => {
+		data['skills'].push({
+			'id': skill.dataset.skillId,
+			'set': skill.querySelector('input').checked,
+			'rank': skill.querySelector('.rank-selector').dataset.rank
 		});
-		
-		data['categories'].push(catData);
 	});
 	
 	return data;
@@ -320,33 +309,19 @@ function setSkills(data)
 		document.getElementById(field).value = data[field];
 	});
 	
-	const categories = document.getElementById('skills-container')
-								.querySelectorAll('.skill-category');
-	categories.forEach(category => {
-		
-		data['categories'].forEach(catData => {
-			if (catData['name'] == category.querySelector('.skill-header').firstElementChild.innerHTML)
-			{
-				skills = category.querySelectorAll('.skill-item');
-				skills.forEach(skill => {
-					nm = skill.querySelector('.skill-name').innerHTML;
-					archived = catData['skillList'].find(item => item.name == nm);
-					
-					if (archived)
-					{
-						skill.querySelector('input').checked = archived.set;
-						
-						selector = skill.querySelector('.rank-selector');
-						selector.dataset.rank = archived.rank;
-						
-						selector.dispatchEvent(new CustomEvent('update', {
-							detail: {},
-							bubbles: true
-						}))
-					}
-				});
-			}
-		});
+	container = document.getElementById('skills-container');
+	
+	data['skills'].forEach(msg => {
+	    skill = container.querySelector(`.skill-item[data-skill-id="${msg.id}"]`);
+	    skill.querySelector('input').checked = msg.set;
+	    
+	    selector = skill.querySelector('.rank-selector');
+		selector.dataset.rank = msg.rank;
+		selector.dispatchEvent(new CustomEvent('update', {
+			detail: {},
+			bubbles: true
+		}));
+	    
 	});
 	
 	return data;
