@@ -243,7 +243,7 @@ function uploadData()
 		{
 			const data = JSON.parse(e.target.result);
 			
-			aknowledgeData(data);
+			loadData(data);
 		}
 		catch (error)
 		{
@@ -257,6 +257,25 @@ function uploadData()
 	};
 	
 	reader.readAsText(file);
+}
+
+function loadData(data)
+{
+    //setEmpty();
+    aknowledgeData(data);
+}
+
+function setEmpty()
+{
+    fetch('https://temporaldarkness.ru/genesys/data/empty.json')
+        .then(response => {
+            if (!response.ok) throw new Error(response.statusText);
+            return response.json();
+        })
+        .then(data => aknowledgeData(data))
+        .catch(error => {
+            console.log('Ошибка загрузки пустого файла:', error.message);
+        });
 }
 
 function aknowledgeData(data)
@@ -275,6 +294,23 @@ function setIndex(data)
 	indexIDs.forEach(field => {
 		document.getElementById(field).value = data[field];
 	});
+	
+	document.getElementById('injuries').replaceChildren();
+	
+	data['injuries'].forEach(msg => {
+	    trauma = createTrauma();
+	    trauma.querySelector('.misc-textarea').value = msg['misc'];
+	    
+	    let selector = trauma.querySelector('.rank-selector');
+	    
+	    selector.dataset.rank = msg['rank'];
+	    selector.dispatchEvent(new CustomEvent('update', {
+			detail: {},
+			bubbles: true
+		}))
+	});
+	
+	createTrauma();
 }
 
 function setSkills(data)
@@ -320,16 +356,54 @@ function setEquipment(data)
 	equipmentIDs.forEach(field => {
 		document.getElementById(field).value = data[field];
 	});
+	
+	document.getElementById('weapons-table').replaceChildren(document.querySelector('#weapons-table .weapon-header'));
+	
+	data['weapons'].forEach(msg => {
+	    weapon = createWeapon();
+	    weapon.querySelector('.name').firstElementChild.value = msg['name'];
+	    weapon.querySelector('.skill').firstElementChild.value = msg['skill'];
+	    weapon.querySelector('.damage').firstElementChild.value = msg['damage'];
+	    weapon.querySelector('.crit').firstElementChild.value = msg['crit'];
+	    weapon.querySelector('.range').firstElementChild.value = msg['range'];
+	    weapon.querySelector('.special').firstElementChild.value = msg['special'];
+	    
+	});
+	
+	createWeapon();
 }
 
 function setTalents(data)
 {
+	document.querySelector('.talents').replaceChildren();
 	
+	data.forEach(msg => {
+	    talent = createTalent();
+	    talent.querySelector('input').value = msg['name'];
+	    talent.querySelector('textarea').value = msg['misc'];
+	});
+	
+	createTalent();
 }
 
 function setPyramid(data)
 {
+	const levels = document.querySelectorAll('.level');
 	
+	inc = 1;
+	levels.forEach(level => {
+	    level.replaceChildren();
+	    
+	    data['level-' + inc].forEach(msg => {
+	       talent = createPyramidTalent(inc);
+	       talent.querySelector('.talent-name').value = msg['name'];
+	       talent.querySelector('.talent-active').checked = msg['set'];
+	       talent.querySelector('.talent-desc').value = msg['desc'];
+	    });
+	    
+	    createPyramidTalent(inc);
+	    inc++;
+	});
 }
 
 function setBio(data)
@@ -347,5 +421,12 @@ function setBio(data)
 
 function setNotes(data)
 {
+	document.getElementById('notesContainer').replaceChildren();
 	
+	data.forEach(msg => {
+	    note = createNote();
+	    note.firstElementChild.value = msg;
+	});
+	
+	createNote();
 }

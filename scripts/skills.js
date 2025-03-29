@@ -47,12 +47,6 @@ function generateHTML(data)
 					grid.appendChild(item);
 					
 					const dots = selector.querySelectorAll('.rank-dot');
-					let currentRank = parseInt(selector.dataset.rank);
-					dots.forEach((d, index) => {
-					const isActive = index < currentRank;
-						d.classList.toggle('active', isActive);
-					});
-					selector.dataset.rank = currentRank;
 					
 					selector.addEventListener('click', function(e) {
 						const dot = e.target.closest('.rank-dot');
@@ -60,20 +54,19 @@ function generateHTML(data)
 							return;
 						
 						currentRank = parseInt(dot.dataset.value) + 1;
-						if (selector.dataset.rank == currentRank)
+						if (e.currentTarget.dataset.rank == currentRank)
 							currentRank = 0;
 						
 						dots.forEach((d, index) => {
 						const isActive = index < currentRank;
 							d.classList.toggle('active', isActive);
 						});
-						console.log(currentRank)
-						selector.dataset.rank = currentRank;
+						e.currentTarget.dataset.rank = currentRank;
 					});
 					
 					selector.addEventListener('update', function(e) {
             			dots.forEach((d, index) => {
-            			const isActive = index < selector.dataset.rank;
+            			const isActive = index < e.currentTarget.dataset.rank;
             				d.classList.toggle('active', isActive);
             			});
             		});

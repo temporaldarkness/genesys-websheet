@@ -1,3 +1,64 @@
+function createTrauma()
+{
+    const container = document.querySelector('.critical-injuries');
+    
+    let section = document.createElement('div');
+    section.className = 'section removable';
+    section.innerHTML = `
+        <div class="field bottomline">
+            <label>Тяжесть : </label>
+            <div class="rank-selector" data-rank="0">
+                <div class="rank-dot" data-value="0"></div>
+                <div class="rank-dot" data-value="1"></div>
+				<div class="rank-dot" data-value="2"></div>
+			</div>
+		</div>
+		<div class="field">
+			<label for="desc">Результат : </label>
+		</div>
+		<div class="field misc-field">
+			<textarea placeholder="Введите результат" class="misc-textarea"></textarea>
+		</div>
+	`;
+	
+	const selector = section.querySelector('.rank-selector');
+	const dots = selector.querySelectorAll('.rank-dot');
+	
+	selector.addEventListener('click', function(e) {
+		const dot = e.target.closest('.rank-dot');
+		if (!dot)
+			return;
+		
+		currentRank = parseInt(dot.dataset.value) + 1;
+		if (e.currentTarget.dataset.rank == currentRank)
+			currentRank = 0;
+				
+		dots.forEach((d, index) => {
+		const isActive = index < currentRank;
+			d.classList.toggle('active', isActive);
+		});
+		e.currentTarget.dataset.rank = currentRank;
+	});
+	
+	selector.addEventListener('update', function(e) {
+		dots.forEach((d, index) => {
+		const isActive = index < e.currentTarget.dataset.rank;
+			d.classList.toggle('active', isActive);
+		});
+	});
+	
+	section.style.opacity = '0';
+	section.style.transform = 'translateY(10px)'
+	
+	container.appendChild(section);
+	setTimeout(() => {
+        section.style.opacity = '';
+        section.style.transform = '';
+    }, 10);
+    
+    return section;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	const container = document.querySelector('.critical-injuries');
 	
@@ -27,60 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		
 		if (lastSection && !isSectionEmpty(lastSection))
 		{
-		    const section = document.createElement('div');
-		    section.className = 'section removable';
-		    section.innerHTML = `
-		        <div class="field bottomline">
-					<label>Тяжесть : </label>
-					<div class="rank-selector" data-rank="0">
-						<div class="rank-dot" data-value="0"></div>
-						<div class="rank-dot" data-value="1"></div>
-						<div class="rank-dot" data-value="2"></div>
-					</div>
-				</div>
-				<div class="field">
-					<label for="desc">Результат : </label>
-				</div>
-				<div class="field misc-field">
-					<textarea placeholder="Введите результат" class="misc-textarea"></textarea>
-				</div>
-			`;
-			
-			const selector = section.querySelector('.rank-selector');
-			const dots = selector.querySelectorAll('.rank-dot');
-			let currentRank = parseInt(selector.dataset.rank);
-			dots.forEach((d, index) => {
-			const isActive = index < currentRank;
-				d.classList.toggle('active', isActive);
-				d.classList.toggle('inactive', currentRank === 0);
-			});
-			selector.dataset.rank = currentRank;
-			
-			selector.addEventListener('click', function(e) {
-				const dot = e.target.closest('.rank-dot');
-				if (!dot)
-					return;
-				
-				currentRank = parseInt(dot.dataset.value) + 1;
-				if (selector.dataset.rank == currentRank)
-					currentRank = 0;
-				
-				dots.forEach((d, index) => {
-				const isActive = index < currentRank;
-					d.classList.toggle('active', isActive);
-					d.classList.toggle('inactive', currentRank === 0);
-				});
-				selector.dataset.rank = currentRank;
-			});
-			
-			section.style.opacity = '0';
-			section.style.transform = 'translateY(10px)'
-			
-			container.appendChild(section);
-			setTimeout(() => {
-                section.style.opacity = '';
-                section.style.transform = '';
-            }, 10);
+		    createTrauma();
 		}
 	};
 	

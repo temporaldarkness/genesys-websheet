@@ -1,3 +1,33 @@
+function createTalent()
+{
+    const container = document.querySelector('.talents');
+    let section = document.createElement('div');
+    section.className = 'section removable';
+    section.innerHTML = `
+        <div class="field  bottomline">
+            <label>Название : </label>
+			<input type="text" class="talent-name" placeholder="Введите название">
+		</div>
+		<div class="field">
+		    <label>Описание : </label>
+		</div>
+		<div class="field misc-field">
+			<textarea placeholder="Введите описание" class="misc-textarea talent-desc"></textarea>
+		</div>
+	`;
+	
+	section.style.opacity = '0';
+	section.style.transform = 'translateY(10px)'
+	
+	container.appendChild(section);
+	setTimeout(() => {
+        section.style.opacity = '';
+        section.style.transform = '';
+    }, 10);
+    
+    return section;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	const container = document.querySelector('.talents');
 	
@@ -27,29 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		
 		if (lastSection && !isSectionEmpty(lastSection))
 		{
-		    const section = document.createElement('div');
-		    section.className = 'section removable';
-		    section.innerHTML = `
-		        <div class="field  bottomline">
-					<label>Название : </label>
-					<input type="text" class="talent-name" placeholder="Введите название">
-				</div>
-					<div class="field">
-					<label>Описание : </label>
-				</div>
-					<div class="field misc-field">
-					<textarea placeholder="Введите описание" class="misc-textarea talent-desc"></textarea>
-				</div>
-			`;
-			
-			section.style.opacity = '0';
-			section.style.transform = 'translateY(10px)'
-			
-			container.appendChild(section);
-			setTimeout(() => {
-                section.style.opacity = '';
-                section.style.transform = '';
-            }, 10);
+		    createTalent();
 		}
 	};
 	

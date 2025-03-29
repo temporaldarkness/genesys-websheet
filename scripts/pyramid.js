@@ -1,5 +1,39 @@
+function createPyramidTalent(level)
+{
+    console.log(level, level-1)
+    container = document.querySelectorAll('#pyramid .level')[level-1];
+    
+    let section = document.createElement('div');
+	section.className = 'section removable';
+	section.innerHTML = `
+		<div class="field bottomline">
+			<label>Название : </label>
+    		<input type="text" class="talent-name" placeholder="Введите название">
+			<input type="checkbox" class="talent-active">
+			<label class="activelabel">Активный ? </label>
+		</div>
+		<div class="field">
+			<label>Описание : </label>
+		</div>
+		<div class="field misc-field">
+			<textarea placeholder="Введите описание" class="misc-textarea talent-desc"></textarea>
+		</div>
+	`;
+	
+	section.style.opacity = '0';
+	section.style.transform = 'translateY(10px)'
+	
+	container.appendChild(section);
+	setTimeout(() => {
+		section.style.opacity = '';
+		section.style.transform = '';
+	}, 10);
+	
+	return section;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-	const initLevel = container => {
+	const initLevel = (container, index) => {
 		const isSectionEmpty = section => {
 			return (
 				section.querySelector('.talent-name').value.trim() === '' &&
@@ -26,31 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			
 			if (lastSection && !isSectionEmpty(lastSection))
 			{
-				const section = document.createElement('div');
-				section.className = 'section removable';
-				section.innerHTML = `
-					<div class="field bottomline">
-						<label>Название : </label>
-					<input type="text" class="talent-name" placeholder="Введите название">
-						<input type="checkbox" class="talent-active">
-						<label class="activelabel">Активный ? </label>
-					</div>
-					<div class="field">
-						<label>Описание : </label>
-					</div>
-					<div class="field misc-field">
-						<textarea placeholder="Введите описание" class="misc-textarea talent-desc"></textarea>
-					</div>
-				`;
-				
-				section.style.opacity = '0';
-				section.style.transform = 'translateY(10px)'
-				
-				container.appendChild(section);
-				setTimeout(() => {
-					section.style.opacity = '';
-					section.style.transform = '';
-				}, 10);
+				createPyramidTalent(index+1);
 			}
 		}
 		container.addEventListener('input', debounce(updateSections, 300));
@@ -60,7 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		updateSections();
 	}
 	
-	document.querySelectorAll('#pyramid .level').forEach(initLevel);
+	document.querySelectorAll('#pyramid .level').forEach((container, index) => {
+	    initLevel(container, index)
+	});
 });
 
 function debounce(func, timeout = 300)

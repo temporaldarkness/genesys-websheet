@@ -1,3 +1,24 @@
+function createNote()
+{
+	const container = document.getElementById('notesContainer');
+    let section = document.createElement('div');
+    section.className = 'section removable';
+	section.innerHTML = `
+	    <textarea class="misc-textarea" placeholder="Введите ваши заметки..."></textarea>
+	`;
+		
+	section.style.opacity = '0';
+	section.style.transform = 'translateY(10px)'
+		
+	container.appendChild(section);
+	setTimeout(() => {
+        section.style.opacity = '';
+        section.style.transform = '';
+    }, 10);
+    
+    return section;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	const container = document.getElementById('notesContainer');
 	
@@ -24,20 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		
 		if (lastSection && !isSectionEmpty(lastSection))
 		{
-		    const section = document.createElement('div');
-		    section.className = 'section removable';
-		    section.innerHTML = `
-		        <textarea class="misc-textarea" placeholder="Введите ваши заметки..."></textarea>
-			`;
-			
-			section.style.opacity = '0';
-			section.style.transform = 'translateY(10px)'
-			
-			container.appendChild(section);
-			setTimeout(() => {
-                section.style.opacity = '';
-                section.style.transform = '';
-            }, 10);
+		    createNote();
 		}
 	};
 	

@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		dots.forEach((d, index) => {
 		const isActive = index < currentRank;
 			d.classList.toggle('active', isActive);
-			d.classList.toggle('inactive', currentRank === 0);
 		});
 		container.dataset.rank = currentRank;
 		
@@ -15,22 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
 				return;
 			
 			currentRank = parseInt(dot.dataset.value) + 1;
-			if (container.dataset.rank == currentRank)
+			if (e.currentTarget.dataset.rank == currentRank)
 				currentRank = 0;
 			
 			dots.forEach((d, index) => {
 			const isActive = index < currentRank;
 				d.classList.toggle('active', isActive);
-				d.classList.toggle('inactive', currentRank === 0);
 			});
-			container.dataset.rank = currentRank;
+			e.currentTarget.dataset.rank = currentRank;
 		});
 		
 		container.addEventListener('update', function(e) {
 			dots.forEach((d, index) => {
-			const isActive = index < container.dataset.rank;
+			const isActive = index < e.currentTarget.dataset.rank;
 				d.classList.toggle('active', isActive);
-				d.classList.toggle('inactive', container.dataset.rank === 0);
 			});
 		});
 	}

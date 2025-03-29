@@ -1,3 +1,42 @@
+function createWeapon()
+{
+    const table = document.querySelector('.weapons-table');
+    
+    let row = document.createElement('div');
+    row.className = 'weapon-row removable';
+    row.innerHTML = `
+        <div class="weapon-cell name">
+			<textarea class="misc-textarea noresize"></textarea>
+		</div>
+		<div class="weapon-cell skill">
+			<textarea class="misc-textarea noresize"></textarea>
+		</div>
+		<div class="weapon-cell damage">
+			<textarea class="misc-textarea noresize"></textarea>
+		</div>
+		<div class="weapon-cell crit">
+			<textarea class="misc-textarea noresize"></textarea>
+		</div>
+		<div class="weapon-cell range">
+			<textarea class="misc-textarea noresize"></textarea>
+		</div>
+		<div class="weapon-cell special">
+			<textarea class="misc-textarea" ></textarea>
+		</div>
+	`;
+	
+	row.style.opacity = '0';
+	row.style.transform = 'translateY(10px)'
+	
+	table.appendChild(row);
+	setTimeout(() => {
+        row.style.opacity = '';
+        row.style.transform = '';
+    }, 10);
+    
+    return row;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	const table = document.querySelector('.weapons-table');
 	
@@ -25,37 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		
 		if (lastRow && isRowFilled(lastRow))
 		{
-		    const row = document.createElement('div');
-		    row.className = 'weapon-row removable';
-		    row.innerHTML = `
-		        <div class="weapon-cell name">
-					<textarea class="misc-textarea noresize"></textarea>
-				</div>
-				<div class="weapon-cell skill">
-					<textarea class="misc-textarea noresize"></textarea>
-				</div>
-				<div class="weapon-cell damage">
-					<textarea class="misc-textarea noresize"></textarea>
-				</div>
-				<div class="weapon-cell crit">
-					<textarea class="misc-textarea noresize"></textarea>
-				</div>
-				<div class="weapon-cell range">
-					<textarea class="misc-textarea noresize"></textarea>
-				</div>
-				<div class="weapon-cell special">
-					<textarea class="misc-textarea"></textarea>
-				</div>
-			`;
-			
-			row.style.opacity = '0';
-			row.style.transform = 'translateY(10px)'
-			
-			table.appendChild(row);
-			setTimeout(() => {
-                row.style.opacity = '';
-                row.style.transform = '';
-            }, 10);
+		    createWeapon();
 		}
 	};
 	
