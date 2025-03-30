@@ -81,6 +81,7 @@ function collectIndex()
 	});
 	
 	data.careerSelected = document.getElementById('careerSelect').value;
+	data.archetypeSelected = document.getElementById('archetypeSelect').value;
 	
 	const injuries = document.getElementById('injuries').querySelectorAll('.section.filled')
 	
@@ -149,11 +150,17 @@ function collectTalents()
 	
 	const talents = document.getElementById('talents').querySelectorAll('.section.filled');
 	
+	
 	talents.forEach(section => {
-		data.push({
+	    info = {
 			'name': section.querySelector('input').value,
-			'misc': section.querySelector('textarea').value
-		});
+			'misc': section.querySelector('textarea').value,
+		};
+		
+		if (section.dataset.source)
+	        info['source'] = section.dataset.source;
+	        
+		data.push(info);
 	});
 	
 	return data;
@@ -289,6 +296,7 @@ function setIndex(data)
 	});
 	
 	document.getElementById('careerSelect').value = data.careerSelected;
+	document.getElementById('archetypeSelect').value = data.archetypeSelected;
 	
 	document.getElementById('injuries').replaceChildren();
 	
@@ -365,6 +373,8 @@ function setTalents(data)
 		talent.classList.add('filled');
 	    talent.querySelector('input').value = msg['name'];
 	    talent.querySelector('textarea').value = msg['misc'];
+	    if (msg['source'])
+	        talent.dataset.source = msg['source'];
 	});
 	
 	createTalent();

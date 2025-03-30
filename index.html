@@ -22,18 +22,19 @@
 	<script type="text/javascript" src="./scripts/notes.js"></script>
 	<script type="text/javascript" src="./scripts/skills.js"></script>
 	<script type="text/javascript" src="./scripts/storage.js"></script>
-	<script type="text/javascript" src="./scripts/presets.js"></script>
+	<script type="text/javascript" src="./scripts/careerPresets.js"></script>
+	<script type="text/javascript" src="./scripts/archetypePresets.js"></script>
 </head>
 <body>
 	<div class="windowContainer">
 		<nav class="sidebar">
 			<div class="nav-item link" id="nav-index">Основное</div>
-			<div class="nav-item link" id="nav-character">Биография</div>
-			<div class="nav-item link" id="nav-equipment">Снаряжение</div>
-			<div class="nav-item link" id="nav-notes">Заметки</div>
 			<div class="nav-item link" id="nav-skills">Навыки</div>
+			<div class="nav-item link" id="nav-equipment">Снаряжение</div>
 			<div class="nav-item link" id="nav-talents">Таланты</div>
 			<div class="nav-item link" id="nav-pyramid">Пирамида</div>
+			<div class="nav-item link" id="nav-character">Биография</div>
+			<div class="nav-item link" id="nav-notes">Заметки</div>
 			<div class="nav-item" id="nav-download" onclick="downloadData()">Выгрузить</div>
 			<div class="nav-item" id="nav-upload" onclick="uploadData()">Загрузить</div>
 			<input type="file" accept=".json" id="uploadinput">
@@ -50,12 +51,15 @@
 					<div class="field bottomline">
 						<label for="archetype">Архетип : </label>
 						<input type="text" id="archetype" placeholder="Введите архетип">
+						<select id="archetypeSelect">
+						    <option value="-1">- - Отсутствует - -</option>
+						</select>
 					</div>
 					<div class="field bottomline">
 						<label for="career">Карьера : </label>
 						<input type="text" id="career" placeholder="Введите карьеру">
 						<select id="careerSelect">
-						    <option value="-1"></option>
+						    <option value="-1">- - Отсутствует - -</option>
 						</select>
 					</div>
 					<div class="field bottomline">
@@ -246,7 +250,7 @@
 								<textarea class="misc-textarea noresize" placeholder="Короткий меч"></textarea>
 							</div>
 							<div class="weapon-cell skill">
-								<textarea class="misc-textarea noresize" placeholder="Ближний бой (лёгкое)"></textarea>
+								<textarea class="misc-textarea noresize" placeholder="Ближний бой (Лёгкое)"></textarea>
 							</div>
 							<div class="weapon-cell damage">
 								<textarea class="misc-textarea noresize" placeholder="3"></textarea>

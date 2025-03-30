@@ -1,10 +1,10 @@
 careerPresets = {};
-ids = [];
+careerIds = [];
 
-async function retrievePresets() 
+async function retrieveCareerPresets() 
 {
     try {
-        const response = await fetch('./data/presets.json');
+        const response = await fetch('./data/careers.json');
         if (!response.ok)
             throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
@@ -16,14 +16,14 @@ async function retrievePresets()
                'display': preset.display,
                'id': preset.id
             };
-            ids.push(preset.id);
+            careerIds.push(preset.id);
         });
         
     } catch (error) {
         console.error('Ошибка:', error);
     }
     select = document.getElementById('careerSelect');
-    ids.forEach(presetId => {
+    careerIds.forEach(presetId => {
        let preset = careerPresets[presetId];
        if (preset.display)
        {
@@ -41,7 +41,7 @@ async function retrievePresets()
     });
 }
 
-function loadPreset(preset)
+function loadCareerPreset(preset)
 {
     document.getElementById('career').value = preset.name;
     
@@ -50,8 +50,6 @@ function loadPreset(preset)
     container.querySelectorAll('.skill-item').forEach(skill => {
         skill.querySelector('input').checked = false;
     });
-    
-    document.querySelector('nav').lastElementChild.innerHTML = preset.name;
 	
 	preset.values.forEach(skillId => {
 	    container.querySelector(`.skill-item[data-skill-id="${skillId}"]`).querySelector('input').checked = true;
@@ -60,7 +58,7 @@ function loadPreset(preset)
 
 function setCareerPreset(preset)
 {
-    loadPreset(careerPresets[preset]);
+    loadCareerPreset(careerPresets[preset]);
 }
 
-document.addEventListener('DOMContentLoaded', retrievePresets());
+document.addEventListener('DOMContentLoaded', retrieveCareerPresets());
