@@ -124,7 +124,7 @@
       "id": 200,
       "name": "Артиллерия",
       "attribute": "Лов",
-      "display": true,
+      "display": false,
       "category": 2
     },
     {
@@ -215,14 +215,14 @@
       "id": 500,
       "name": "Внутренний Аспект",
       "attribute": "Воля",
-      "display": true,
+      "display": false,
       "category": 5
     },
     {
       "id": 501,
       "name": "Внешний Аспект",
       "attribute": "Воля",
-      "display": true,
+      "display": false,
       "category": 5
     },
     {
