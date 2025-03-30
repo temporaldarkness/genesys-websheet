@@ -240,11 +240,9 @@ input[type="file"] {
 .removable.removing {
     opacity: 0;
     transform: translateY(-10px);
-    max-height: 0;
-    margin-bottom: 0;
 }
 
-.removable:last-child:not(.filled) {
+.removable:not(.filled) {
     opacity: 0.6;
     transform: scale(0.98);
     background: #f8f8f8;
