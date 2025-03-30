@@ -37,7 +37,6 @@
 			<div class="nav-item" id="nav-download" onclick="downloadData()">Выгрузить</div>
 			<div class="nav-item" id="nav-upload" onclick="uploadData()">Загрузить</div>
 			<input type="file" accept=".json" id="uploadinput">
-			<div class="nav-item" onclick="setCareerPreset(101)">Карьера</div>
 			
 		</nav>
 		<div class="content">
@@ -55,6 +54,9 @@
 					<div class="field bottomline">
 						<label for="career">Карьера : </label>
 						<input type="text" id="career" placeholder="Введите карьеру">
+						<select id="careerSelect">
+						    <option value="-1"></option>
+						</select>
 					</div>
 					<div class="field bottomline">
 						<label for="player">Игрок : </label>

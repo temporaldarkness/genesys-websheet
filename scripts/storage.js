@@ -80,6 +80,8 @@ function collectIndex()
 		data[field] = document.getElementById(field).value;
 	});
 	
+	data.careerSelected = document.getElementById('careerSelect').value;
+	
 	const injuries = document.getElementById('injuries').querySelectorAll('.section.filled')
 	
 	data['injuries'] = [];
@@ -285,6 +287,8 @@ function setIndex(data)
 	indexIDs.forEach(field => {
 		document.getElementById(field).value = data[field];
 	});
+	
+	document.getElementById('careerSelect').value = data.careerSelected;
 	
 	document.getElementById('injuries').replaceChildren();
 	

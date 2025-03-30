@@ -1,4 +1,5 @@
 careerPresets = {};
+ids = [];
 
 async function retrievePresets() 
 {
@@ -11,17 +12,39 @@ async function retrievePresets()
         data.forEach(preset => {
            careerPresets[preset.id] = {
                'name': preset.name,
-               'values': preset.values
+               'values': preset.values,
+               'display': preset.display,
+               'id': preset.id
             };
+            ids.push(preset.id);
         });
         
     } catch (error) {
         console.error('Ошибка:', error);
     }
+    select = document.getElementById('careerSelect');
+    ids.forEach(presetId => {
+       let preset = careerPresets[presetId];
+       if (preset.display)
+       {
+           let option = document.createElement('option');
+           
+           option.value = preset.id;
+           option.innerHTML = preset.name;
+           
+           select.appendChild(option);
+       }
+    });
+    
+    select.addEventListener('change', function(){
+        setCareerPreset(parseInt(this.value));
+    });
 }
 
 function loadPreset(preset)
 {
+    document.getElementById('career').value = preset.name;
+    
     container = document.getElementById('skills-container');
     
     container.querySelectorAll('.skill-item').forEach(skill => {

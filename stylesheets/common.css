@@ -7,7 +7,7 @@ body {
     text-transform: uppercase;
 }
 
-input, textarea {
+input, textarea, select, option {
     font-family: "Oswald", "Bahnschrift", sans-serif;
     letter-spacing: -0.075em;
     font-size: 1.2em;
@@ -54,6 +54,22 @@ input, textarea {
 }
 
 .misc-textarea:focus {
+    outline: none;
+    border-color: #666;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+select {
+    padding: 10px;
+    height: 50%;
+    border: 0px solid transparent;
+    resize: vertical;
+    font-size: 13px;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+select:focus {
     outline: none;
     border-color: #666;
     box-shadow: 0 0 3px rgba(0,0,0,0.1);
