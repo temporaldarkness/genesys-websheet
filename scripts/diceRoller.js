@@ -1,3 +1,5 @@
+availableSides = {}
+
 availableDice = {}
 
 async function retrieveDice()
@@ -8,10 +10,15 @@ async function retrieveDice()
             throw new Error(`Ошибка загрузки костей: ${response.status}`);
 		
         const data = await response.json();
-        data.forEach(dice => {
+        data.dice.forEach(dice => {
            availableDice[dice.id] = {
                'name': dice.name,
                'values': dice.values
+            };
+        });
+        data.sides.forEach(side => {
+           availableSides[side.id] = {
+               'name': side.name
             };
         });
         
@@ -42,11 +49,24 @@ function roll(diceId, n = 1)
     sides = dice.length;
     choice = cryptoRandom(n, dice.length-1);
     
-    result = [];
+    let result = [];
     choice.forEach(r => {
         result.push(dice[r]);
     })
     
+    return result;
+}
+
+function rollPool(dict)
+{
+    let result = [];
+    
+    Object.entries(dict).forEach(([key, value]) => {
+        result.push({
+            "id": parseInt(key),
+            "values": roll(parseInt(key), value)
+        });
+    });
     return result;
 }
 
