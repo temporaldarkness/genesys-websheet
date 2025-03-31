@@ -1,311 +1,315 @@
 {
   "categories": [
-    "Общие навыки",
-    "Общие навыки",
-    "Боевые навыки",
-    "Навыки знаний",
-    "Социальные навыки",
-    "Магические навыки"
+    "Общие навыки"     , "Общие навыки"     , "Боевые навыки"    ,
+    "Навыки знаний"    , "Социальные навыки", "Магические навыки"
+  ],
+  "characteristics": [
+    {"id": 0, "name": "Сила"     , "shortcut": "Сила", "uid": "strength"    },
+    {"id": 1, "name": "Ловкость" , "shortcut": "Лов" , "uid": "agility"     },
+    {"id": 2, "name": "Интеллект", "shortcut": "Инт" , "uid": "intelligence"},
+    {"id": 3, "name": "Смекалка" , "shortcut": "Сме" , "uid": "wits"        },
+    {"id": 4, "name": "Воля"     , "shortcut": "Воля", "uid": "willpower"   },
+    {"id": 5, "name": "Харизма"  , "shortcut": "Хар" , "uid": "charisma"    }
   ],
   "skills": [
     {
       "id": 0,
       "name": "Алхимия",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": true,
       "category": 0
     },
     {
       "id": 1,
       "name": "Атлетика",
-      "attribute": "Сила",
+      "attribute": 0,
       "display": true,
       "category": 0
     },
     {
       "id": 2,
       "name": "Бдительность",
-      "attribute": "Воля",
+      "attribute": 4,
       "display": true,
       "category": 0
     },
     {
       "id": 3,
       "name": "Верховая езда",
-      "attribute": "Лов",
+      "attribute": 1,
       "display": true,
       "category": 0
     },
     {
       "id": 4,
       "name": "Внимание",
-      "attribute": "Сме",
+      "attribute": 3,
       "display": true,
       "category": 0
     },
     {
       "id": 5,
       "name": "Вождение",
-      "attribute": "Лов",
+      "attribute": 1,
       "display": true,
       "category": 0
     },
     {
       "id": 6,
       "name": "Выдержка",
-      "attribute": "Воля",
+      "attribute": 4,
       "display": true,
       "category": 0
     },
     {
       "id": 7,
       "name": "Выживание",
-      "attribute": "Сме",
+      "attribute": 3,
       "display": true,
       "category": 0
     },
     {
       "id": 100,
       "name": "Жульничество",
-      "attribute": "Сме",
+      "attribute": 3,
       "display": true,
       "category": 1
     },
     {
       "id": 101,
       "name": "Координация",
-      "attribute": "Лов",
+      "attribute": 1,
       "display": true,
       "category": 1
     },
     {
       "id": 102,
       "name": "Медицина",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": true,
       "category": 1
     },
     {
       "id": 103,
       "name": "Скрытность",
-      "attribute": "Лов",
+      "attribute": 1,
       "display": true,
       "category": 1
     },
     {
       "id": 104,
       "name": "Стойкость",
-      "attribute": "Сила",
+      "attribute": 0,
       "display": true,
       "category": 1
     },
     {
       "id": 105,
       "name": "Уличная интуиция",
-      "attribute": "Сме",
+      "attribute": 3,
       "display": true,
       "category": 1
     },
     {
       "id": 106,
       "name": "Управление",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": true,
       "category": 1
     },
     {
       "id": 107,
       "name": "Хладнокровие",
-      "attribute": "Хар",
+      "attribute": 5,
       "display": true,
       "category": 1
     },
     {
       "id": 200,
       "name": "Артиллерия",
-      "attribute": "Лов",
+      "attribute": 1,
       "display": false,
       "category": 2
     },
     {
       "id": 201,
       "name": "Ближний бой (Лёгкое)",
-      "attribute": "Сила",
+      "attribute": 0,
       "display": true,
       "category": 2
     },
     {
       "id": 202,
       "name": "Ближний бой (Тяжёлое)",
-      "attribute": "Сила",
+      "attribute": 0,
       "display": true,
       "category": 2
     },
     {
       "id": 203,
       "name": "Грубая сила",
-      "attribute": "Сила",
+      "attribute": 0,
       "display": true,
       "category": 2
     },
     {
       "id": 204,
       "name": "Дальний бой",
-      "attribute": "Лов",
+      "attribute": 1,
       "display": true,
       "category": 2
     },
     {
       "id": 300,
       "name": "Культура",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": true,
       "category": 3
     },
     {
       "id": 301,
       "name": "Пределы",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": true,
       "category": 3
     },
     {
       "id": 302,
       "name": "Природа",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": true,
       "category": 3
     },
     {
       "id": 400,
       "name": "Запугивание",
-      "attribute": "Воля",
+      "attribute": 4,
       "display": true,
       "category": 4
     },
     {
       "id": 401,
       "name": "Лидерство",
-      "attribute": "Хар",
+      "attribute": 5,
       "display": true,
       "category": 4
     },
     {
       "id": 402,
       "name": "Обаяние",
-      "attribute": "Хар",
+      "attribute": 5,
       "display": true,
       "category": 4
     },
     {
       "id": 403,
       "name": "Обман",
-      "attribute": "Хар",
+      "attribute": 5,
       "display": true,
       "category": 4
     },
     {
       "id": 404,
       "name": "Переговоры",
-      "attribute": "Хар",
+      "attribute": 5,
       "display": true,
       "category": 4
     },
     {
       "id": 500,
       "name": "Внутренний Аспект",
-      "attribute": "Воля",
+      "attribute": 4,
       "display": false,
       "category": 5
     },
     {
       "id": 501,
       "name": "Внешний Аспект",
-      "attribute": "Воля",
+      "attribute": 4,
       "display": false,
       "category": 5
     },
     {
       "id": 502,
       "name": "Аспект Бездны",
-      "attribute": "Воля",
+      "attribute": 4,
       "display": false,
       "category": 5
     },
     {
       "id": 503,
       "name": "Аспект Бури",
-      "attribute": "Воля",
+      "attribute": 4,
       "display": false,
       "category": 5
     },
     {
       "id": 504,
       "name": "Аспект Грота",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": false,
       "category": 5
     },
     {
       "id": 505,
       "name": "Аспект Дюн",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": false,
       "category": 5
     },
     {
       "id": 506,
       "name": "Аспект Замка",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": false,
       "category": 5
     },
     {
       "id": 507,
       "name": "Аспект Инфина",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": false,
       "category": 5
     },
     {
       "id": 508,
       "name": "Аспект Катакомб",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": false,
       "category": 5
     },
     {
       "id": 509,
       "name": "Аспект Кратера",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": false,
       "category": 5
     },
     {
       "id": 510,
       "name": "Аспект Мадеры",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": false,
       "category": 5
     },
     {
       "id": 511,
       "name": "Аспект Маяка",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": false,
       "category": 5
     },
     {
       "id": 512,
       "name": "Аспект Тайги",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": false,
       "category": 5
     },
     {
       "id": 513,
       "name": "Аспект Тумана",
-      "attribute": "Инт",
+      "attribute": 2,
       "display": false,
       "category": 5
     }
