@@ -3,37 +3,44 @@
     {
       "id": 0,
       "name": "Пусто",
-      "image": "./images/crossedbox.svg"
+      "image": "./images/crossedbox.svg",
+      "glyph" : "□"
     },
     {
       "id": 1,
       "name": "Преимущество",
-      "image": "./images/advantage.svg"
+      "image": "./images/advantage.svg",
+      "glyph" : "⋀"
     },
     {
       "id": 2,
       "name": "Успех",
-      "image": "./images/success.svg"
+      "image": "./images/success.svg",
+      "glyph" : "✓"
     },
     {
       "id": 3,
       "name": "Триумф",
-      "image": "./images/triumph.svg"
+      "image": "./images/triumph.svg",
+      "glyph" : "☼"
     },
     {
       "id": -1,
       "name": "Осложнение",
-      "image": "./images/threat.svg"
+      "image": "./images/threat.svg",
+      "glyph" : "⋁"
     },
     {
       "id": -2,
       "name": "Провал",
-      "image": "./images/failure.svg"
+      "image": "./images/failure.svg",
+      "glyph" : "𝝬"
     },
     {
       "id": -3,
       "name": "Крах",
-      "image": "./images/despair.svg"
+      "image": "./images/despair.svg",
+      "glyph" : "⦻"
     }
   ],
   "dice": [

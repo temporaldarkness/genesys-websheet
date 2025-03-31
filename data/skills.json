@@ -15,6 +15,7 @@
     {
       "id": 0,
       "name": "Алхимия",
+      "nameP": "Алхимии",
       "attribute": 2,
       "display": true,
       "category": 0
@@ -22,6 +23,7 @@
     {
       "id": 1,
       "name": "Атлетика",
+      "nameP": "Атлетики",
       "attribute": 0,
       "display": true,
       "category": 0
@@ -29,6 +31,7 @@
     {
       "id": 2,
       "name": "Бдительность",
+      "nameP": "Бдительности",
       "attribute": 4,
       "display": true,
       "category": 0
@@ -36,6 +39,7 @@
     {
       "id": 3,
       "name": "Верховая езда",
+      "nameP": "Верховой езды",
       "attribute": 1,
       "display": true,
       "category": 0
@@ -43,6 +47,7 @@
     {
       "id": 4,
       "name": "Внимание",
+      "nameP": "Внимания",
       "attribute": 3,
       "display": true,
       "category": 0
@@ -50,6 +55,7 @@
     {
       "id": 5,
       "name": "Вождение",
+      "nameP": "Вождения",
       "attribute": 1,
       "display": true,
       "category": 0
@@ -57,6 +63,7 @@
     {
       "id": 6,
       "name": "Выдержка",
+      "nameP": "Выдержки",
       "attribute": 4,
       "display": true,
       "category": 0
@@ -64,6 +71,7 @@
     {
       "id": 7,
       "name": "Выживание",
+      "nameP": "Выживания",
       "attribute": 3,
       "display": true,
       "category": 0
@@ -71,6 +79,7 @@
     {
       "id": 100,
       "name": "Жульничество",
+      "nameP": "Жульничества",
       "attribute": 3,
       "display": true,
       "category": 1
@@ -78,6 +87,7 @@
     {
       "id": 101,
       "name": "Координация",
+      "nameP": "Координации",
       "attribute": 1,
       "display": true,
       "category": 1
@@ -85,6 +95,7 @@
     {
       "id": 102,
       "name": "Медицина",
+      "nameP": "Медицины",
       "attribute": 2,
       "display": true,
       "category": 1
@@ -92,6 +103,7 @@
     {
       "id": 103,
       "name": "Скрытность",
+      "nameP": "Скрытности",
       "attribute": 1,
       "display": true,
       "category": 1
@@ -99,6 +111,7 @@
     {
       "id": 104,
       "name": "Стойкость",
+      "nameP": "Стойкости",
       "attribute": 0,
       "display": true,
       "category": 1
@@ -106,6 +119,7 @@
     {
       "id": 105,
       "name": "Уличная интуиция",
+      "nameP": "Уличной интуиции",
       "attribute": 3,
       "display": true,
       "category": 1
@@ -113,6 +127,7 @@
     {
       "id": 106,
       "name": "Управление",
+      "nameP": "Управления",
       "attribute": 2,
       "display": true,
       "category": 1
@@ -120,6 +135,7 @@
     {
       "id": 107,
       "name": "Хладнокровие",
+      "nameP": "Хладнокровия",
       "attribute": 5,
       "display": true,
       "category": 1
@@ -127,6 +143,7 @@
     {
       "id": 200,
       "name": "Артиллерия",
+      "nameP": "Артиллерии",
       "attribute": 1,
       "display": false,
       "category": 2
@@ -134,6 +151,7 @@
     {
       "id": 201,
       "name": "Ближний бой (Лёгкое)",
+      "nameP": "Ближнего боя (Лёгкое)",
       "attribute": 0,
       "display": true,
       "category": 2
@@ -141,6 +159,7 @@
     {
       "id": 202,
       "name": "Ближний бой (Тяжёлое)",
+      "nameP": "Ближнего боя (Тяжёлое)",
       "attribute": 0,
       "display": true,
       "category": 2
@@ -148,6 +167,7 @@
     {
       "id": 203,
       "name": "Грубая сила",
+      "nameP": "Грубой силы",
       "attribute": 0,
       "display": true,
       "category": 2
@@ -155,6 +175,7 @@
     {
       "id": 204,
       "name": "Дальний бой",
+      "nameP": "Дальнего боя",
       "attribute": 1,
       "display": true,
       "category": 2
@@ -162,6 +183,7 @@
     {
       "id": 300,
       "name": "Культура",
+      "nameP": "Культуры",
       "attribute": 2,
       "display": true,
       "category": 3
@@ -169,6 +191,7 @@
     {
       "id": 301,
       "name": "Пределы",
+      "nameP": "Пределов",
       "attribute": 2,
       "display": true,
       "category": 3
@@ -176,6 +199,7 @@
     {
       "id": 302,
       "name": "Природа",
+      "nameP": "Природы",
       "attribute": 2,
       "display": true,
       "category": 3
@@ -183,6 +207,7 @@
     {
       "id": 400,
       "name": "Запугивание",
+      "nameP": "Запугивания",
       "attribute": 4,
       "display": true,
       "category": 4
@@ -190,6 +215,7 @@
     {
       "id": 401,
       "name": "Лидерство",
+      "nameP": "Лидерства",
       "attribute": 5,
       "display": true,
       "category": 4
@@ -197,6 +223,7 @@
     {
       "id": 402,
       "name": "Обаяние",
+      "nameP": "Обаяния",
       "attribute": 5,
       "display": true,
       "category": 4
@@ -204,6 +231,7 @@
     {
       "id": 403,
       "name": "Обман",
+      "nameP": "Обмана",
       "attribute": 5,
       "display": true,
       "category": 4
@@ -211,6 +239,7 @@
     {
       "id": 404,
       "name": "Переговоры",
+      "nameP": "Переговоров",
       "attribute": 5,
       "display": true,
       "category": 4
@@ -218,6 +247,7 @@
     {
       "id": 500,
       "name": "Внутренний Аспект",
+      "nameP": "Внутреннего Аспекта",
       "attribute": 4,
       "display": false,
       "category": 5
@@ -225,6 +255,7 @@
     {
       "id": 501,
       "name": "Внешний Аспект",
+      "nameP": "Внешнего Аспекта",
       "attribute": 4,
       "display": false,
       "category": 5
@@ -232,6 +263,7 @@
     {
       "id": 502,
       "name": "Аспект Бездны",
+      "nameP": "Аспекта Бездны",
       "attribute": 4,
       "display": false,
       "category": 5
@@ -239,6 +271,7 @@
     {
       "id": 503,
       "name": "Аспект Бури",
+      "nameP": "Аспекта Бури",
       "attribute": 4,
       "display": false,
       "category": 5
@@ -246,6 +279,7 @@
     {
       "id": 504,
       "name": "Аспект Грота",
+      "nameP": "Аспекта Грота",
       "attribute": 2,
       "display": false,
       "category": 5
@@ -253,6 +287,7 @@
     {
       "id": 505,
       "name": "Аспект Дюн",
+      "nameP": "Аспекта Дюн",
       "attribute": 2,
       "display": false,
       "category": 5
@@ -260,6 +295,7 @@
     {
       "id": 506,
       "name": "Аспект Замка",
+      "nameP": "Аспекта Замка",
       "attribute": 2,
       "display": false,
       "category": 5
@@ -267,6 +303,7 @@
     {
       "id": 507,
       "name": "Аспект Инфина",
+      "nameP": "Аспекта Инфина",
       "attribute": 2,
       "display": false,
       "category": 5
@@ -274,6 +311,7 @@
     {
       "id": 508,
       "name": "Аспект Катакомб",
+      "nameP": "Аспекта Катакомб",
       "attribute": 2,
       "display": false,
       "category": 5
@@ -281,6 +319,7 @@
     {
       "id": 509,
       "name": "Аспект Кратера",
+      "nameP": "Аспекта Кратера",
       "attribute": 2,
       "display": false,
       "category": 5
@@ -288,6 +327,7 @@
     {
       "id": 510,
       "name": "Аспект Мадеры",
+      "nameP": "Аспекта Мадеры",
       "attribute": 2,
       "display": false,
       "category": 5
@@ -295,6 +335,7 @@
     {
       "id": 511,
       "name": "Аспект Маяка",
+      "nameP": "Аспекта Маяка",
       "attribute": 2,
       "display": false,
       "category": 5
@@ -302,6 +343,7 @@
     {
       "id": 512,
       "name": "Аспект Тайги",
+      "nameP": "Аспекта Тайги",
       "attribute": 2,
       "display": false,
       "category": 5
@@ -309,6 +351,7 @@
     {
       "id": 513,
       "name": "Аспект Тумана",
+      "nameP": "Аспекта Тумана",
       "attribute": 2,
       "display": false,
       "category": 5
