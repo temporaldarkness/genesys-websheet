@@ -26,6 +26,10 @@ const equipmentIDs = [
 	'text-money'
 ]
 
+const diceRollerIDs = [
+	'dice-webhook'
+]
+
 const bioIDs = [
 	'gender',
 	'age',
@@ -66,7 +70,8 @@ function collectData()
 		'talents': collectTalents(),
 		'pyramid': collectPyramid(),
 		'bio': collectBio(),
-		'notes': collectNotes()
+		'notes': collectNotes(),
+		'diceRoller': collectDiceRoller(),
 	};
 	
 	return data;
@@ -226,6 +231,17 @@ function collectNotes()
 	return data;
 }
 
+function collectDiceRoller()
+{
+    let data = {};
+    
+    diceRollerIDs.forEach(field => {
+		data[field] = document.getElementById(field).value;
+	});
+    
+    return data;
+}
+
 function uploadData()
 {
 	const inp = document.getElementById('uploadinput');
@@ -261,21 +277,7 @@ function uploadData()
 
 function loadData(data)
 {
-    //setEmpty();
     aknowledgeData(data);
-}
-
-function setEmpty()
-{
-    fetch('https://temporaldarkness.ru/genesys/data/empty.json')
-        .then(response => {
-            if (!response.ok) throw new Error(response.statusText);
-            return response.json();
-        })
-        .then(data => aknowledgeData(data))
-        .catch(error => {
-            console.log('Ошибка загрузки пустого файла:', error.message);
-        });
 }
 
 function aknowledgeData(data)
@@ -287,6 +289,7 @@ function aknowledgeData(data)
 	setPyramid(data['pyramid']);
 	setBio(data['bio']);
 	setNotes(data['notes']);
+	setDiceRoller(data['diceRoller']);
 }
 
 function setIndex(data)
@@ -427,4 +430,11 @@ function setNotes(data)
 	});
 	
 	createNote();
+}
+
+function setDiceRoller(data)
+{
+    diceRollerIDs.forEach(field => {
+		document.getElementById(field).value = data[field];
+	});
 }

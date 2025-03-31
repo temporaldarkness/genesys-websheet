@@ -12,14 +12,15 @@ async function retrieveDice()
         const data = await response.json();
         data.dice.forEach(dice => {
            availableDice[dice.id] = {
-               'name': dice.name,
-               'values': dice.values
+               name: dice.name,
+               values: dice.values
             };
         });
         data.sides.forEach(side => {
            availableSides[side.id] = {
-               'name': side.name,
-               'image': side.image
+               name: side.name,
+               image: side.image,
+               glyph: side.glyph
             };
         });
         
@@ -175,6 +176,165 @@ function processRollResults(values)
     return result;
 }
 
+async function dicerollerSendRollToWebhook(flatResults, results, rolled)
+{
+    let webhook = document.getElementById('dice-webhook').value;
+    if (!webhook || !webhook.startsWith('https://discord.com/api/webhooks/'))
+        return;
+    
+    
+    const payload = {
+        embeds: [
+            {
+                author: {},
+                description: "",
+                footer: {
+                    text: `Положительные : ⯀ ${rolled[0]} ◆ ${rolled[1]} ⬢ ${rolled[2]}\nОтрицательные :  ⯀ ${rolled[3]} ◆ ${rolled[4]} ⬢ ${rolled[5]}`
+                },
+                fields: [
+                    {
+                        name: "Кости Бонуса :",
+                        value: ""
+                    },
+                    {
+                        name: "Кости Способности :",
+                        value: ""
+                    },
+                    {
+                        name: "Кости Мастерства :",
+                        value: ""
+                    },
+                    {
+                        name: "Кости Штрафа :",
+                        value: ""
+                    },
+                    {
+                        name: "Кости Сложности :",
+                        value: ""
+                    },
+                    {
+                        name: "Кости Вызова :",
+                        value: ""
+                    }
+                ]
+            }
+        ]
+    };
+    
+    let selectedSkill = document.getElementById('dice-skillSelect').value;
+    if (selectedSkill < 0)
+    {
+        selectedSkill = "";
+    }
+    else
+    {
+        selectedSkill = " " + availableSkills[selectedSkill].nameP;
+    }
+    
+    let selectedDifficulty = document.getElementById('dice-difficultySelect');
+    selectedDifficulty = selectedDifficulty.children[selectedDifficulty.value].text.split(' ')[0];
+    
+    payload.embeds[0].title = `Проверка${selectedSkill} (${selectedDifficulty}) — `;
+    payload.embeds[0].color = flatResults.successes > 0 ? 40507 : 16711680;
+    payload.embeds[0].title += flatResults.successes > 0 ? "Успех!" : "Провал!";
+    if (flatResults.successes > 1)
+        payload.embeds[0].title += " (" + flatResults.successes + ")";
+    
+    if (flatResults.triumphs > 0) payload.embeds[0].description += `\n**Триумфов** — ${flatResults.triumphs}`;
+    if (flatResults.despairs > 0) payload.embeds[0].description += `\n**Крахов** — ${flatResults.despairs}`;
+    if (flatResults.advantages > 0) payload.embeds[0].description += `\n**Преимуществ** — ${flatResults.advantages}`;
+    if (flatResults.advantages < 0) payload.embeds[0].description += `\n**Осложнений** — ${-flatResults.advantages}`;
+    
+    payload.embeds[0].author.name = document.getElementById('charname').value;
+    
+    let wipes = [];
+    results.forEach((res, index) => {
+        if (res.values.length === 0)
+        {
+            wipes.push(index);
+        }
+        else
+        {
+            startFlag = true;
+            res.values.forEach(val => {
+                if (!startFlag)
+                {
+                    payload.embeds[0].fields[index].value += ", ";
+                }
+                else
+                {
+                    startFlag = false;
+                }
+                val.forEach(v => {
+                    payload.embeds[0].fields[index].value += availableSides[v].glyph;
+                })
+            });
+        }
+    });
+    wipes.reverse().forEach(i => {
+        payload.embeds[0].fields.splice(i, 1);
+    });
+    
+    try 
+    {
+        const response = await fetch(webhook, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+        
+        if (!response.ok)
+            throw new Error(`Ошибка отправления вебхука: ${response.status}\n${response.statusText}`);
+    }
+    catch (error)
+    {
+        console.error('Ошибка сети:', error);
+    }
+}
+
+async function dicerollerSendRollSimpleToWebhook(result, n)
+{
+    let webhook = document.getElementById('dice-webhook').value;
+    if (!webhook || webhook.startsWith('https://discord.com/api/webhooks/'))
+        return;
+    
+    const payload = {
+        embeds: [
+            {
+                color: 33791,
+                author: {},
+                description: result,
+                footer: {
+                    text: `⯀ ${n}`
+                }
+            }
+        ]
+    };
+    
+    payload.embeds[0].title = `Бросок d${n} — ${result}`;
+    payload.embeds[0].author.name = document.getElementById('charname').value;
+    
+    try 
+    {
+        const response = await fetch(webhook, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+        
+        if (!response.ok)
+            throw new Error(`Ошибка отправления вебхука: ${response.status}\n${response.statusText}`);
+    }
+    catch (error)
+    {
+        console.error('Ошибка сети:', error);
+    }
+}
+
 function dicerollerRoll()
 {
     let amounts = [
@@ -212,9 +372,22 @@ function dicerollerRoll()
     
     let processedResults = processRollResults(rollValue.flatMap(dice => dice.values.flat()));
     
-    
     let stats = result.querySelectorAll('.block-subtitle');
     
+    let selectedSkill = document.getElementById('dice-skillSelect').value;
+    if (selectedSkill < 0)
+    {
+        selectedSkill = "";
+    }
+    else
+    {
+        selectedSkill = " " + availableSkills[selectedSkill].nameP;
+    }
+    
+    let selectedDifficulty = document.getElementById('dice-difficultySelect');
+    selectedDifficulty = selectedDifficulty.children[selectedDifficulty.value].text.split(' ')[0];
+    
+    stats[0].innerHTML = `Проверка${selectedSkill} (${selectedDifficulty}) — `;
     stats[0].innerHTML += processedResults.successes > 0 ? "Успех !" : "Провал !";
     if (processedResults.successes > 1)
         stats[0].innerHTML += " ( " + processedResults.successes + " )";
@@ -239,6 +412,8 @@ function dicerollerRoll()
         stats[4].style = "";
         stats[4].innerHTML += -processedResults.advantages;
     }
+    
+    dicerollerSendRollToWebhook(processedResults, rollValue, amounts);
 }
 
 function dicerollerRollSimple(n)
@@ -246,16 +421,17 @@ function dicerollerRollSimple(n)
     let side = cryptoRandom(1, n)[0];
     
     let result = createRollResultSimple();
-    
-    result.querySelector('.diceroller-resultdice').firstElementChild.innerHTML += n;
+    result.querySelector('.diceroller-resultdice').firstElementChild.innerHTML += side;
     let resultSpan = document.createElement('div');
     resultSpan.className = 'text-icon icon-splitter';
     let span = document.createElement('span');
     span.ClassName = 'icon';
-    span.innerHTML += side;
+    span.innerHTML = n;
     resultSpan.appendChild(span);
     result.querySelector('[data-type="rollresults"]').appendChild(resultSpan);
-    result.querySelector('.block-subtitle').innerHTML += side;
+    result.querySelector('.block-subtitle').innerHTML += `Бросок d${n} — ${side}`;
+    
+    dicerollerSendRollSimpleToWebhook(side, n)
 }
 
 function dicerollerEmpower(alignment = true)
