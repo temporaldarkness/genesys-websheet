@@ -228,7 +228,7 @@ async function dicerollerSendRollToWebhook(flatResults, results, rolled)
     }
     else
     {
-        selectedSkill = " " + availableSkills[selectedSkill].nameP;
+        selectedSkill = " " + availableSkills.find(item => item.id == selectedSkill).nameP;
     }
     
     let selectedDifficulty = document.getElementById('dice-difficultySelect');
@@ -381,7 +381,7 @@ function dicerollerRoll()
     }
     else
     {
-        selectedSkill = " " + availableSkills[selectedSkill].nameP;
+        selectedSkill = " " + availableSkills.find(item => item.id == selectedSkill).nameP;
     }
     
     let selectedDifficulty = document.getElementById('dice-difficultySelect');
@@ -489,7 +489,7 @@ function dicerollerWeaken(alignment = true)
 
 function skillSelect(value)
 {
-    let skill = availableSkills[value];
+    let skill = availableSkills.find(item => item.id == value);
     let attribute = availableChars[skill.attribute];
     
     let attributeValue = document.getElementById(attribute.uid).value;
