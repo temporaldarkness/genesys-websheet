@@ -2,31 +2,38 @@
   "sides": [
     {
       "id": 0,
-      "name": "Пусто"
+      "name": "Пусто",
+      "image": "./images/crossedbox.svg"
     },
     {
       "id": 1,
-      "name": "Преимущество"
+      "name": "Преимущество",
+      "image": "./images/advantage.svg"
     },
     {
       "id": 2,
-      "name": "Успех"
+      "name": "Успех",
+      "image": "./images/success.svg"
     },
     {
       "id": 3,
-      "name": "Триумф"
+      "name": "Триумф",
+      "image": "./images/triumph.svg"
     },
     {
       "id": -1,
-      "name": "Осложнение"
+      "name": "Осложнение",
+      "image": "./images/threat.svg"
     },
     {
       "id": -2,
-      "name": "Провал"
+      "name": "Провал",
+      "image": "./images/failure.svg"
     },
     {
       "id": -3,
-      "name": "Крах"
+      "name": "Крах",
+      "image": "./images/despair.svg"
     }
   ],
   "dice": [

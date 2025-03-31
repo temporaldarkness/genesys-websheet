@@ -1,0 +1,83 @@
+.dice-field {
+    display: flex;
+}
+
+.dice-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: transparent;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dice-button-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: transparent;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+.dice-block {
+    height: 100%;
+}
+
+.dice-button {
+    background: white;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+    cursor: pointer;
+    border: 2px solid transparent;
+    font-weight: 800;
+    align-content: center;
+}
+
+.dice-button:hover {
+	background: #eee;
+}
+
+.dice-button.main {
+    width: 50%;
+    margin: auto;
+    height: 50%;
+}
+
+.dice-input {
+    width: 100%;
+    padding: 5px;
+    margin: 0px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.dice-input:focus {
+    outline: none;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+.diceroller-resultdice {
+    margin: auto;
+    display: flex;
+}
+
+.text-icon.icon-splitter {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.text-icon.icon-splitter .icon {
+    width: 30px;
+    height: 30px;
+}

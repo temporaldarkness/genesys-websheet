@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="./stylesheets/pyramid.css">
 	<link rel="stylesheet" href="./stylesheets/skills.css">
 	<link rel="stylesheet" href="./stylesheets/talents.css">
-	<link rel="stylesheet" href="./stylesheets/notes.css">
+	<link rel="stylesheet" href="./stylesheets/diceroller.css">
 	<script type="text/javascript" src="./scripts/navigation.js"></script>
 	<script type="text/javascript" src="./scripts/rank.js"></script>
 	<script type="text/javascript" src="./scripts/traumas.js"></script>
@@ -428,6 +428,89 @@
 			</div>
 			<div id="diceroller" class="document-section">
 				<h3 class="section-title">Дайс-роллер</h3>
+				<div class="dice-container">
+				    <div class="dice-block">
+                        <h4 class="block-subtitle">Положительные кости</h4>
+                        <div class="section autoheight">
+                            <div class="field bottomline">
+                                <div>
+                                    <label>Кость Бонуса</label>
+                                </div>
+                                <div class="dice-field">
+                                    <span class="text-icon">&#11200;</span>
+                                    <input type="number" min="0" value="0" id="diceroller-value1">
+                                </div>
+                            </div>
+                            <div class="field bottomline">
+                                <div>
+                                    <label>Кость Способности</label>
+                                </div>
+                                <div class="dice-field">
+                                    <span class="text-icon">&#9670;</span>
+                                    <input type="number" min="0" value="0" id="diceroller-value2">
+                                </div>
+                            </div>
+                            <div class="field bottomline">
+                                <div>
+                                    <label>Кость Мастерства</label>
+                                </div>
+                                <div class="dice-field">
+                                    <span class="text-icon">&#11042;</span>
+                                    <input type="number" min="0" value="0" id="diceroller-value3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dice-block">
+                        <h4 class="block-subtitle">Отрицательные кости</h4>
+                        <div class="section autoheight">
+                            <div class="field bottomline">
+                                <div>
+                                    <label>Кость Штрафа</label>
+                                </div>
+                                <div class="dice-field">
+                                    <span class="text-icon">&#11200;</span>
+                                    <input type="number" min="0" value="0" id="diceroller-valuen1">
+                                </div>
+                            </div>
+                            <div class="field bottomline">
+                                <div>
+                                    <label>Кость Сложности</label>
+                                </div>
+                                <div class="dice-field">
+                                    <span class="text-icon">&#9670;</span>
+                                    <input type="number" min="0" value="0" id="diceroller-valuen2">
+                                </div>
+                            </div>
+                            <div class="field bottomline">
+                                <div>
+                                    <label>Кость Вызова</label>
+                                </div>
+                                <div class="dice-field">
+                                    <span class="text-icon">&#11042;</span>
+                                    <input type="number" min="0" value="0" id="diceroller-valuen3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dice-button-container">
+                    <div class="dice-container">
+                        <input type="number" min="0" value="0" class="dice-input" id="diceroller-adjust1">
+                        <input type="number" min="0" value="0" class="dice-input" id="diceroller-adjust2">
+                        <div class="dice-button" id="diceroller-empower-a">Усилить !</div>
+                        <div class="dice-button" id="diceroller-weaken-a">Ослабить !</div>
+                    </div>
+                    <div class="dice-button main" id="diceroller-roll"><div>Бросить !</div></div>
+                    <div class="dice-container">
+                        <input type="number" min="0" value="0" class="dice-input" id="diceroller-adjustn1">
+                        <input type="number" min="0" value="0" class="dice-input" id="diceroller-adjustn2">
+                        <div class="dice-button" id="diceroller-empower-b">Усилить !</div>
+                        <div class="dice-button" id="diceroller-weaken-b">Ослабить !</div>
+                    </div>
+                </div>
+                <div id="diceroller-result" class="dice-container">
+                </div>
 			</div>
 		</div>
 	</div>
