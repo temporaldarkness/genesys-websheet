@@ -25,6 +25,8 @@ function createTrauma()
 	const dots = selector.querySelectorAll('.rank-dot');
 	
 	selector.addEventListener('click', function(e) {
+		if (e.target.disabled)
+		    return;
 		const dot = e.target.closest('.rank-dot');
 		if (!dot)
 			return;
