@@ -77,18 +77,37 @@ function createRollResult()
                 <span class="text-icon">&#11042; </span>
             </div>
         </div>
-        <div class="field bottomline" data-type="rollresults"></div>
-        <div class="field bottomline" data-type="rollresults"></div>
-        <div class="field bottomline" data-type="rollresults"></div>
-        <div class="field bottomline" data-type="rollresults"></div>
-        <div class="field bottomline" data-type="rollresults"></div>
-        <div class="field bottomline" data-type="rollresults"></div>
+        <div class="field bottomline wrappable" data-type="rollresults"></div>
+        <div class="field bottomline wrappable" data-type="rollresults"></div>
+        <div class="field bottomline wrappable" data-type="rollresults"></div>
+        <div class="field bottomline wrappable" data-type="rollresults"></div>
+        <div class="field bottomline wrappable" data-type="rollresults"></div>
+        <div class="field bottomline wrappable" data-type="rollresults"></div>
         <h4 class="block-subtitle"></h4>
         <h4 class="block-subtitle" style="display:none;">Триумфов : </h4>
         <h4 class="block-subtitle" style="display:none;">Крахов : </h4>
         <h4 class="block-subtitle" style="display:none;">Преимуществ : </h4>
         <h4 class="block-subtitle" style="display:none;">Осложнений : </h4>
-        
+    `;
+    
+    container.insertBefore(resultBlock, container.firstChild);
+    return resultBlock;
+}
+
+function createRollResultSimple()
+{
+    let container = document.getElementById('diceroller-result');
+    
+    let resultBlock = document.createElement('span');
+    resultBlock.className = 'section autoheight';
+    resultBlock.innerHTML = `
+        <div class="field bottomline">
+            <div class="diceroller-resultdice">
+                <span class="text-icon">&#11200; </span>
+            </div>
+        </div>
+        <div class="field bottomline wrappable" data-type="rollresults"></div>
+        <h4 class="block-subtitle"></h4>
     `;
     
     container.insertBefore(resultBlock, container.firstChild);
@@ -222,6 +241,23 @@ function dicerollerRoll()
     }
 }
 
+function dicerollerRollSimple(n)
+{
+    let side = cryptoRandom(1, n)[0];
+    
+    let result = createRollResultSimple();
+    
+    result.querySelector('.diceroller-resultdice').firstElementChild.innerHTML += n;
+    let resultSpan = document.createElement('div');
+    resultSpan.className = 'text-icon icon-splitter';
+    let span = document.createElement('span');
+    span.ClassName = 'icon';
+    span.innerHTML += side;
+    resultSpan.appendChild(span);
+    result.querySelector('[data-type="rollresults"]').appendChild(resultSpan);
+    result.querySelector('.block-subtitle').innerHTML += side;
+}
+
 function dicerollerEmpower(alignment = true)
 {
     inputLower = 'diceroller-value'+ (alignment ? '' : 'n') +'2';
@@ -280,6 +316,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.getElementById('diceroller-roll').addEventListener('click', () => {
         dicerollerRoll();
+    });
+    
+    document.getElementById('diceroller-rollSimple10').addEventListener('click', () => {
+        dicerollerRollSimple(10);
+    });
+    
+    document.getElementById('diceroller-rollSimple100').addEventListener('click', () => {
+        dicerollerRollSimple(100);
     });
     
     document.getElementById('diceroller-empower-a').addEventListener('click', () => {

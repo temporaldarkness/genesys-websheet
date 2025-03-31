@@ -27,6 +27,10 @@ input, textarea, select, option {
     padding: 0;
 }
 
+.field.wrappable {
+    flex-wrap: wrap;
+}
+
 .bottomline {
     border-bottom: 1px solid #000;
 }

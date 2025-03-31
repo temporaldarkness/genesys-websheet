@@ -53,6 +53,11 @@
     height: 50%;
 }
 
+.dice-button.simple {
+    width: 50%;
+    margin: 15px auto 0 auto;
+}
+
 .dice-input {
     width: 100%;
     padding: 5px;
