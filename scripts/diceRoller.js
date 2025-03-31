@@ -311,6 +311,23 @@ function dicerollerWeaken(alignment = true)
     }
 }
 
+function skillSelect(value)
+{
+    let skill = availableSkills[value];
+    let attribute = availableChars[skill.attribute];
+    
+    let attributeValue = document.getElementById(attribute.uid).value;
+    let skillValue = document.getElementById('skills-container')
+        .querySelector(`[data-skill-id="${skill.id}"]`)
+        .querySelector(`.rank-selector`)
+        .dataset.rank;
+    
+    document.getElementById('diceroller-value2').value = Math.abs(attributeValue - skillValue);
+    document.getElementById('diceroller-value3').value = Math.min(attributeValue, skillValue);
+    
+    
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     retrieveDice();
     
@@ -340,6 +357,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.getElementById('diceroller-weaken-b').addEventListener('onclick', () => {
         dicerollerWeaken(false);
+    });
+    
+    document.getElementById('dice-difficultySelect').addEventListener('change', function(){
+        document.getElementById('diceroller-valuen2').value = parseInt(this.value);
+    });
+    
+    document.getElementById('dice-skillSelect').addEventListener('change', function(){
+        skillSelect(parseInt(this.value));
     });
     
 });

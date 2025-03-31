@@ -1,9 +1,13 @@
-function generateHTML(data, categories) 
+availableChars = [];
+
+availableSkills = [];
+
+function generateHTML(categories) 
 {
 	const container = document.querySelector('.skills-container');
 	container.innerHTML = '';
 	
-	const sortedSkills = data.reduce((acc, skill) => {
+	const sortedSkills = availableSkills.reduce((acc, skill) => {
 	    const categoryId = skill['category'];
 	    if (!acc[categoryId])
 	        acc[categoryId] = [];
@@ -38,7 +42,7 @@ function generateHTML(data, categories)
 			item.classList.add('skill-item');
 		    item.dataset.skillId = skill.id;
 			item.innerHTML = `
-				<span class="skill-name">${skill.name} (${skill.attribute})</span>
+				<span class="skill-name">${skill.name} &nbsp; [ ${availableChars[skill.attribute].name} ]</span>
 				<input type="checkbox">
 			`;
 			
@@ -89,7 +93,30 @@ async function loadSkillsData()
             throw new Error(`Ошибка загрузки данных: ${response.status}`);
 		
         const data = await response.json();
-        generateHTML(data['skills'], data['categories']);
+        
+        data.characteristics.forEach(char => {
+            availableChars.push({
+                'name': char.name,
+                'shortcut': char.shortcut,
+                'uid': char.uid
+            });
+        });
+        
+        select = document.getElementById('dice-skillSelect');
+        data.skills.forEach(skill => {
+            if (skill.display)
+            {
+                let option = document.createElement('option');
+                option.value = skill.id;
+                option.innerHTML = skill.name;
+                
+                select.appendChild(option);
+            }
+        });
+        
+        availableSkills = data.skills;
+        
+        generateHTML(data.categories);
     } catch (error) {
         console.error('Ошибка:', error);
     }
