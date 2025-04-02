@@ -36,7 +36,6 @@
     padding: 5px;
     opacity: inherit;
     transform: inherit;
-    transition: inherit;
 }
 
 @media (max-width: 768px) {

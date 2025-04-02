@@ -1,0 +1,630 @@
+[
+  {
+    "name": "Arcade",
+    "id": "arcade",
+    "default": false,
+    "colors": [
+      "#000000",
+      "#110022",
+      "#220044",
+      "#4A0066",
+      "#FF69B4",
+      "#CC99FF",
+      "#00FF9D",
+      "#C0C0C0",
+      "#FF69B4",
+      "#00FF9D"
+    ]
+  },
+  {
+    "name": "Blossom",
+    "id": "blossom",
+    "default": false,
+    "colors": [
+      "#FFF0F5",
+      "#FFFFFF",
+      "#FFE5EE",
+      "#FFD1E0",
+      "#FF6B6B",
+      "#FF99CC",
+      "#7B68EE",
+      "#4A3A40",
+      "#FF69B4",
+      "#7B68EE"
+    ]
+  },
+  {
+    "name": "Blueberry",
+    "id": "blueberry",
+    "default": false,
+    "colors": [
+      "#0F172A",
+      "#1E293B",
+      "#334155",
+      "#475569",
+      "#F8FAFC",
+      "#94A3B8",
+      "#38BDF8",
+      "#CBD5E1",
+      "#38BDF8",
+      "#38BDF8"
+    ]
+  },
+  {
+    "name": "Citrus",
+    "id": "citrus",
+    "default": false,
+    "colors": [
+      "#FFFDE7",
+      "#FFFFFF",
+      "#FCF8E3",
+      "#EEE6C4",
+      "#4A473D",
+      "#7C786B",
+      "#FFD700",
+      "#3E3B32",
+      "#FFD700",
+      "#FFD700"
+    ]
+  },
+  {
+    "name": "Cloud",
+    "id": "cloud",
+    "default": false,
+    "colors": [
+      "#F0F2F5",
+      "#FFFFFF",
+      "#EBEFF5",
+      "#D6DEE9",
+      "#3C4858",
+      "#6B7785",
+      "#8C9EFF",
+      "#4A5568",
+      "#8C9EFF",
+      "#8C9EFF"
+    ]
+  },
+  {
+    "name": "Desert",
+    "id": "desert",
+    "default": false,
+    "colors": [
+      "#2E1C05",
+      "#42290A",
+      "#56360F",
+      "#7A4D1A",
+      "#F4D03F",
+      "#D4AC0D",
+      "#E67E22",
+      "#F5E3C1",
+      "#E67E22",
+      "#E67E22"
+    ]
+  },
+  {
+    "name": "Digital",
+    "id": "digital",
+    "default": false,
+    "colors": [
+      "#000F08",
+      "#001C10",
+      "#002A18",
+      "#004D27",
+      "#00C84D",
+      "#008F11",
+      "#00FF88",
+      "#C8FFD4",
+      "#00FF41",
+      "#00FF88"
+    ]
+  },
+  {
+    "name": "Durasteel",
+    "id": "durasteel",
+    "default": false,
+    "colors": [
+      "#0D0F14",
+      "#1A1D26",
+      "#272B38",
+      "#3D4354",
+      "#A0B2C6",
+      "#6E7F91",
+      "#00CED1",
+      "#CAD5E0",
+      "#00CED1",
+      "#00CED1"
+    ]
+  },
+  {
+    "name": "Fireproof",
+    "id": "fireproof",
+    "default": false,
+    "colors": [
+      "#1A1818",
+      "#2A2525",
+      "#3A3333",
+      "#4D4545",
+      "#F0EBE3",
+      "#A89B9B",
+      "#FF9F43",
+      "#D8D1D1",
+      "#FF9F43",
+      "#FF9F43"
+    ]
+  },
+  {
+    "name": "Fresh",
+    "id": "fresh",
+    "default": false,
+    "colors": [
+      "#F0F9FF",
+      "#FFFFFF",
+      "#E6F4FB",
+      "#C4E3F2",
+      "#2B4E6B",
+      "#5E7B94",
+      "#48A9C5",
+      "#3A546B",
+      "#48A9C5",
+      "#48A9C5"
+    ]
+  },
+  {
+    "name": "Gradient",
+    "id": "gradient",
+    "default": false,
+    "colors": [
+      "#F3F5FD",
+      "#FFFFFF",
+      "#EAEDF9",
+      "#D4DAF0",
+      "#2A2F45",
+      "#5E6378",
+      "#6C5CE7",
+      "#3A3E52",
+      "#6C5CE7",
+      "#6C5CE7"
+    ]
+  },
+  {
+    "name": "Greenfreeze",
+    "id": "greenfreeze",
+    "default": false,
+    "colors": [
+      "#0F1A22",
+      "#1C2D30",
+      "#2A3F43",
+      "#3D565B",
+      "#B8E1C4",
+      "#7DAF9C",
+      "#4FB28B",
+      "#C3D8CD",
+      "#5FBB97",
+      "#5FBB97"
+    ]
+  },
+  {
+    "name": "Holographic",
+    "id": "holographic",
+    "default": false,
+    "colors": [
+      "#0A0A14",
+      "#120018",
+      "#240030",
+      "#3D0052",
+      "#FFFFFF",
+      "#C792EA",
+      "#64D2FF",
+      "#E1E1E6",
+      "#89DDFF",
+      "#C992EA"
+    ]
+  },
+  {
+    "name": "Jungle",
+    "id": "jungle",
+    "default": false,
+    "colors": [
+      "#18200A",
+      "#253312",
+      "#32461A",
+      "#435F24",
+      "#D4E6A5",
+      "#A3B87D",
+      "#FF6B6B",
+      "#D4E6A5",
+      "#D4E6A5",
+      "#FF6B6B"
+    ]
+  },
+  {
+    "name": "Lava",
+    "id": "lava",
+    "default": false,
+    "colors": [
+      "#2D0A3D",
+      "#45195A",
+      "#5D2871",
+      "#7A3E8F",
+      "#FFD700",
+      "#FFA500",
+      "#FF1493",
+      "#FFE4E1",
+      "#FFD700",
+      "#FF1493"
+    ]
+  },
+  {
+    "name": "Light",
+    "id": "light",
+    "default": true,
+    "colors": [
+      "#F0F0F0",
+      "#FFFFFF",
+      "#EEEEEE",
+      "#CCCCCC",
+      "#444444",
+      "#666666",
+      "#666666",
+      "#000000",
+      "#000000",
+      "#000000"
+    ]
+  },
+  {
+    "name": "Masquerade",
+    "id": "masquerade",
+    "default": false,
+    "colors": [
+      "#2D1A1A",
+      "#3D2626",
+      "#4D3232",
+      "#664040",
+      "#FFD700",
+      "#CCB000",
+      "#DA70D6",
+      "#E8D8D8",
+      "#FFD700",
+      "#DA70D6"
+    ]
+  },
+  {
+    "name": "Milk",
+    "id": "milk",
+    "default": false,
+    "colors": [
+      "#FFF5EB",
+      "#FFFFFF",
+      "#F8F0E8",
+      "#E0D4C8",
+      "#4A3C2E",
+      "#7D6B58",
+      "#D49B6A",
+      "#3E3329",
+      "#D49B6A",
+      "#D49B6A"
+    ]
+  },
+  {
+    "name": "Moonlight",
+    "id": "moonlight",
+    "default": false,
+    "colors": [
+      "#1A1A2F",
+      "#2D2D4F",
+      "#3B3B6B",
+      "#575793",
+      "#E6E6FA",
+      "#A5A5D1",
+      "#9D7CFF",
+      "#D0D0F0",
+      "#9D7CFF",
+      "#9D7CFF"
+    ]
+  },
+  {
+    "name": "Morphism",
+    "id": "morphism",
+    "default": false,
+    "colors": [
+      "#10121B",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#7F5AF0",
+      "#FFFFFF",
+      "#000000",
+      "#7F5AF0"
+    ]
+  },
+  {
+    "name": "Neon-amor",
+    "id": "neon-amor",
+    "default": false,
+    "colors": [
+      "#181818",
+      "#242424",
+      "#303030",
+      "#404040",
+      "#FFFFFF",
+      "#AAAAAA",
+      "#BB86FC",
+      "#E0E0E0",
+      "#BB86FC",
+      "#BB86FC"
+    ]
+  },
+  {
+    "name": "Pop",
+    "id": "pop",
+    "default": false,
+    "colors": [
+      "#FFF3FD",
+      "#FFFFFF",
+      "#FFEFFB",
+      "#FFD8F0",
+      "#4A2D3C",
+      "#7B5A6B",
+      "#FF44CC",
+      "#3E2633",
+      "#FF44CC",
+      "#FF44CC"
+    ]
+  },
+  {
+    "name": "Quantum",
+    "id": "quantum",
+    "default": false,
+    "colors": [
+      "#000A1A",
+      "#001233",
+      "#001F4D",
+      "#003366",
+      "#00E6FF",
+      "#66B2FF",
+      "#FF4D88",
+      "#CCE6FF",
+      "#00E6FF",
+      "#FF4D88"
+    ]
+  },
+  {
+    "name": "Reddest",
+    "id": "reddest",
+    "default": false,
+    "colors": [
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#000000",
+      "#000000"
+    ]
+  },
+  {
+    "name": "Redplanet",
+    "id": "redplanet",
+    "default": false,
+    "colors": [
+      "#381A1A",
+      "#4D2525",
+      "#633030",
+      "#804040",
+      "#FFD8A8",
+      "#CCAA7D",
+      "#FF6B35",
+      "#E8CBB9",
+      "#FF6B35",
+      "#FF6B35"
+    ]
+  },
+  {
+    "name": "Rose",
+    "id": "rose",
+    "default": false,
+    "colors": [
+      "#2D2424",
+      "#3B2E2E",
+      "#4A3939",
+      "#634B4B",
+      "#E2B4BD",
+      "#B89297",
+      "#C89B7B",
+      "#D8C8C8",
+      "#C89B7B",
+      "#C89B7B"
+    ]
+  },
+  {
+    "name": "Snow",
+    "id": "snow",
+    "default": false,
+    "colors": [
+      "#F8FBFE",
+      "#FFFFFF",
+      "#EFF4F9",
+      "#D3E0EA",
+      "#2C3E50",
+      "#6C7A89",
+      "#29B6F6",
+      "#34495E",
+      "#3498DB",
+      "#3498DB"
+    ]
+  },
+  {
+    "name": "Solarized",
+    "id": "solarized",
+    "default": false,
+    "colors": [
+      "#002B36",
+      "#073642",
+      "#0A4B58",
+      "#586E75",
+      "#EEE8D5",
+      "#CB4B16",
+      "#839496",
+      "#CB4B16",
+      "#CB4B16"
+    ]
+  },
+  {
+    "name": "Space",
+    "id": "space",
+    "default": false,
+    "colors": [
+      "#121212",
+      "#1E1E1E",
+      "#2A2A2A",
+      "#3D3D3D",
+      "#FFFFFF",
+      "#B0B0B0",
+      "#4A9EFF",
+      "#E0E0E0",
+      "#FFFFFF",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "name": "Spring",
+    "id": "spring",
+    "default": false,
+    "colors": [
+      "#F9F7F3",
+      "#FFFCF8",
+      "#F5F0E9",
+      "#E5DDD2",
+      "#5E5349",
+      "#8E8277",
+      "#A8D8B9",
+      "#4A423A",
+      "#A8D8B9",
+      "#A8D8B9"
+    ]
+  },
+  {
+    "name": "Synthwave",
+    "id": "synthwave",
+    "default": false,
+    "colors": [
+      "#2B1B2F",
+      "#3D2B40",
+      "#4F3C50",
+      "#6A4D6B",
+      "#FF7ED4",
+      "#FFA8EB",
+      "#36F1CD",
+      "#E8D7F1",
+      "#FF7ED4",
+      "#36F1CD"
+    ]
+  },
+  {
+    "name": "Terminal",
+    "id": "terminal",
+    "default": false,
+    "colors": [
+      "#0A0A0A",
+      "#151515",
+      "#202020",
+      "#2D2D2D",
+      "#F5F5F5",
+      "#909090",
+      "#00CC88",
+      "#D0D0D0",
+      "#00FF00",
+      "#00FF00"
+    ]
+  },
+  {
+    "name": "Thunderstorm",
+    "id": "thunderstorm",
+    "default": false,
+    "colors": [
+      "#0A0F1F",
+      "#151A2B",
+      "#202538",
+      "#2F3655",
+      "#9EB5FF",
+      "#6E89CC",
+      "#FFEE32",
+      "#B8C7FF",
+      "#9EB5FF",
+      "#FFEE32"
+    ]
+  },
+  {
+    "name": "Tokyo",
+    "id": "tokyo",
+    "default": false,
+    "colors": [
+      "#0A0A14",
+      "#161622",
+      "#222230",
+      "#36364A",
+      "#FFFFFF",
+      "#A0A0B4",
+      "#00FF9D",
+      "#D0D0E6",
+      "#00FF9D",
+      "#00FF9D"
+    ]
+  },
+  {
+    "name": "Toxic",
+    "id": "toxic",
+    "default": false,
+    "colors": [
+      "#1A1A1A",
+      "#262626",
+      "#333333",
+      "#4D4D4D",
+      "#D4FF99",
+      "#8FB359",
+      "#FF467E",
+      "#E6E6E6",
+      "#C1FF72",
+      "#FF467E"
+    ]
+  },
+  {
+    "name": "Tropical",
+    "id": "tropical",
+    "default": false,
+    "colors": [
+      "#FFF7E6",
+      "#FFFFFF",
+      "#FFF2D9",
+      "#FFE6BF",
+      "#5C4A32",
+      "#8C7759",
+      "#FF6B6B",
+      "#4A3D2C",
+      "#FF6B6B",
+      "#FF6B6B"
+    ]
+  },
+  {
+    "name": "Vintage",
+    "id": "vintage",
+    "default": false,
+    "colors": [
+      "#FDF6E3",
+      "#FFFEF8",
+      "#F5EDDA",
+      "#E0D6C1",
+      "#5B4B3A",
+      "#8C7A66",
+      "#A0522D",
+      "#4A3C2E",
+      "#A0522D",
+      "#A0522D"
+    ]
+  }
+]

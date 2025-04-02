@@ -68,7 +68,6 @@
     background-color: var(--clr-element-bg);
     border: 2px solid var(--clr-subtitle);
     border-radius: 4px;
-    transition: all 0.3s;
 }
 
 .skill-name {

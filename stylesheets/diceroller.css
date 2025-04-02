@@ -32,7 +32,6 @@
     margin: 5px;
     text-align: center;
     box-shadow: 0 2px 4px var(--clr-shadow);
-    transition: background 0.3s;
     cursor: pointer;
     border: 2px solid transparent;
     font-weight: 800;

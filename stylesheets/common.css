@@ -1,5 +1,5 @@
 * {
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease, max-height 0.3s ease;
 }
 
 body {
@@ -19,6 +19,10 @@ input, textarea, select, option, button {
     border-radius: 4px;
     background: var(--clr-element-bg);
     color: var(--clr-text);
+}
+
+select {
+    background-color: var(--clr-background);
 }
 
 label {
@@ -44,7 +48,7 @@ label {
 }
 
 .bottomline {
-    border-bottom: 1px solid var(--clr-underline);
+    border-bottom: 1px solid var(--clr-accent);
 }
 
 .misc-field {
@@ -211,7 +215,6 @@ input[type="file"] {
 	margin-bottom: 20px;
 	text-align: center;
     box-shadow: 0 2px 4px var(--clr-shadow);
-	transition: background 0.3s;
 	cursor: pointer;
 	border: 2px solid transparent;
 }
@@ -240,10 +243,6 @@ input[type="file"] {
 .removable {
     opacity: 1;
     transform: translateY(0);
-    transition: 
-        opacity 0.3s ease,
-        transform 0.3s ease,
-        max-height 0.3s ease;
 }
 
 .removable.removing {
