@@ -70,4 +70,6 @@ function startupThemeSelect()
 }
 
 startupThemeSelect();
-document.addEventListener('DOMContentLoaded', retrieveThemes());
+document.addEventListener('DOMContentLoaded', () => {
+    retrieveThemes();
+});

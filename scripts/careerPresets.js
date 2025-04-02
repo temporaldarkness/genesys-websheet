@@ -61,4 +61,6 @@ function setCareerPreset(preset)
     loadCareerPreset(careerPresets[preset]);
 }
 
-document.addEventListener('DOMContentLoaded', retrieveCareerPresets());
+document.addEventListener('DOMContentLoaded', () => {
+    retrieveCareerPresets();
+});

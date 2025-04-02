@@ -80,4 +80,6 @@ function setArchetypePreset(preset)
     loadArchetypePreset(archetypePresets[preset]);
 }
 
-document.addEventListener('DOMContentLoaded', retrieveArchetypePresets());
+document.addEventListener('DOMContentLoaded', () => {
+    retrieveArchetypePresets();
+});
