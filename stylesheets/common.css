@@ -1,22 +1,34 @@
+* {
+    transition: background-color 0.3s, color 0.3s;
+}
+
 body {
     font-family: "Oswald", "Bahnschrift", sans-serif;
     letter-spacing: -0.075em;
     margin: 20px auto;
     padding: 15px;
-    background: #f0f0f0;
+    background: var(--clr-background);
     text-transform: uppercase;
+    color: var(--clr-text);
 }
 
-input, textarea, select, option {
+input, textarea, select, option, button {
     font-family: "Oswald", "Bahnschrift", sans-serif;
     letter-spacing: -0.075em;
     font-size: 1.2em;
     border-radius: 4px;
+    background: var(--clr-element-bg);
+    color: var(--clr-text);
 }
 
+label {
+    color: var(--clr-title);
+}
+
+
 .section-title {
-    color: #444;
-    border-bottom: 2px solid #999;
+    color: var(--clr-title);
+    border-bottom: 2px solid var(--clr-accent);
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
@@ -32,7 +44,7 @@ input, textarea, select, option {
 }
 
 .bottomline {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--clr-underline);
 }
 
 .misc-field {
@@ -59,8 +71,7 @@ input, textarea, select, option {
 
 .misc-textarea:focus {
     outline: none;
-    border-color: #666;
-    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    box-shadow: 0 0 3px var(--clr-shadow);
 }
 
 select {
@@ -75,19 +86,18 @@ select {
 
 select:focus {
     outline: none;
-    border-color: #666;
-    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    box-shadow: 0 0 3px var(--clr-shadow);
 }
 
 .section {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background: white;
+    background: var(--clr-element-bg);
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px var(--clr-shadow);
 }
 
 .section.autoheight {
@@ -111,27 +121,22 @@ select:focus {
     font-size: 15px;
 }
 
-.field input:focus {
-    outline: none;
-    box-shadow: 0 0 3px rgba(0,0,0,0.2);
-}
-
 input:focus, textarea:focus {
     outline: none;
     border-color: #666;
-    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    box-shadow: 0 0 3px var(--clr-shadow-focus);
 }
 
 .block-title {
-    color: #444;
+    color: var(--clr-title);
     margin: 0 0 15px 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid #999;
+    border-bottom: 2px solid var(--clr-placeholder);
 }
 
 .block-subtitle {
     font-weight: 600;
-    color: #666;
+    color: var(--clr-subtitle);
     margin: 0 0 2px 0;
     font-size: 16px;
 }
@@ -139,7 +144,7 @@ input:focus, textarea:focus {
 input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    accent-color: #666;
+    accent-color: var(--clr-accent);
 	margin: 6px;
 }
 
@@ -152,6 +157,7 @@ input[type="file"] {
 	overflow: hidden;
 	display: block;
     max-width: 300px;
+    background: transparent;
 }
 
 .rank-bar {
@@ -175,22 +181,17 @@ input[type="file"] {
     min-height: 20px;
     border-width: 1px;
 	border-radius: 2px;
-    background: #eee;
+    background: var(--clr-element-muted);
     cursor: pointer;
 }
 
 .rank-dot.active {
-    background: #666;
+    background: var(--clr-accent);
 }
 
 .rank-dot:hover {
     transform: scale(1.1);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.rank-dot.inactive {
-    border-color: #ddd;
-    background: transparent !important;
+    box-shadow: 0 2px 4px var(--clr-shadow-focus);
 }
 
 .windowContainer {
@@ -204,23 +205,23 @@ input[type="file"] {
 }
 
 .nav-item {
-	background: white;
+	background: var(--clr-element-bg);
 	border-radius: 8px;
 	padding: 10px;
 	margin-bottom: 20px;
 	text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px var(--clr-shadow);
 	transition: background 0.3s;
 	cursor: pointer;
 	border: 2px solid transparent;
 }
 
 .nav-item.active {
-	border: 2px solid #666;
+	border: 2px solid var(--clr-accent);
 }
 
 .nav-item:hover {
-	background: #eee;
+	background: var(--clr-element-muted);
 }
 
 .content {
@@ -253,7 +254,7 @@ input[type="file"] {
 .removable:not(.filled) {
     opacity: 0.6;
     transform: scale(0.98);
-    background: #f8f8f8;
+    background: var(--clr-element-muted);
 }
 
 .icon {

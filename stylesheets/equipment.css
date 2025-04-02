@@ -2,8 +2,6 @@
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
-    background: transparent;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .weapons-table {
@@ -21,7 +19,7 @@
 
 .weapon-header .weapon-cell {
     background: transparent;
-    color: #666;
+    color: var(--clr-subtitle);
     padding: 12px;
     font-size: 13px;
     text-transform: uppercase;
@@ -34,7 +32,7 @@
 }
 
 .weapon-cell {
-    background: white;
+    background: var(--clr-element-bg);
     padding: 5px;
     opacity: inherit;
     transform: inherit;
@@ -54,10 +52,10 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
-        background: white;
+        background: var(--clr-element-bg);
         padding: 10px;
         border-radius: 4px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 0 1px 3px var(--clr-shadow);
     }
 
     .weapon-cell {
@@ -70,7 +68,7 @@
         font-weight: bold;
         display: block;
         margin-bottom: 5px;
-        color: #666;
+        color: var(--clr-subtitle);
         font-size: 12px;
     }
 
@@ -100,38 +98,27 @@
 }
 
 .equipment-column {
-    background: white;
+    background: var(--clr-element-bg);
     padding: 15px;
     border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px var(--clr-shadow);
 }
 
 .equipment-subtitle {
-    color: #666;
+    color: var(--clr-subtitle);
     margin: 0 0 10px 0;
     font-size: 14px;
     font-weight: bold;
-}
-
-.equipment-input.large {
-    width: 100%;
-    height: 150px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    resize: vertical;
-    box-sizing: border-box;
-    font-size: 14px;
 }
 
 .money-row {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: white;
+    background: var(--clr-element-bg);
     padding: 12px 15px;
     border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px var(--clr-shadow);
     margin-top: 10px;
 }
 
@@ -142,37 +129,15 @@
     white-space: nowrap;
 }
 
-.money-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-.equipment-input:focus, .money-input:focus {
-    outline: none;
-    border-color: #666;
-    box-shadow: 0 0 3px rgba(0,0,0,0.1);
-}
-
 @media (max-width: 768px) {
     .equipment-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
-    .equipment-input.large {
-        height: 100px;
-    }
-
     .money-row {
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    .money-input {
-        width: 100%;
     }
 }
 

@@ -1,10 +1,8 @@
 .skills-block, .experience-container {
     margin: 20px auto;
     padding: 20px;
-    background: #f0f0f0;
     border-radius: 8px;
 	display: block;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .skills-container {
@@ -14,10 +12,10 @@
 }
 
 .skill-category {
-    background: white;
+    background: var(--clr-element-bg);
     padding: 15px;
     border-radius: 6px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--clr-border);
 }
 
 .skill-header {
@@ -67,15 +65,15 @@
     left: 0;
     height: 24px;
     width: 24px;
-    background-color: #fff;
-    border: 2px solid #666;
+    background-color: var(--clr-element-bg);
+    border: 2px solid var(--clr-subtitle);
     border-radius: 4px;
     transition: all 0.3s;
 }
 
 .skill-name {
     font-size: 14px;
-    color: #444;
+    color: var(--clr-text);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -86,20 +84,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px auto;
-    padding: 20px;
-    background: #f0f0f0;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .experience-counter {
-    background: #f0f0f0;
     border-radius: 8px;
     padding: 15px;
     width: 200px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px var(--clr-shadow);
 }
 
 .experience-input {
@@ -119,7 +111,7 @@
 
 .experience-label {
     font-size: 14px;
-    color: #666;
+    color: var(--clr-accent);
     font-weight: 600;
 }
 
