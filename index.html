@@ -38,11 +38,7 @@
 			<div class="nav-item link" id="nav-character">Биография</div>
 			<div class="nav-item link" id="nav-notes">Заметки</div>
 			<div class="nav-item link" id="nav-diceroller">Дайс-роллер</div>
-			<div class="nav-item" id="nav-editMode" onclick="editMode()">Режим просмотра</div>
-			<div class="nav-item" id="nav-download" onclick="downloadData()">Выгрузить</div>
-			<div class="nav-item" id="nav-upload" onclick="uploadData()">Загрузить</div>
-			<input type="file" accept=".json" id="uploadinput">
-			
+			<div class="nav-item link" id="nav-settings">Настройки</div>
 		</nav>
 		<div class="content">
 			<div id="index" class="document-section active">
@@ -164,7 +160,6 @@
 						<div class="image-placeholder">
 							<img id="character-image" src="#" alt="Добавьте изображение"  style="max-width: 100%;">
 						</div>
-						<input type="file" id="character-image-input" accept="image/*">
 					</div>
 					<div class="desc-container">
 						<h4 class="block-subtitle">Описание персонажа</h4>
@@ -540,9 +535,44 @@
                     Нет , спасибо , просто сделайте мне обычный бросок D 10
                 </div>
                 <div class="dice-button simple" id="diceroller-rollSimple100">
-                    Нет , спасибо , просто сделайте мне обычный бросок D 100
+                    . . . Я имел ввиду D 100
                 </div>
-                <input id="dice-webhook" class="dice-button simple" placeholder="Вставьте ссылку на вебхук!" style="display: block; cursor: auto;">
+			</div>
+			<div id="settings" class="document-section">
+				<h3 class="section-title">Настройки</h3>
+				<h4 class="block-subtitle">Сохранение листа</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Скачать готовый лист персонажа : </label>
+				    </div>
+				    <div class="nav-item" id="nav-download" onclick="downloadData()">Скачать файл</div>
+				    <div class="field">
+				        <label>Загрузить готовый лист персонажа : </label>
+        			    <input type="file" accept=".json" id="uploadinput">
+				    </div>
+				    <div class="nav-item" id="nav-upload" onclick="uploadData()">Загрузить файл</div>
+				</div>
+				<h4 class="block-subtitle">Редактирование листа</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Редактирование : </label>
+				        <input type="checkbox" id="editMode" onclick="editMode()">
+				    </div>
+				</div>
+				<h4 class="block-subtitle">Изображение персонажа</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Загрузить изображение : </label>
+						<input type="file" id="character-image-input" accept="image/*">
+				    </div>
+				</div>
+				<h4 class="block-subtitle">Дискорд - интеграция</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Ссылка на вебхук бросков : </label>
+				        <input id="dice-webhook" placeholder="https://discord.com/api/webhooks/">
+				    </div>
+				</div>
 			</div>
 		</div>
 	</div>
