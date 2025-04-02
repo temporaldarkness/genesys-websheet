@@ -36,6 +36,12 @@ for css_file in ./stylesheets/themes/*.css; do
     
     id=$(basename "$css_file" .css)
     
+    if grep -q "light: false" "$css_file"; then
+        light="false"
+    else
+        light="true"
+    fi
+    
     colors=()
     while IFS= read -r line; do
         if [[ $line =~ ^[[:space:]]*--clr-[^:]+:[[:space:]]*([^;]+) ]]; then
@@ -47,7 +53,7 @@ for css_file in ./stylesheets/themes/*.css; do
     
     if [ ${#colors[@]} -gt 0 ]; then
         color_list=$(IFS=,; echo "${colors[*]}")
-        json_output+="{\"name\": \"${id^}\", \"id\": \"$id\", \"colors\": [${color_list}]},"
+        json_output+="{\"name\": \"${id^}\", \"id\": \"$id\", \"colors\": [${color_list}], \"light\": $light},"
         files_processed=$((files_processed + 1))
     fi
 done

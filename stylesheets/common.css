@@ -1,7 +1,3 @@
-* {
-    transition: background-color 0.5s, color 0.5s;
-}
-
 body {
     font-family: "Oswald", "Bahnschrift", sans-serif;
     letter-spacing: -0.075em;

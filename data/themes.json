@@ -1,295 +1,24 @@
 [
   {
-    "name": "Arcade",
-    "id": "arcade",
+    "name": "8-Bit",
+    "id": "8-Bit",
     "colors": [
-      "#000000",
-      "#110022",
-      "#220044",
-      "#4A0066",
-      "#FF69B4",
-      "#CC99FF",
-      "#00FF9D",
-      "#C0C0C0",
-      "#FF69B4",
-      "#00FF9D"
-    ]
-  },
-  {
-    "name": "Blossom",
-    "id": "blossom",
-    "colors": [
-      "#FFF0F5",
-      "#FFFFFF",
-      "#FFE5EE",
-      "#FFD1E0",
-      "#FF6B6B",
-      "#FF99CC",
-      "#7B68EE",
-      "#4A3A40",
-      "#FF69B4",
-      "#7B68EE"
-    ]
-  },
-  {
-    "name": "Blueberry",
-    "id": "blueberry",
-    "colors": [
-      "#0F172A",
-      "#1E293B",
-      "#334155",
-      "#475569",
-      "#F8FAFC",
-      "#94A3B8",
-      "#38BDF8",
-      "#CBD5E1",
-      "#38BDF8",
-      "#38BDF8"
-    ]
-  },
-  {
-    "name": "Citrus",
-    "id": "citrus",
-    "colors": [
-      "#FFFDE7",
-      "#FFFFFF",
-      "#FCF8E3",
-      "#EEE6C4",
-      "#4A473D",
-      "#7C786B",
+      "#2D2D2D",
+      "#3C3C3C",
+      "#4B4B4B",
+      "#5A5A5A",
       "#FFD700",
-      "#3E3B32",
-      "#FFD700",
-      "#FFD700"
-    ]
-  },
-  {
-    "name": "Cloud",
-    "id": "cloud",
-    "colors": [
-      "#F0F2F5",
+      "#00FF00",
+      "#FF0000",
       "#FFFFFF",
-      "#EBEFF5",
-      "#D6DEE9",
-      "#3C4858",
-      "#6B7785",
-      "#8C9EFF",
-      "#4A5568",
-      "#8C9EFF",
-      "#8C9EFF"
-    ]
+      "#FF0000",
+      "#00FF00"
+    ],
+    "light": false
   },
   {
-    "name": "Desert",
-    "id": "desert",
-    "colors": [
-      "#2E1C05",
-      "#42290A",
-      "#56360F",
-      "#7A4D1A",
-      "#F4D03F",
-      "#D4AC0D",
-      "#E67E22",
-      "#F5E3C1",
-      "#E67E22",
-      "#E67E22"
-    ]
-  },
-  {
-    "name": "Digital",
-    "id": "digital",
-    "colors": [
-      "#000F08",
-      "#001C10",
-      "#002A18",
-      "#004D27",
-      "#00C84D",
-      "#008F11",
-      "#00FF88",
-      "#C8FFD4",
-      "#00FF41",
-      "#00FF88"
-    ]
-  },
-  {
-    "name": "Durasteel",
-    "id": "durasteel",
-    "colors": [
-      "#0D0F14",
-      "#1A1D26",
-      "#272B38",
-      "#3D4354",
-      "#A0B2C6",
-      "#6E7F91",
-      "#00CED1",
-      "#CAD5E0",
-      "#00CED1",
-      "#00CED1"
-    ]
-  },
-  {
-    "name": "Fireproof",
-    "id": "fireproof",
-    "colors": [
-      "#1A1818",
-      "#2A2525",
-      "#3A3333",
-      "#4D4545",
-      "#F0EBE3",
-      "#A89B9B",
-      "#FF9F43",
-      "#D8D1D1",
-      "#FF9F43",
-      "#FF9F43"
-    ]
-  },
-  {
-    "name": "Fresh",
-    "id": "fresh",
-    "colors": [
-      "#F0F9FF",
-      "#FFFFFF",
-      "#E6F4FB",
-      "#C4E3F2",
-      "#2B4E6B",
-      "#5E7B94",
-      "#48A9C5",
-      "#3A546B",
-      "#48A9C5",
-      "#48A9C5"
-    ]
-  },
-  {
-    "name": "Gradient",
-    "id": "gradient",
-    "colors": [
-      "#F3F5FD",
-      "#FFFFFF",
-      "#EAEDF9",
-      "#D4DAF0",
-      "#2A2F45",
-      "#5E6378",
-      "#6C5CE7",
-      "#3A3E52",
-      "#6C5CE7",
-      "#6C5CE7"
-    ]
-  },
-  {
-    "name": "Greenfreeze",
-    "id": "greenfreeze",
-    "colors": [
-      "#0F1A22",
-      "#1C2D30",
-      "#2A3F43",
-      "#3D565B",
-      "#B8E1C4",
-      "#7DAF9C",
-      "#4FB28B",
-      "#C3D8CD",
-      "#5FBB97",
-      "#5FBB97"
-    ]
-  },
-  {
-    "name": "Holographic",
-    "id": "holographic",
-    "colors": [
-      "#0A0A14",
-      "#120018",
-      "#240030",
-      "#3D0052",
-      "#FFFFFF",
-      "#C792EA",
-      "#64D2FF",
-      "#E1E1E6",
-      "#89DDFF",
-      "#C992EA"
-    ]
-  },
-  {
-    "name": "Jungle",
-    "id": "jungle",
-    "colors": [
-      "#18200A",
-      "#253312",
-      "#32461A",
-      "#435F24",
-      "#D4E6A5",
-      "#A3B87D",
-      "#FF6B6B",
-      "#D4E6A5",
-      "#D4E6A5",
-      "#FF6B6B"
-    ]
-  },
-  {
-    "name": "Lava",
-    "id": "lava",
-    "colors": [
-      "#2D0A3D",
-      "#45195A",
-      "#5D2871",
-      "#7A3E8F",
-      "#FFD700",
-      "#FFA500",
-      "#FF1493",
-      "#FFE4E1",
-      "#FFD700",
-      "#FF1493"
-    ]
-  },
-  {
-    "name": "Light",
-    "id": "light",
-    "colors": [
-      "#F0F0F0",
-      "#FFFFFF",
-      "#EEEEEE",
-      "#CCCCCC",
-      "#444444",
-      "#666666",
-      "#666666",
-      "#000000",
-      "#000000",
-      "#000000"
-    ]
-  },
-  {
-    "name": "Masquerade",
-    "id": "masquerade",
-    "colors": [
-      "#2D1A1A",
-      "#3D2626",
-      "#4D3232",
-      "#664040",
-      "#FFD700",
-      "#CCB000",
-      "#DA70D6",
-      "#E8D8D8",
-      "#FFD700",
-      "#DA70D6"
-    ]
-  },
-  {
-    "name": "Milk",
-    "id": "milk",
-    "colors": [
-      "#FFF5EB",
-      "#FFFFFF",
-      "#F8F0E8",
-      "#E0D4C8",
-      "#4A3C2E",
-      "#7D6B58",
-      "#D49B6A",
-      "#3E3329",
-      "#D49B6A",
-      "#D49B6A"
-    ]
-  },
-  {
-    "name": "Moonlight",
-    "id": "moonlight",
+    "name": "After Dark",
+    "id": "After Dark",
     "colors": [
       "#1A1A2F",
       "#2D2D4F",
@@ -301,27 +30,29 @@
       "#D0D0F0",
       "#9D7CFF",
       "#9D7CFF"
-    ]
+    ],
+    "light": false
   },
   {
-    "name": "Morphism",
-    "id": "morphism",
+    "name": "Aged Bronze",
+    "id": "Aged Bronze",
     "colors": [
-      "#10121B",
-      "#FFFFFF",
-      "#FFFFFF",
-      "#FFFFFF",
-      "#FFFFFF",
-      "#FFFFFF",
-      "#7F5AF0",
-      "#FFFFFF",
-      "#000000",
-      "#7F5AF0"
-    ]
+      "#0F1A22",
+      "#1C2D30",
+      "#2A3F43",
+      "#3D565B",
+      "#B8E1C4",
+      "#7DAF9C",
+      "#4FB28B",
+      "#C3D8CD",
+      "#5FBB97",
+      "#5FBB97"
+    ],
+    "light": false
   },
   {
-    "name": "Neon-amor",
-    "id": "neon-amor",
+    "name": "Amour Formalized",
+    "id": "Amour Formalized",
     "colors": [
       "#181818",
       "#242424",
@@ -333,138 +64,97 @@
       "#E0E0E0",
       "#BB86FC",
       "#BB86FC"
-    ]
+    ],
+    "light": false
   },
   {
-    "name": "Pop",
-    "id": "pop",
+    "name": "Arcade Room",
+    "id": "Arcade Room",
     "colors": [
-      "#FFF3FD",
-      "#FFFFFF",
-      "#FFEFFB",
-      "#FFD8F0",
-      "#4A2D3C",
-      "#7B5A6B",
-      "#FF44CC",
-      "#3E2633",
-      "#FF44CC",
-      "#FF44CC"
-    ]
-  },
-  {
-    "name": "Quantum",
-    "id": "quantum",
-    "colors": [
-      "#000A1A",
-      "#001233",
-      "#001F4D",
-      "#003366",
-      "#00E6FF",
-      "#66B2FF",
-      "#FF4D88",
-      "#CCE6FF",
-      "#00E6FF",
-      "#FF4D88"
-    ]
-  },
-  {
-    "name": "Reddest",
-    "id": "reddest",
-    "colors": [
-      "#FF0000",
-      "#FF0000",
-      "#FF0000",
-      "#FF0000",
-      "#FF0000",
-      "#FF0000",
-      "#FF0000",
-      "#FF0000",
       "#000000",
-      "#000000"
-    ]
+      "#110022",
+      "#220044",
+      "#4A0066",
+      "#FF69B4",
+      "#CC99FF",
+      "#00FF9D",
+      "#C0C0C0",
+      "#FF69B4",
+      "#00FF9D"
+    ],
+    "light": false
   },
   {
-    "name": "Redplanet",
-    "id": "redplanet",
+    "name": "Beta Test",
+    "id": "Beta Test",
     "colors": [
-      "#381A1A",
-      "#4D2525",
-      "#633030",
-      "#804040",
-      "#FFD8A8",
-      "#CCAA7D",
-      "#FF6B35",
-      "#E8CBB9",
-      "#FF6B35",
-      "#FF6B35"
-    ]
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#FF0000",
+      "#FF0000"
+    ],
+    "light": true
   },
   {
-    "name": "Rose",
-    "id": "rose",
+    "name": "Bioluminescence",
+    "id": "Bioluminescence",
     "colors": [
-      "#2D2424",
-      "#3B2E2E",
-      "#4A3939",
-      "#634B4B",
-      "#E2B4BD",
-      "#B89297",
-      "#C89B7B",
-      "#D8C8C8",
-      "#C89B7B",
-      "#C89B7B"
-    ]
+      "#000B18",
+      "#001A30",
+      "#00294D",
+      "#004080",
+      "#00FFE0",
+      "#00B3A4",
+      "#FF2A6D",
+      "#80D0FF",
+      "#00FFE0",
+      "#FF2A6D"
+    ],
+    "light": false
   },
   {
-    "name": "Snow",
-    "id": "snow",
+    "name": "Black Retro",
+    "id": "Black Retro",
     "colors": [
-      "#F8FBFE",
+      "#0A0A14",
+      "#120018",
+      "#240030",
+      "#3D0052",
       "#FFFFFF",
-      "#EFF4F9",
-      "#D3E0EA",
-      "#2C3E50",
-      "#6C7A89",
-      "#29B6F6",
-      "#34495E",
-      "#3498DB",
-      "#3498DB"
-    ]
+      "#C792EA",
+      "#64D2FF",
+      "#E1E1E6",
+      "#89DDFF",
+      "#C992EA"
+    ],
+    "light": false
   },
   {
-    "name": "Solarized",
-    "id": "solarized",
+    "name": "Blueberry",
+    "id": "Blueberry",
     "colors": [
-      "#002B36",
-      "#073642",
-      "#0A4B58",
-      "#586E75",
-      "#EEE8D5",
-      "#CB4B16",
-      "#839496",
-      "#CB4B16",
-      "#CB4B16"
-    ]
+      "#0F172A",
+      "#1E293B",
+      "#334155",
+      "#475569",
+      "#F8FAFC",
+      "#94A3B8",
+      "#38BDF8",
+      "#CBD5E1",
+      "#38BDF8",
+      "#38BDF8"
+    ],
+    "light": false
   },
   {
-    "name": "Space",
-    "id": "space",
-    "colors": [
-      "#121212",
-      "#1E1E1E",
-      "#2A2A2A",
-      "#3D3D3D",
-      "#FFFFFF",
-      "#B0B0B0",
-      "#4A9EFF",
-      "#E0E0E0",
-      "#FFFFFF",
-      "#FFFFFF"
-    ]
-  },
-  {
-    "name": "Spring",
-    "id": "spring",
+    "name": "Bright Spring",
+    "id": "Bright Spring",
     "colors": [
       "#F9F7F3",
       "#FFFCF8",
@@ -476,43 +166,233 @@
       "#4A423A",
       "#A8D8B9",
       "#A8D8B9"
-    ]
+    ],
+    "light": true
   },
   {
-    "name": "Synthwave",
-    "id": "synthwave",
+    "name": "Candy Floss",
+    "id": "Candy Floss",
     "colors": [
-      "#2B1B2F",
-      "#3D2B40",
-      "#4F3C50",
-      "#6A4D6B",
-      "#FF7ED4",
-      "#FFA8EB",
-      "#36F1CD",
-      "#E8D7F1",
-      "#FF7ED4",
-      "#36F1CD"
-    ]
+      "#FFF0F5",
+      "#FFFFFF",
+      "#FFE4E1",
+      "#FFB6C1",
+      "#FF1493",
+      "#FF69B4",
+      "#00FF7F",
+      "#4B0082",
+      "#FF1493",
+      "#00FF7F"
+    ],
+    "light": true
   },
   {
-    "name": "Terminal",
-    "id": "terminal",
+    "name": "Citrus Light",
+    "id": "Citrus Light",
     "colors": [
-      "#0A0A0A",
-      "#151515",
-      "#202020",
-      "#2D2D2D",
-      "#F5F5F5",
-      "#909090",
-      "#00CC88",
-      "#D0D0D0",
+      "#FFFDE7",
+      "#FFFFFF",
+      "#FCF8E3",
+      "#EEE6C4",
+      "#4A473D",
+      "#7C786B",
+      "#FFD700",
+      "#3E3B32",
+      "#FFD700",
+      "#FFD700"
+    ],
+    "light": true
+  },
+  {
+    "name": "Console Ghost",
+    "id": "Console Ghost",
+    "colors": [
+      "#000F08",
+      "#001C10",
+      "#002A18",
+      "#004D27",
+      "#00C84D",
+      "#008F11",
+      "#00FF88",
+      "#C8FFD4",
+      "#00FF41",
+      "#00FF88"
+    ],
+    "light": false
+  },
+  {
+    "name": "Corrupted Info",
+    "id": "Corrupted Info",
+    "colors": [
+      "#000000",
+      "#110011",
+      "#220022",
+      "#FF00FF",
+      "#00FFFF",
+      "#FF00FF",
       "#00FF00",
-      "#00FF00"
-    ]
+      "#FFFFFF",
+      "#FF00FF",
+      "#00FFFF"
+    ],
+    "light": false
   },
   {
-    "name": "Thunderstorm",
-    "id": "thunderstorm",
+    "name": "Cryptic Quantum",
+    "id": "Cryptic Quantum",
+    "colors": [
+      "#000A1A",
+      "#001233",
+      "#001F4D",
+      "#003366",
+      "#00E6FF",
+      "#66B2FF",
+      "#FF4D88",
+      "#CCE6FF",
+      "#00E6FF",
+      "#FF4D88"
+    ],
+    "light": false
+  },
+  {
+    "name": "Daylight Dawn",
+    "id": "Daylight Dawn",
+    "colors": [
+      "#FFF5EB",
+      "#FFFFFF",
+      "#F8F0E8",
+      "#E0D4C8",
+      "#4A3C2E",
+      "#7D6B58",
+      "#D49B6A",
+      "#3E3329",
+      "#D49B6A",
+      "#D49B6A"
+    ],
+    "light": true
+  },
+  {
+    "name": "Daylight Dusk",
+    "id": "Daylight Dusk",
+    "colors": [
+      "#F3F5FD",
+      "#FFFFFF",
+      "#EAEDF9",
+      "#D4DAF0",
+      "#2A2F45",
+      "#5E6378",
+      "#6C5CE7",
+      "#3A3E52",
+      "#6C5CE7",
+      "#6C5CE7"
+    ],
+    "light": true
+  },
+  {
+    "name": "Daylight Fresh",
+    "id": "Daylight Fresh",
+    "colors": [
+      "#E6FFFA",
+      "#FFFFFF",
+      "#F0FFF0",
+      "#B2F5EA",
+      "#2D3748",
+      "#718096",
+      "#48BB78",
+      "#4A5568",
+      "#48BB78",
+      "#48BB78"
+    ],
+    "light": true
+  },
+  {
+    "name": "Daylight Sky",
+    "id": "Daylight Sky",
+    "colors": [
+      "#F0F9FF",
+      "#FFFFFF",
+      "#E6F4FB",
+      "#C4E3F2",
+      "#2B4E6B",
+      "#5E7B94",
+      "#48A9C5",
+      "#3A546B",
+      "#48A9C5",
+      "#48A9C5"
+    ],
+    "light": true
+  },
+  {
+    "name": "Deepest Gold",
+    "id": "Deepest Gold",
+    "colors": [
+      "#2E1C05",
+      "#42290A",
+      "#56360F",
+      "#7A4D1A",
+      "#F4D03F",
+      "#D4AC0D",
+      "#E67E22",
+      "#F5E3C1",
+      "#E67E22",
+      "#E67E22"
+    ],
+    "light": false
+  },
+  {
+    "name": "Dreamy Cloud",
+    "id": "Dreamy Cloud",
+    "colors": [
+      "#F0F2F5",
+      "#FFFFFF",
+      "#EBEFF5",
+      "#D6DEE9",
+      "#3C4858",
+      "#6B7785",
+      "#8C9EFF",
+      "#4A5568",
+      "#8C9EFF",
+      "#8C9EFF"
+    ],
+    "light": true
+  },
+  {
+    "name": "Durasteel",
+    "id": "Durasteel",
+    "colors": [
+      "#0D0F14",
+      "#1A1D26",
+      "#272B38",
+      "#3D4354",
+      "#A0B2C6",
+      "#6E7F91",
+      "#00CED1",
+      "#CAD5E0",
+      "#00CED1",
+      "#00CED1"
+    ],
+    "light": false
+  },
+  {
+    "name": "Fireproof",
+    "id": "Fireproof",
+    "colors": [
+      "#1A1818",
+      "#2A2525",
+      "#3A3333",
+      "#4D4545",
+      "#F0EBE3",
+      "#A89B9B",
+      "#FF9F43",
+      "#D8D1D1",
+      "#FF9F43",
+      "#FF9F43"
+    ],
+    "light": false
+  },
+  {
+    "name": "Indigo Thunder",
+    "id": "Indigo Thunder",
     "colors": [
       "#0A0F1F",
       "#151A2B",
@@ -524,11 +404,12 @@
       "#B8C7FF",
       "#9EB5FF",
       "#FFEE32"
-    ]
+    ],
+    "light": false
   },
   {
-    "name": "Tokyo",
-    "id": "tokyo",
+    "name": "Isotope Vibrant",
+    "id": "Isotope Vibrant",
     "colors": [
       "#0A0A14",
       "#161622",
@@ -540,43 +421,80 @@
       "#D0D0E6",
       "#00FF9D",
       "#00FF9D"
-    ]
+    ],
+    "light": false
   },
   {
-    "name": "Toxic",
-    "id": "toxic",
+    "name": "Jungle Heart",
+    "id": "Jungle Heart",
     "colors": [
-      "#1A1A1A",
-      "#262626",
-      "#333333",
-      "#4D4D4D",
-      "#D4FF99",
-      "#8FB359",
-      "#FF467E",
-      "#E6E6E6",
-      "#C1FF72",
-      "#FF467E"
-    ]
-  },
-  {
-    "name": "Tropical",
-    "id": "tropical",
-    "colors": [
-      "#FFF7E6",
-      "#FFFFFF",
-      "#FFF2D9",
-      "#FFE6BF",
-      "#5C4A32",
-      "#8C7759",
+      "#18200A",
+      "#253312",
+      "#32461A",
+      "#435F24",
+      "#D4E6A5",
+      "#A3B87D",
       "#FF6B6B",
-      "#4A3D2C",
-      "#FF6B6B",
+      "#D4E6A5",
+      "#D4E6A5",
       "#FF6B6B"
-    ]
+    ],
+    "light": false
   },
   {
-    "name": "Vintage",
-    "id": "vintage",
+    "name": "Lava Lamp",
+    "id": "Lava Lamp",
+    "colors": [
+      "#2D0A3D",
+      "#45195A",
+      "#5D2871",
+      "#7A3E8F",
+      "#FFD700",
+      "#FFA500",
+      "#FF1493",
+      "#FFE4E1",
+      "#FFD700",
+      "#FF1493"
+    ],
+    "light": false
+  },
+  {
+    "name": "Masquerade",
+    "id": "Masquerade",
+    "colors": [
+      "#2D1A1A",
+      "#3D2626",
+      "#4D3232",
+      "#664040",
+      "#FFD700",
+      "#CCB000",
+      "#DA70D6",
+      "#E8D8D8",
+      "#FFD700",
+      "#DA70D6"
+    ],
+    "light": false
+  },
+  {
+    "name": "Monochrome",
+    "id": "Monochrome",
+    "colors": [
+      "#F0F0F0",
+      "#FFFFFF",
+      "#EEEEEE",
+      "#CCCCCC",
+      "#444444",
+      "#666666",
+      "#666666",
+      "#000000",
+      "#000000",
+      "#000000"
+    ],
+    "light": true
+  },
+  {
+    "name": "Morning Coffee",
+    "id": "Morning Coffee",
     "colors": [
       "#FDF6E3",
       "#FFFEF8",
@@ -588,6 +506,294 @@
       "#4A3C2E",
       "#A0522D",
       "#A0522D"
-    ]
+    ],
+    "light": true
+  },
+  {
+    "name": "Neon Future",
+    "id": "Neon Future",
+    "colors": [
+      "#10121B",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#89F7FE",
+      "#66D9EF",
+      "#FF6BCB",
+      "#FFFFFF",
+      "#89F7FE",
+      "#FF6BCB"
+    ],
+    "light": false
+  },
+  {
+    "name": "Pina Colada",
+    "id": "Pina Colada",
+    "colors": [
+      "#FFF7E6",
+      "#FFFFFF",
+      "#FFF2D9",
+      "#FFE6BF",
+      "#5C4A32",
+      "#8C7759",
+      "#FF6B6B",
+      "#4A3D2C",
+      "#FF6B6B",
+      "#FF6B6B"
+    ],
+    "light": true
+  },
+  {
+    "name": "Pink Pop",
+    "id": "Pink Pop",
+    "colors": [
+      "#FFF3FD",
+      "#FFFFFF",
+      "#FFEFFB",
+      "#FFD8F0",
+      "#4A2D3C",
+      "#7B5A6B",
+      "#FF44CC",
+      "#3E2633",
+      "#FF44CC",
+      "#FF44CC"
+    ],
+    "light": true
+  },
+  {
+    "name": "Red Wasteland",
+    "id": "Red Wasteland",
+    "colors": [
+      "#381A1A",
+      "#4D2525",
+      "#633030",
+      "#804040",
+      "#FFD8A8",
+      "#CCAA7D",
+      "#FF6B35",
+      "#E8CBB9",
+      "#FF6B35",
+      "#FF6B35"
+    ],
+    "light": false
+  },
+  {
+    "name": "Rose Sentiments",
+    "id": "Rose Sentiments",
+    "colors": [
+      "#2D2424",
+      "#3B2E2E",
+      "#4A3939",
+      "#634B4B",
+      "#E2B4BD",
+      "#B89297",
+      "#C89B7B",
+      "#D8C8C8",
+      "#C89B7B",
+      "#C89B7B"
+    ],
+    "light": false
+  },
+  {
+    "name": "Sanctuary",
+    "id": "Sanctuary",
+    "colors": [
+      "#1A1A1A",
+      "#333333",
+      "#4D4D4D",
+      "#C0C0C0",
+      "#909090",
+      "#FFD700",
+      "#E0E0E0",
+      "#FFD700",
+      "#FFD700"
+    ],
+    "light": false
+  },
+  {
+    "name": "Snow White",
+    "id": "Snow White",
+    "colors": [
+      "#F8FBFE",
+      "#FFFFFF",
+      "#EFF4F9",
+      "#D3E0EA",
+      "#2C3E50",
+      "#6C7A89",
+      "#29B6F6",
+      "#34495E",
+      "#3498DB",
+      "#3498DB"
+    ],
+    "light": true
+  },
+  {
+    "name": "Solarized Dark",
+    "id": "Solarized Dark",
+    "colors": [
+      "#002B36",
+      "#073642",
+      "#0A4B58",
+      "#586E75",
+      "#EEE8D5",
+      "#CB4B16",
+      "#839496",
+      "#CB4B16",
+      "#CB4B16"
+    ],
+    "light": false
+  },
+  {
+    "name": "Space Isotope",
+    "id": "Space Isotope",
+    "colors": [
+      "#0A0A0A",
+      "#151515",
+      "#202020",
+      "#2D2D2D",
+      "#F5F5F5",
+      "#909090",
+      "#00CC88",
+      "#D0D0D0",
+      "#00FF00",
+      "#00FF00"
+    ],
+    "light": false
+  },
+  {
+    "name": "Space Shadow",
+    "id": "Space Shadow",
+    "colors": [
+      "#121212",
+      "#1E1E1E",
+      "#2A2A2A",
+      "#3D3D3D",
+      "#FFFFFF",
+      "#B0B0B0",
+      "#4A9EFF",
+      "#E0E0E0",
+      "#FFFFFF",
+      "#FFFFFF"
+    ],
+    "light": false
+  },
+  {
+    "name": "Stargazer Contrast",
+    "id": "Stargazer Contrast",
+    "colors": [
+      "#1A0033",
+      "#330066",
+      "#4D0099",
+      "#6600CC",
+      "#FF9933",
+      "#CC6600",
+      "#33CCFF",
+      "#FFCC99",
+      "#FF9933",
+      "#33CCFF"
+    ],
+    "light": false
+  },
+  {
+    "name": "Steampunk",
+    "id": "Steampunk",
+    "colors": [
+      "#261C15",
+      "#3D2E23",
+      "#544031",
+      "#6B5240",
+      "#C5A880",
+      "#9E8565",
+      "#FFD75C",
+      "#E0D0B8",
+      "#C5A880",
+      "#FFD75C"
+    ],
+    "light": false
+  },
+  {
+    "name": "Synthwave",
+    "id": "Synthwave",
+    "colors": [
+      "#2B1B2F",
+      "#3D2B40",
+      "#4F3C50",
+      "#6A4D6B",
+      "#FF7ED4",
+      "#FFA8EB",
+      "#36F1CD",
+      "#E8D7F1",
+      "#FF7ED4",
+      "#36F1CD"
+    ],
+    "light": false
+  },
+  {
+    "name": "Tokyo Blossom",
+    "id": "Tokyo Blossom",
+    "colors": [
+      "#FFF0F5",
+      "#FFFFFF",
+      "#FFE5EE",
+      "#FFD1E0",
+      "#FF6B6B",
+      "#FF99CC",
+      "#7B68EE",
+      "#4A3A40",
+      "#FF69B4",
+      "#7B68EE"
+    ],
+    "light": true
+  },
+  {
+    "name": "Toxic Jungle",
+    "id": "Toxic Jungle",
+    "colors": [
+      "#1A1A1A",
+      "#262626",
+      "#333333",
+      "#4D4D4D",
+      "#D4FF99",
+      "#8FB359",
+      "#FF467E",
+      "#E6E6E6",
+      "#C1FF72",
+      "#FF467E"
+    ],
+    "light": false
+  },
+  {
+    "name": "Umbral",
+    "id": "Umbral",
+    "colors": [
+      "#10121B",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#7F5AF0",
+      "#FFFFFF",
+      "#000000",
+      "#7F5AF0"
+    ],
+    "light": false
+  },
+  {
+    "name": "Volcano Pit",
+    "id": "Volcano Pit",
+    "colors": [
+      "#331100",
+      "#4D1A00",
+      "#662200",
+      "#803300",
+      "#FF6600",
+      "#CC5200",
+      "#00FF88",
+      "#FFD9BF",
+      "#FF6600",
+      "#00FF88"
+    ],
+    "light": false
   }
 ]

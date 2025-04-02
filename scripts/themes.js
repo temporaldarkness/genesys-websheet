@@ -1,7 +1,17 @@
 themePresets = {};
 themeIds = [];
 
-themeSelected = 'light';
+themeSelected = 'Monochrome';
+
+async function fileExists(url)
+{
+    try {
+        const response = await fetch(url, { method: 'HEAD' });
+        return response.ok;
+    } catch (error) {
+        return false;
+    }
+}
 
 async function retrieveThemes() 
 {
@@ -15,7 +25,8 @@ async function retrieveThemes()
            themePresets[preset.id] = {
                'name': preset.name,
                'colors': preset.colors,
-               'id': preset.id
+               'id': preset.id,
+               'light': preset.light
             };
             themeIds.push(preset.id);
         });
@@ -29,13 +40,15 @@ async function retrieveThemes()
     });
     
     select = document.getElementById('themeSelect');
+    let lightIndicator = '☀︎';
+    let darkIndicator = '☾';
     themeIds.forEach(presetId => {
         let preset = themePresets[presetId];
         
         let option = document.createElement('option');
         
         option.value = preset.id;
-        option.innerHTML = preset.name;
+        option.innerHTML = `${preset.light ? lightIndicator : darkIndicator} ${preset.name}`;
         
         select.appendChild(option);
     });
@@ -50,10 +63,27 @@ async function retrieveThemes()
     });
 }
 
+async function swapThemeStyles()
+{
+    let link = `./stylesheets/themes/${themeSelected}.css`;
+    if (await fileExists(link))
+    {
+        oldStyle = document.querySelector('[data-thematic]');
+        oldStyle.removeAttribute('data-thematic');
+        
+        newStyle = document.createElement('link');
+        newStyle.rel = 'stylesheet';
+        newStyle.href = link;
+        newStyle.dataset.thematic = 'mainTheme';
+        document.querySelector('head').appendChild(newStyle);
+        setTimeout(() => oldStyle.remove(), 300);
+    }
+}
+
 function changeTheme()
 {
-    let theme = themePresets[themeSelected];
-    document.querySelector('link').href = `./stylesheets/themes/${themeSelected}.css`;
+    swapThemeStyles();
+    let theme = themePresets[themeSelected] || themePresets['Monochrome'];
     
     let test = document.getElementById('settings-colortest');
     
@@ -63,13 +93,22 @@ function changeTheme()
     });
 }
 
-function startupThemeSelect()
+async function themeSetup()
 {
-    themeSelected = localStorage.getItem('theme') || 'light';
-    document.querySelector('link').href = `./stylesheets/themes/${themeSelected}.css`;
+    themeSelected = localStorage.getItem('theme') || themeSelected;
+    let link = `./stylesheets/themes/${themeSelected}.css`;
+    document.querySelector('[data-thematic]').href = link;
+    
+    newStyle = document.createElement('link');
+    newStyle.rel = 'stylesheet';
+    newStyle.href = './stylesheets/colorTransition.css';
+    document.querySelector('head').appendChild(newStyle);
 }
 
-startupThemeSelect();
+
+
+themeSetup();
+
 document.addEventListener('DOMContentLoaded', () => {
     retrieveThemes();
 });
