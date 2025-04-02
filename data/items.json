@@ -421,6 +421,21 @@
     {"name": "Книга", "id": 34, "weight": 3, "rarity": 1, "price": 120},
     {"name": "Пустой журнал", "id": 35, "weight": 1, "rarity": 1, "price": 30},
     {"name": "Кисет", "id": 36, "weight": 0, "rarity": 1, "price": 5},
-    {}
+    {
+      "id": 37,
+      "name": "Холщовый мешок",
+      "weight": 1,
+      "rarity": 0,
+      "price": 10,
+      "description": "Вмещает предметы суммарным объёмом до 5."
+    },
+    {
+      "id": 38,
+      "name": "Дорожные сухари",
+      "weight": 1,
+      "rarity": 0,
+      "price": 8
+    },
+    {"id": 39, "name": "Зольное мыло", "weight": 0, "rarity": 1, "price": 12}
   ]
 }
