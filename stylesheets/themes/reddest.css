@@ -1,0 +1,13 @@
+:root {
+  --clr-background: #f00;
+  --clr-element-bg: #f00;
+  --clr-element-muted: #f00;
+  --clr-border: #f00;
+  --clr-title: #f00;
+  --clr-subtitle: #f00;
+  --clr-accent: #f00;
+  --clr-text: #f00;
+  
+  --clr-shadow: rgba(0,0,0,0.1);
+  --clr-shadow-focus: rgba(0,0,0,0.2);
+}
