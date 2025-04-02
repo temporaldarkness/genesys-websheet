@@ -160,7 +160,6 @@
 						<div class="image-placeholder">
 							<img id="character-image" src="#" alt="Добавьте изображение"  style="max-width: 100%;">
 						</div>
-						<input type="file" id="character-image-input" accept="image/*">
 					</div>
 					<div class="desc-container">
 						<h4 class="block-subtitle">Описание персонажа</h4>
@@ -541,20 +540,6 @@
 			</div>
 			<div id="settings" class="document-section">
 				<h3 class="section-title">Настройки</h3>
-				<h4 class="block-subtitle">Дискорд - интеграция</h4>
-				<div class="section">
-				    <div class="field">
-				        <label>Ссылка на вебхук бросков : </label>
-				        <input id="dice-webhook" placeholder="https://discord.com/api/webhooks/">
-				    </div>
-				</div>
-				<h4 class="block-subtitle">Редактирование листа</h4>
-				<div class="section">
-				    <div class="field">
-				        <label>Редактирование : </label>
-				        <input type="checkbox" id="editMode" onclick="editMode()">
-				    </div>
-				</div>
 				<h4 class="block-subtitle">Сохранение листа</h4>
 				<div class="section">
 				    <div class="field">
@@ -565,7 +550,28 @@
 				        <label>Загрузить готовый лист персонажа : </label>
         			    <input type="file" accept=".json" id="uploadinput">
 				    </div>
-				        <div class="nav-item" id="nav-upload" onclick="uploadData()">Загрузить файл</div>
+				    <div class="nav-item" id="nav-upload" onclick="uploadData()">Загрузить файл</div>
+				</div>
+				<h4 class="block-subtitle">Редактирование листа</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Редактирование : </label>
+				        <input type="checkbox" id="editMode" onclick="editMode()">
+				    </div>
+				</div>
+				<h4 class="block-subtitle">Изображение персонажа</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Загрузить изображение : </label>
+						<input type="file" id="character-image-input" accept="image/*">
+				    </div>
+				</div>
+				<h4 class="block-subtitle">Дискорд - интеграция</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Ссылка на вебхук бросков : </label>
+				        <input id="dice-webhook" placeholder="https://discord.com/api/webhooks/">
+				    </div>
 				</div>
 			</div>
 		</div>
