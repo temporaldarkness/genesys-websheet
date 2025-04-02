@@ -1,6 +1,8 @@
 themePresets = {};
 themeIds = [];
 
+themeSelected = 'light';
+
 async function retrieveThemes() 
 {
     try {
@@ -38,18 +40,20 @@ async function retrieveThemes()
         select.appendChild(option);
     });
     
-    select.value = 'light';
-    setTheme('light');
+    select.value = themeSelected;
+    changeTheme(themeSelected);
     
     select.addEventListener('change', function(){
-        setTheme(this.value);
+        themeSelected = this.value;
+        localStorage.setItem('theme', themeSelected);
+        changeTheme();
     });
 }
 
-function setTheme(uid)
+function changeTheme()
 {
-    let theme = themePresets[uid];
-    document.querySelector('link').href = `./stylesheets/themes/${uid}.css`;
+    let theme = themePresets[themeSelected];
+    document.querySelector('link').href = `./stylesheets/themes/${themeSelected}.css`;
     
     let test = document.getElementById('settings-colortest');
     
@@ -59,4 +63,11 @@ function setTheme(uid)
     });
 }
 
+function startupThemeSelect()
+{
+    themeSelected = localStorage.getItem('theme') || 'light';
+    document.querySelector('link').href = `./stylesheets/themes/${themeSelected}.css`;
+}
+
+startupThemeSelect();
 document.addEventListener('DOMContentLoaded', retrieveThemes());
