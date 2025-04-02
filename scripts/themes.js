@@ -13,8 +13,7 @@ async function retrieveThemes()
            themePresets[preset.id] = {
                'name': preset.name,
                'colors': preset.colors,
-               'id': preset.id,
-               'default': !!preset.default
+               'id': preset.id
             };
             themeIds.push(preset.id);
         });
@@ -31,17 +30,15 @@ async function retrieveThemes()
     themeIds.forEach(presetId => {
         let preset = themePresets[presetId];
         
-        if (!preset.default)
-        {
-            let option = document.createElement('option');
-           
-            option.value = preset.id;
-            option.innerHTML = preset.name;
-            
-            select.appendChild(option);
-        }
+        let option = document.createElement('option');
+        
+        option.value = preset.id;
+        option.innerHTML = preset.name;
+        
+        select.appendChild(option);
     });
     
+    select.value = 'light';
     setTheme('light');
     
     select.addEventListener('change', function(){

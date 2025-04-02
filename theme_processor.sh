@@ -36,9 +36,6 @@ for css_file in ./stylesheets/themes/*.css; do
     
     id=$(basename "$css_file" .css)
     
-    default="false"
-    [[ "$id" == "light" ]] && default="true"
-    
     colors=()
     while IFS= read -r line; do
         if [[ $line =~ ^[[:space:]]*--clr-[^:]+:[[:space:]]*([^;]+) ]]; then
@@ -50,7 +47,7 @@ for css_file in ./stylesheets/themes/*.css; do
     
     if [ ${#colors[@]} -gt 0 ]; then
         color_list=$(IFS=,; echo "${colors[*]}")
-        json_output+="{\"name\": \"${id^}\", \"id\": \"$id\", \"default\": $default, \"colors\": [${color_list}]},"
+        json_output+="{\"name\": \"${id^}\", \"id\": \"$id\", \"colors\": [${color_list}]},"
         files_processed=$((files_processed + 1))
     fi
 done
@@ -61,8 +58,8 @@ else
     json_output="[]"
 fi
 
-if echo "$json_output" | jq . > ./data/raw_themes.json 2>/dev/null; then
-    echo "Файл ./data/raw_themes.json успешно создан"
+if echo "$json_output" | jq . > ./data/themes.json 2>/dev/null; then
+    echo "Файл ./data/themes.json успешно создан"
 else
     echo "Ошибка при создании JSON. Проверьте корректность данных"
     echo "Сгенерированный JSON:"
