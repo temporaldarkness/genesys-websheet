@@ -17,8 +17,9 @@ input, textarea, select, option, button {
     color: var(--clr-text);
 }
 
-select {
+select, option {
     background-color: var(--clr-background);
+    cursor: pointer;
 }
 
 label {
@@ -142,10 +143,31 @@ input:focus, textarea:focus {
 }
 
 input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--clr-accent);
-	margin: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    border: 1px solid var(--clr-element-muted);
+    border-radius: 2px;
+    background: var(--clr-element-muted);
+    cursor: pointer;
+    margin: 6px;
+    position: relative;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 4px var(--clr-shadow-focus);
+}
+
+input[type="checkbox"]:checked {
+    background: var(--clr-accent);
+    border-color: var(--clr-accent);
 }
 
 input[type="number"] {
@@ -155,9 +177,31 @@ input[type="number"] {
 input[type="file"] {
 	white-space: nowrap;
 	overflow: hidden;
-	display: block;
-    max-width: 300px;
+	display: none;
     background: transparent;
+}
+
+body .file-upload-button {
+    padding: 8px 15px;
+    background-color: var(--clr-element-bg);
+    border-radius: 8px;
+    color: var(--clr-text);
+    cursor: pointer;
+    margin-left: auto;
+    border: 2px solid var(--clr-border);
+}
+
+.file-upload-button:hover {
+    background-color: var(--clr-element-muted);
+}
+
+body .file-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+	overflow: hidden;
+	display: block;
+    background: transparent;
+    margin-right: 10px;
 }
 
 .rank-bar {

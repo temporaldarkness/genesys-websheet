@@ -26,12 +26,13 @@
 }
 
 .dice-button {
-    background: var(--clr-bg-element);
+    background-color: var(--clr-element-bg);
     border-radius: 8px;
     padding: 5px;
     margin: 5px;
     text-align: center;
     box-shadow: 0 2px 4px var(--clr-shadow);
+    border: 2px solid var(--clr-border);
     cursor: pointer;
     border: 2px solid transparent;
     font-weight: 800;
