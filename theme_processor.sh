@@ -2,8 +2,12 @@
 
 mkdir -p ./data
 
-rgb_to_hex() {
-    printf '#%02X%02X%02X' "$1" "$2" "$3"
+format_rgba() {
+    local r=$1
+    local g=$2
+    local b=$3
+    local a=$4
+    echo "rgba($r, $g, $b, $a)"
 }
 
 normalize_hex() {
@@ -17,12 +21,23 @@ normalize_hex() {
 process_color() {
     local value="$1"
     
-    if [[ $value =~ rgba\(\s*([0-9]+)\s*,\s*([0-9]+)\s*,\s*([0-9]+)\s*,.*?\) ]]; then
-        echo $(rgb_to_hex "${BASH_REMATCH[1]}" "${BASH_REMATCH[2]}" "${BASH_REMATCH[3]}")
-    elif [[ $value =~ rgb\(\s*([0-9]+)\s*,\s*([0-9]+)\s*,\s*([0-9]+)\s*\) ]]; then
-        echo $(rgb_to_hex "${BASH_REMATCH[1]}" "${BASH_REMATCH[2]}" "${BASH_REMATCH[3]}")
+    if [[ $value =~ rgba\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9.]+)\s*\) ]]; then
+        echo $(format_rgba "${BASH_REMATCH[1]}" "${BASH_REMATCH[2]}" "${BASH_REMATCH[3]}" "${BASH_REMATCH[4]}")
+    elif [[ $value =~ rgb\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*\) ]]; then
+        echo $(format_rgba "${BASH_REMATCH[1]}" "${BASH_REMATCH[2]}" "${BASH_REMATCH[3]}" "1")
     elif [[ $value =~ ^\#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$ ]]; then
-        normalize_hex "$value"
+        normalized_hex=$(normalize_hex "$value")
+        hex="${normalized_hex/#\#/}"
+        
+        if [[ ${#hex} != 6 ]]; then
+            echo "unknown"
+            return
+        fi
+        
+        r=$((16#${hex:0:2}))
+        g=$((16#${hex:2:2}))
+        b=$((16#${hex:4:2}))
+        echo $(format_rgba "$r" "$g" "$b" "1")
     else
         echo "unknown"
     fi
