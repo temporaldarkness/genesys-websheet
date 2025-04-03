@@ -60,6 +60,7 @@ function loadArchetypePreset(preset)
     document.getElementById('charisma').value = preset.stats.charisma;
     document.getElementById('exp-total').value = preset.experience;
     document.getElementById('exp-available').value = preset.experience;
+    document.getElementById('absorption').value = preset.stats.strength;
     
     container = document.querySelector('.talents');
     talent = container.querySelector('[data-source="archetype"]');
