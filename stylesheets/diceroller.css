@@ -1,5 +1,6 @@
 .dice-field {
     display: flex;
+    width: 100%;
 }
 
 .dice-container {
