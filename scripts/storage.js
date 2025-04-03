@@ -44,8 +44,19 @@ const bioIDs = [
 	'fear'
 ]
 
+function sanitize(input)
+{
+    const forbiddenChars = /[\\/:*?"<>|]/g;
+
+    let sanitized = input.replace(forbiddenChars, '');
+    sanitized = sanitized.trim();
+
+    return sanitized;
+}
+
 function downloadData()
 {
+	const filename = document.getElementById('downloadinput-name').textContent ?? 'data.json';
 	const data = collectData();
 	const json = JSON.stringify(data, null, 2);
 	
@@ -54,7 +65,7 @@ function downloadData()
 	
 	const a = document.createElement('a');
 	a.href = url;
-	a.download = 'form-data.json';
+	a.download = filename;
 	document.body.appendChild(a);
 	a.click();
 	document.body.removeChild(a);
@@ -242,39 +253,6 @@ function collectDiceRoller()
     return data;
 }
 
-function uploadData()
-{
-	const inp = document.getElementById('uploadinput');
-	
-	if (inp.files.length == 0)
-		return;
-	
-	const file = inp.files[0];
-	
-	const reader = new FileReader();
-	
-	reader.onload = function(e) 
-	{
-		try 
-		{
-			const data = JSON.parse(e.target.result);
-			
-			loadData(data);
-		}
-		catch (error)
-		{
-			console.log('Ошибка парсинга JSON: ' + error.message);
-		}
-	};
-	
-	reader.onerror = function()
-	{
-		console.log('Ошибка чтения файла');
-	};
-	
-	reader.readAsText(file);
-}
-
 function loadData(data)
 {
     aknowledgeData(data);
@@ -294,6 +272,8 @@ function aknowledgeData(data)
 
 function setIndex(data)
 {
+	document.getElementById('downloadinput-name').innerHTML = `${sanitize(data.charname) ?? 'data'}.json`;
+	
 	indexIDs.forEach(field => {
 		document.getElementById(field).value = data[field];
 	});
@@ -438,3 +418,57 @@ function setDiceRoller(data)
 		document.getElementById(field).value = data[field];
 	});
 }
+
+document.addEventListener('DOMContentLoaded', function(e) 
+{
+	const fileInput = document.getElementById('uploadinput');
+	const fileName = document.getElementById('uploadinput-name');
+	
+	fileInput.addEventListener('change', function(e)
+	{
+		const file = event.target.files[0];
+		
+		if (!file)
+			return;
+		
+		if (!file.name.endsWith('.json'))
+		{
+			alert('Выбранный файл не является листом!');
+			return;
+		}
+		
+		if (file.size > 2 * 1024 * 1024 * 1024) 
+		{
+			alert('Файл слишком большой. Максимальный размер: 2GB.');
+			return;
+		}
+		fileName.innerHTML = file.name ?? "...";
+		
+		const reader = new FileReader();
+	    
+    	reader.onload = function(e) 
+    	{
+    		try 
+    		{
+    			const data = JSON.parse(e.target.result);
+    			
+    			loadData(data);
+    		}
+    		catch (error)
+    		{
+    			console.log('Ошибка парсинга JSON: ' + error.message);
+    		}
+    	};
+    	
+    	reader.onerror = function()
+    	{
+    		console.log('Ошибка чтения файла');
+    	};
+    	
+    	reader.readAsText(file);
+	});
+	
+	document.getElementById('charname').addEventListener('input', (e) => {
+	    document.getElementById('downloadinput-name').innerHTML = `${sanitize(e.target.value) ?? 'data'}.json`;
+	});
+})

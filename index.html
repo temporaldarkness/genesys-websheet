@@ -548,24 +548,31 @@
 				    <div class="field">
 				        <label>Скачать готовый лист персонажа : </label>
 				    </div>
-				    <div class="nav-item" id="nav-download" onclick="downloadData()">Скачать файл</div>
 				    <div class="field">
-				        <label>Загрузить готовый лист персонажа : </label>
+				        <label class="file-name" id="downloadinput-name">data.json</label>
+				        <label class="file-upload-button" onclick="downloadData()">Скачать файл</label>
+				    </div>
+				    <div class="field">
+				        <label for="uploadinput">Готовый лист персонажа : </label>
+				    </div>
+				    <div class="field">
+				        <label class="file-name" id="uploadinput-name">Файл не выбран</label>
+				        <label for="uploadinput" class="file-upload-button">Загрузить файл</label>
         			    <input type="file" accept=".json" id="uploadinput">
 				    </div>
-				    <div class="nav-item" id="nav-upload" onclick="uploadData()">Загрузить файл</div>
 				</div>
 				<h4 class="block-subtitle">Редактирование листа</h4>
 				<div class="section">
 				    <div class="field">
-				        <label>Редактирование : </label>
+				        <label for="editMode">Редактирование : </label>
 				        <input type="checkbox" id="editMode" onclick="editMode()">
 				    </div>
 				</div>
 				<h4 class="block-subtitle">Изображение персонажа</h4>
 				<div class="section">
 				    <div class="field">
-				        <label>Загрузить изображение : </label>
+				        <label class="file-name" id="character-image-name">Файл не выбран</label>
+				        <label for="character-image-input" class="file-upload-button">Загрузить изображение</label>
 						<input type="file" id="character-image-input" accept="image/*">
 				    </div>
 				</div>
