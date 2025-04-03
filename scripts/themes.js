@@ -97,12 +97,8 @@ async function themeSetup()
 {
     themeSelected = localStorage.getItem('theme') || themeSelected;
     let link = `./stylesheets/themes/${themeSelected}.css`;
-    document.querySelector('[data-thematic]').href = link;
-    
-    newStyle = document.createElement('link');
-    newStyle.rel = 'stylesheet';
-    newStyle.href = './stylesheets/colorTransition.css';
-    document.querySelector('head').appendChild(newStyle);
+    let sheet = document.querySelector('[data-thematic]');
+    sheet.href = link;
 }
 
 
@@ -110,5 +106,10 @@ async function themeSetup()
 themeSetup();
 
 document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('theme-loaded');
+    newStyle = document.createElement('link');
+    newStyle.rel = 'stylesheet';
+    newStyle.href = './stylesheets/colorTransition.css';
+    document.querySelector('head').appendChild(newStyle);
     retrieveThemes();
 });

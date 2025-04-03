@@ -68,12 +68,12 @@ function createRollResult()
     resultBlock.innerHTML = `
         <div class="field bottomline">
             <div class="diceroller-resultdice">
-                <span class="text-icon">&#11200; </span>
+                <span class="text-icon">&#9632; </span>
                 <span class="text-icon">&#9670; </span>
                 <span class="text-icon">&#11042; </span>
             </div>
             <div class="diceroller-resultdice">
-                <span class="text-icon">&#11200; </span>
+                <span class="text-icon">&#9632; </span>
                 <span class="text-icon">&#9670; </span>
                 <span class="text-icon">&#11042; </span>
             </div>
@@ -104,7 +104,7 @@ function createRollResultSimple()
     resultBlock.innerHTML = `
         <div class="field bottomline">
             <div class="diceroller-resultdice">
-                <span class="text-icon">&#11200; </span>
+                <span class="text-icon">&#9632; </span>
             </div>
         </div>
         <div class="field bottomline wrappable" data-type="rollresults"></div>

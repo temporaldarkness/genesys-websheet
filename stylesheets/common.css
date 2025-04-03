@@ -1,3 +1,12 @@
+body:not(.theme-loaded) {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+body.theme-loaded {
+    opacity: 1;
+}
+
 body {
     font-family: "Oswald", "Bahnschrift", sans-serif;
     letter-spacing: -0.075em;
@@ -24,6 +33,14 @@ select, option {
 
 label {
     color: var(--clr-title);
+}
+
+::placeholder {
+    color: inherit;
+}
+
+::-ms-input-placeholder {
+    color: inherit;
 }
 
 
@@ -174,6 +191,12 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 input[type="file"] {
 	white-space: nowrap;
 	overflow: hidden;
@@ -283,7 +306,8 @@ body .file-name {
 .removable {
     opacity: 1;
     transform: translateY(0);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, 
+                transform 0.3s ease, opacity 0.3s ease;
 }
 
 .removable.removing {
