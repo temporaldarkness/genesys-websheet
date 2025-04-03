@@ -1,3 +1,5 @@
+const appVersion = 0.5;
+
 const indexIDs = [
 	'charname', 
 	'archetype', 
@@ -23,7 +25,9 @@ const skillsIDs = [
 const equipmentIDs = [
 	'text-armor',
 	'text-equipment',
-	'text-money'
+	'text-money',
+	'weight-total',
+	'weight-available'
 ]
 
 const diceRollerIDs = [
@@ -75,6 +79,11 @@ function downloadData()
 function collectData()
 {
 	const data = {
+	    'designation': {
+	        'ttrpg': 'Genesys',
+	        'list_creator': 'temporaldarkness',
+	        'version': appVersion
+	    },
 		'index': collectIndex(),
 		'skills': collectSkills(),
 		'equipment': collectEquipment(),
