@@ -250,6 +250,7 @@ body .file-name {
 	border-radius: 2px;
     background: var(--clr-element-muted);
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .rank-dot.active {
