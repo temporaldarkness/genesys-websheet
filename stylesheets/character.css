@@ -11,21 +11,22 @@
 .image-placeholder, #character-image {
     width: 100%;
     height: 400px;
-    background: white;
+    background: var(--clr-element-bg);
     border-radius: 8px;
-    border: 2px dashed #ccc;
+    border: 2px dashed var(--clr-border);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px var(--clr-shadow);
 	overflow: hidden;
 }
 
 #character-image {
-    color: #999;
+    color: var(--clr-subtitle);
     font-style: italic;
 	border: 0px transparent;
 	object-fit: cover;
+	display: none;
 }
 
 @media (max-width: 768px) {
@@ -59,10 +60,10 @@
 }
 
 .motivation-cell {
-    background: white;
+    background: var(--clr-element-bg);
     padding: 15px;
     border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px var(--clr-shadow);
 }
 
 .motivation-large-input {

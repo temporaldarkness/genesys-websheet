@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Генезис - Лист персонажа</title>
+	<link rel="stylesheet" href="./stylesheets/themes/Monochrome.css" data-thematic="mainTheme">
 	<link rel="stylesheet" href="./stylesheets/common.css">
 	<link rel="stylesheet" href="./stylesheets/index.css">
 	<link rel="stylesheet" href="./stylesheets/character.css">
@@ -12,6 +13,7 @@
 	<link rel="stylesheet" href="./stylesheets/skills.css">
 	<link rel="stylesheet" href="./stylesheets/talents.css">
 	<link rel="stylesheet" href="./stylesheets/diceroller.css">
+	<link rel="stylesheet" href="./stylesheets/settings.css">
 	<script type="text/javascript" src="./scripts/navigation.js"></script>
 	<script type="text/javascript" src="./scripts/rank.js"></script>
 	<script type="text/javascript" src="./scripts/traumas.js"></script>
@@ -25,6 +27,7 @@
 	<script type="text/javascript" src="./scripts/careerPresets.js"></script>
 	<script type="text/javascript" src="./scripts/archetypePresets.js"></script>
 	<script type="text/javascript" src="./scripts/diceRoller.js"></script>
+	<script type="text/javascript" src="./scripts/themes.js"></script>
 	<script type="text/javascript" src="./scripts/editMode.js"></script>
 </head>
 <body>
@@ -38,11 +41,7 @@
 			<div class="nav-item link" id="nav-character">Биография</div>
 			<div class="nav-item link" id="nav-notes">Заметки</div>
 			<div class="nav-item link" id="nav-diceroller">Дайс-роллер</div>
-			<div class="nav-item" id="nav-editMode" onclick="editMode()">Режим просмотра</div>
-			<div class="nav-item" id="nav-download" onclick="downloadData()">Выгрузить</div>
-			<div class="nav-item" id="nav-upload" onclick="uploadData()">Загрузить</div>
-			<input type="file" accept=".json" id="uploadinput">
-			
+			<div class="nav-item link" id="nav-settings">Настройки</div>
 		</nav>
 		<div class="content">
 			<div id="index" class="document-section active">
@@ -164,7 +163,6 @@
 						<div class="image-placeholder">
 							<img id="character-image" src="#" alt="Добавьте изображение"  style="max-width: 100%;">
 						</div>
-						<input type="file" id="character-image-input" accept="image/*">
 					</div>
 					<div class="desc-container">
 						<h4 class="block-subtitle">Описание персонажа</h4>
@@ -293,9 +291,19 @@
 					<div class="section">
 						<div class="field bottomline">
 							<label for="text-money">Деньги : </label>
-							<input type="text" id="text-money" placeholder="0">
+							<input type="text" id="text-money" placeholder="500 единиц">
 						</div>
 					</div>
+					<div class="experience-container">
+    					<div class="experience-counter">
+    						<input type="number" value="0" class="experience-input" id="weight-total">
+    						<div class="experience-label">Нагрузка</div>
+    					</div>
+    					<div class="experience-counter">
+    						<input type="number" value="0" class="experience-input" id="weight-available">
+    						<div class="experience-label">Грузоподъёмность</div>
+    					</div>
+    				</div>
 				</div>
 			</div>
 			<div id="notes" class="document-section">
@@ -524,8 +532,8 @@
                         <div class="dice-button" id="diceroller-empower-a">Усилить !</div>
                         <div class="dice-button" id="diceroller-weaken-a">Ослабить !</div>
                     </div>
-                    <div class="dice-button main" id="diceroller-roll">
-                        <div>Бросить !</div>
+                    <div class="dice-button main" id="diceroller-roll" style="display: flex;">
+                        <div style="margin:auto;">Бросить !</div>
                     </div>
                     <div class="dice-container">
                         <input type="number" min="0" value="0" class="dice-input" id="diceroller-adjustn1">
@@ -540,9 +548,71 @@
                     Нет , спасибо , просто сделайте мне обычный бросок D 10
                 </div>
                 <div class="dice-button simple" id="diceroller-rollSimple100">
-                    Нет , спасибо , просто сделайте мне обычный бросок D 100
+                    . . . Я имел ввиду D 100
                 </div>
-                <input id="dice-webhook" class="dice-button simple" placeholder="Вставьте ссылку на вебхук!" style="display: block; cursor: auto;">
+			</div>
+			<div id="settings" class="document-section">
+				<h3 class="section-title">Настройки</h3>
+				<h4 class="block-subtitle">Сохранение листа</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Скачать готовый лист персонажа : </label>
+				    </div>
+				    <div class="field">
+				        <label class="file-name" id="downloadinput-name">data.json</label>
+				        <label class="file-upload-button" onclick="downloadData()">Скачать файл</label>
+				    </div>
+				    <div class="field">
+				        <label for="uploadinput">Готовый лист персонажа : </label>
+				    </div>
+				    <div class="field">
+				        <label class="file-name" id="uploadinput-name">Файл не выбран</label>
+				        <label for="uploadinput" class="file-upload-button">Загрузить файл</label>
+        			    <input type="file" accept=".json" id="uploadinput">
+				    </div>
+				</div>
+				<h4 class="block-subtitle">Редактирование листа</h4>
+				<div class="section">
+				    <div class="field">
+				        <label for="editMode">Редактирование : </label>
+				        <input type="checkbox" id="editMode" onclick="editMode()">
+				    </div>
+				</div>
+				<h4 class="block-subtitle">Изображение персонажа</h4>
+				<div class="section">
+				    <div class="field">
+				        <label class="file-name" id="character-image-name">Файл не выбран</label>
+				        <label for="character-image-input" class="file-upload-button">Загрузить изображение</label>
+						<input type="file" id="character-image-input" accept="image/*">
+				    </div>
+				</div>
+				<h4 class="block-subtitle">Тема приложения</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Выбрать тему : </label>
+    					<select id="themeSelect">
+    					</select>
+    					<div class="themes-colortest-container" id="settings-colortest">
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+				        </div>
+				    </div>
+				</div>
+				<h4 class="block-subtitle">Дискорд - интеграция</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Ссылка на вебхук бросков : </label>
+				        <input id="dice-webhook" placeholder="https://discord.com/api/webhooks/">
+				    </div>
+				</div>
 			</div>
 		</div>
 	</div>

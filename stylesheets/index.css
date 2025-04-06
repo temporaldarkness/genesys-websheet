@@ -19,7 +19,7 @@
 
 .inp {
 	padding: 8px;
-	border: 0px solid #ccc;
+	border: 0px solid var(--clr-border);
 	text-align: center;
 }
 
@@ -33,13 +33,13 @@
 
 .input-caption {
     font-size: 10px;
-    color: #666;
+    color: var(--clr-subtitle);
     letter-spacing: 0.5px;
 }
 
 .stat-item h4 {
     margin: 0 0 10px 0;
-    color: #666;
+    color: var(--clr-subtitle);
     font-size: 16px;
     font-weight: 600;
 }
@@ -48,14 +48,13 @@
     margin: 20px auto;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .stat-item {
-    background: white;
+    background: var(--clr-element-bg);
     text-align: center;
     border-radius: 6px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--clr-border);
     padding: 15px;
 }
 
@@ -68,9 +67,7 @@
 .critical-injuries {
     margin: 20px auto;
     padding: 20px;
-    background: #f0f0f0;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .rank-selector {

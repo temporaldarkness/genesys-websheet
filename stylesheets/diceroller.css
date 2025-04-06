@@ -1,5 +1,6 @@
 .dice-field {
     display: flex;
+    width: 100%;
 }
 
 .dice-container {
@@ -9,8 +10,6 @@
     margin: auto;
     padding: 20px;
     border-radius: 8px;
-    background: transparent;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .dice-button-container {
@@ -20,8 +19,6 @@
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
-    background: transparent;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     align-items: center;
 }
 
@@ -30,21 +27,22 @@
 }
 
 .dice-button {
-    background: white;
+    background-color: var(--clr-element-bg);
     border-radius: 8px;
     padding: 5px;
     margin: 5px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: background 0.3s;
+    box-shadow: 0 2px 4px var(--clr-shadow);
+    border: 2px solid var(--clr-border);
     cursor: pointer;
     border: 2px solid transparent;
     font-weight: 800;
     align-content: center;
+    color: var(--clr-title);
 }
 
 .dice-button:hover {
-	background: #eee;
+	background: var(--clr-element-muted);
 }
 
 .dice-button.main {
@@ -69,7 +67,7 @@
 
 .dice-input:focus {
     outline: none;
-    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    box-shadow: 0 0 3px var(--clr-shadow-focus);
 }
 
 .diceroller-resultdice {

@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function(e) 
 {
-	const imageInput = document.getElementById('character-image-input')
-	const imageOutput = document.getElementById('character-image')
+	const imageInput = document.getElementById('character-image-input');
+	const imageOutput = document.getElementById('character-image');
+	const imageName = document.getElementById('character-image-name');
 	
 	imageInput.addEventListener('change', function(e)
 	{
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function(e)
 		
 		const imageUrl = URL.createObjectURL(file);
 		imageOutput.src = imageUrl;
+		imageName.innerHTML = file.name ?? "...";
 		imageOutput.style.display = 'block';
 	});
 })

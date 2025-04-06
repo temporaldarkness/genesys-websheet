@@ -60,6 +60,9 @@ function loadArchetypePreset(preset)
     document.getElementById('charisma').value = preset.stats.charisma;
     document.getElementById('exp-total').value = preset.experience;
     document.getElementById('exp-available').value = preset.experience;
+    document.getElementById('absorption').value = preset.stats.strength;
+    document.getElementById('weight-available').value = (preset.stats.strength + 5);
+    document.getElementById('text-money').value = '500 единиц';
     
     container = document.querySelector('.talents');
     talent = container.querySelector('[data-source="archetype"]');
@@ -80,4 +83,6 @@ function setArchetypePreset(preset)
     loadArchetypePreset(archetypePresets[preset]);
 }
 
-document.addEventListener('DOMContentLoaded', retrieveArchetypePresets());
+document.addEventListener('DOMContentLoaded', () => {
+    retrieveArchetypePresets();
+});

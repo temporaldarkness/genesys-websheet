@@ -124,4 +124,6 @@ async function loadSkillsData()
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadSkillsData());
+document.addEventListener('DOMContentLoaded', () => {
+    loadSkillsData();
+});
