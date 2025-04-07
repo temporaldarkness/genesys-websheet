@@ -10,10 +10,22 @@ function displaySection(sectionId)
 	document.getElementById(sectionId).classList.add('active');
 }
 
+function openLink(url)
+{
+    const newWindow = window.open(url, '_blank');
+    if (newWindow) newWindow.focus();
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 	document.querySelectorAll('.nav-item.link').forEach(item => {
 		item.addEventListener('click', function(){
 			displaySection(this.id.split('-')[1]);
+		});
+	});
+	
+	document.querySelectorAll('.nav-item.outerlink').forEach(item => {
+		item.addEventListener('click', function(){
+		    openLink(this.dataset.link);
 		});
 	});
 	

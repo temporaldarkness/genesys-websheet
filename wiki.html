@@ -1,16 +1,325 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Генезис - Справочник</title>
-        <link rel="stylesheet" href="./stylesheets/common.css">
-    </head>
-    <body>
-        <div class="windowContainer">
-            <div class="content">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генезис - Руководство</title>
+    <link rel="stylesheet" href="./stylesheets/common.css">
+    <link rel="stylesheet" href="./stylesheets/settings.css">
+	<link rel="stylesheet" href="./stylesheets/wiki.css">
+    <link rel="stylesheet" href="./stylesheets/themes/Monochrome.css" data-thematic="mainTheme">
+    <script type="text/javascript" src="./scripts/navigation.js"></script>
+    <script type="text/javascript" src="./scripts/themes.js"></script>
+</head>
+<body>
+    <div class="windowContainer">
+        <nav class="sidebar">
+            <div class="nav-item outerlink" data-link=".">Лист персонажа</div>
+            <div class="nav-item link" id="nav-index">Справочник</div>
+            <div class="nav-item link" id="nav-settings">Настройки</div>
+        </nav>
+        <div class="content">
+            <div class="document-section active" id="index">
+                <h3 class="section-title">Справочник</h3>
+                <div class="section">
+                    <h1>Руководство по эксплуатации веб-листа персонажа Genesys RPG</h1>
+                    <p class="block-subtitle"><u>Версия 1.0</u> — Обновлено: [07.04.2025]</p>
+                    
+                    <h2 class="section-title">1. Анатомия листа персонажа</h2>
+                    <p>
+                        <strong>Лист персонажа</strong> — центральный инструмент для хранения информации пользователем в системе <strong>Genesys RPG</strong>.
+                        <br>
+                        Ниже приведено детальное описание всех элементов интерфейса и их функциональности.
+                    </p>
                 
+                    <h3 class="section-title">1.1. Основная информация</h3>
+                    <p>Раздел, содержащий ключевые данные персонажа.</p>
+                
+                    <ul>
+                        <li><strong>Поля для заполнения</strong>:
+                            <ul>
+                                <li><strong>Имя персонажа</strong> — произвольный текст.</li>
+                                <li><strong>Архетип</strong> — выбор из выпадающего списка (например, <em>Обыватель</em>, <em>Интеллектуал</em>, <em>Трудяга</em> ).</li>
+                                <li class="no-li">Архетип определяет стартовые характеристики, опыт, финансы и другие начальные способности.</li>
+                                <li><strong>Карьера</strong> — выбор из выпадающего списка (например, <em>Лекарь</em>, <em>Охотник</em>, <em>Дозорный</em> ).</li>
+                                <li class="no-li">Карьера задаёт список карьерных навыков, которые легче развивать.</li>
+                                <li><strong>Имя игрока</strong> — имя участника, управляющего персонажем.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <div class="wiki-note">
+                        Продвинутые игроки могут проигнорировать выпадающие списки и заполнить поля самостоятельно с разрешения мастера.
+                        <br>
+                        Выбор значений выпадающего списка после создания персонажа может сбросить установленные вами поля.
+                    </div>
+                    
+                    <ul>
+                        <li><strong>Автоматические параметры</strong>:
+                            <ul>
+                                <li><strong>Боевые показатели</strong>:
+                                    <ul>
+                                        <li><strong>Поглощение</strong> — снижение получаемого урона (зависит от брони, талантов и показателя силы).</li>
+                                        <li><strong>Раны</strong> — запас здоровья персонажа (формат: <em>Текущее / Пороговое</em> ).</li>
+                                        <li><strong>Защита</strong> — дополнительная гарантия против атак разного вида (формат: <em>Ближняя / Дальняя</em> ).</li>
+                                        <li><strong>Усталость</strong> — запас ментальной бодрости персонажа (формат: <em>Текущая / Пороговая</em> ).</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Базовые характеристики</strong> (Сила, Ловкость, Интеллект и др.) — зависят от архетипа.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Критические травмы</strong>
+                            <ul>
+                                <li class="no-li">Здесь вы можете отметить влияющие на вашего персонажа негативные последствия.</li>
+                                <li class="no-li">Для каждой травмы укажите:</li>
+                                <ul>
+                                    <li>Тяжесть (от 1 до 3).</li>
+                                    <li>Результат (текстовое описание).</li>
+                                </ul>
+                            </ul>
+                        </li>
+                    </ul>
+                
+                    <h3 class="section-title">1.2. Навыки и опыт</h3>
+                    <p>Раздел для управления навыками и трат очков опыта.</p>
+                
+                    <ul>
+                        <li><strong>Структура навыков</strong>:
+                            <ul>
+                                <li class="no-li">Навыки сгруппированы по категориям: <em>Боевые</em>, <em>Социальные</em>, и др.</li>
+                                <li class="no-li">Для каждого навыка указаны:</li>
+                                <ul>
+                                    <li><strong>Родительская характеристика</strong> (например, <em>Скрытность → Ловкость</em> ).</li>
+                                    <li><strong>Ранг</strong> — от 0 до 5.</li>
+                                    <li><strong>Карьерный навык</strong> — отмечен галочкой (зависит от выбранной карьеры).</li>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li><strong>Управление опытом</strong>:
+                            <ul>
+                                <li><strong>Доступный опыт</strong> — тратится на улучшение характеристик (только при создании), навыков и талантов.</li>
+                                <li><strong>Итоговый опыт</strong> — сумма всех полученных очков опыта.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                
+                    <div class="wiki-note">
+                        На этапе создания персонажа распределите +1 ранг в <u>четырёх разных карьерных навыках</u> и получите дополнительные ранги от выбранного архетипа.
+                        <br>
+                        После этого вы можете приступать к трате очков опыта.
+                    </div>
+                
+                    <h3 class="section-title">1.3. Снаряжение</h3>
+                    <p>Инвентарь, оружие и броня. Здесь отслеживается нагрузка и функциональность предметов.</p>
+                
+                    <ul>
+                        <li><strong>Оружие</strong>:
+                            <ul>
+                                <li class="no-li">Заполните поля:</li>
+                                <ul>
+                                    <li><strong>Название</strong> (например, <em>Длинный меч</em> ).</li>
+                                    <li><strong>Навык</strong> (например, <em>Дальний бой</em> ).</li>
+                                    <li><strong>Урон</strong> (<em>твёрдое значение</em> или <em>твёрдое значение + характеристика</em> , если оружие позволяет).</li>
+                                    <li><strong>Критическое значение</strong> (минимальное количество преимуществ для нанесения критического удара).</li>
+                                    <li><strong>Дистанция</strong> (эффективное расстояние оружия, например, <em>Вплотную</em>, <em>Короткая</em>, <em>Средняя</em> ).</li>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li><strong>Оружие, броня и другая экипировка</strong>:
+                            <ul>
+                                <li class="no-li">Для каждого предмета укажите:</li>
+                                <ul>
+                                    <li><strong>Название</strong> (например, <em>Кольчуга</em> ).</li>
+                                    <li><strong>Нагрузка</strong> (например, 0, 1 или 2).</li>
+                                </ul>
+                                <li class="no-li">Для брони также укажите:</li>
+                                <ul>
+                                    <li><strong>Поглощение</strong> — снижает получаемый урон (например, <em>Поглощение: 3</em> ).</li>
+                                    <li><strong>Защита</strong> — повышает сложность попадания по вам (например, <em>Ближняя: +2, Дальняя: +1</em> ).</li>
+                                </ul>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="wiki-note">
+                        Если на вас надето несколько видов брони, вы можете получать преимущество только от одной на выбор.
+                    </div>
+                    <ul>
+                        <li><strong>Грузоподъёмность</strong>:
+                            <ul>
+                                <li class="no-li">Рассчитывается: <em>5 + Сила</em> .</li>
+                                <li class="no-li">Превышение нагрузки даёт штраф за каждую единицу сверх лимита.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Нагрузка</strong>:
+                            <ul>
+                                <li class="no-li">Суммарный вес всех переносимых вами предметов.</li>
+                                <li class="no-li">Надетые на вас предметы уменьшают значение своего объёма на 3 вплоть до 0 (например, кожаный доспех нагрузкой 2 → 0).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                
+                    <h3 class="section-title">1.4. Таланты</h3>
+                    <p>Специальные особенности, уникальные для вашего персонажа.</p>
+                
+                    <ul>
+                        <li><strong>Список талантов</strong>:
+                            <ul>
+                                <li class="no-li">Для каждого укажите:</li>
+                                <ul>
+                                    <li><strong>Название</strong> (например, <em>Закалённый</em> ).</li>
+                                    <li><strong>Активный талант</strong> (если требует активации, помечается галочкой).</li>
+                                    <li><strong>Описание</strong> (например, <em>Персонаж увеличивает порог ран на 2 за каждый ранг таланта.</em> ).</li>
+                                </ul>
+                                <li class="no-li">Стартовая особенность выбранного архетипа, если она есть, добавляется автоматически.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Пирамида талантов</strong>:
+                            <ul>
+                                <li class="no-li">Инструмент для отслеживания талантов таблицы прогрессии.</li>
+                                <li class="no-li"><strong>Уровни талантов</strong>: от 1 (базовые) до 5 (легендарные).</li>
+                                <li class="no-li"><strong>Правило прогрессии пирамиды</strong>: количество талантов каждого уровня должно быть <u>строго меньше</u>, чем предыдущего.</li>
+                                <li class="no-li"><strong>Цена получения таланта</strong>: Указана рядом с уровнем (например, <em>Уровень 2 — 10 опыта</em> ).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                
+                    <div class="wiki-note">
+                        Пример допустимой пирамиды:
+                        <br>
+                        <table>
+                            <tr>
+                                <th>Уровень</th>
+                                <th>Количество талантов</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>1</td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <h3 class="section-title">1.5. Биография</h3>
+                    <p>Раздел для глубокой проработки личности и истории персонажа.</p>
+                
+                    <ul>
+                        <li><strong>Описание</strong></li>
+                        <ul>
+                            <li class="no-li">Особенности внешнего вида вашего персонажа.</li>
+                        </ul>
+                        <li><strong>Мотивации</strong>:
+                            <ul>
+                                <li>Желание (например, <em>Слава</em> ).</li>
+                                <li>Страх (например, <em>Бедность</em> ).</li>
+                                <li>Достоинство (например, <em>Отвага</em> ).</li>
+                                <li>Недостаток (например, <em>Трусость</em> ).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Изображение</strong></li>
+                        <ul>
+                            <li class="no-li">Загрузите изображение через раздел <strong>Настройки</strong> (форматы: JPG, PNG, SVG и др.).</li>
+                        </ul>
+                    </ul>
+                
+                    <div class="wiki-note">
+                        Информация из этого раздела влияет на сложности проверок в социальных сценах.
+                    </div>
+                
+                    <h3 class="section-title">1.6. Заметки</h3>
+                    <p>Дополнительная информация о персонаже, способностях или игре.</p>
+                
+                    <h3 class="section-title">1.7. Дайс-роллер</h3>
+                    <p>Встроенный инструмент для бросков кубиков.</p>
+                
+                    <ul>
+                        <li><strong>Совершение броска</strong>:
+                            <ol>
+                                <li>Выберите <u>навык</u> → система добавит кости способности и мастерства.</li>
+                                <li>Укажите <u>сложность</u> → система добавит кости сложности.</li>
+                                <li>Вручную введите <u>кости бонуса/штрафа</u> (например, <em>1 кость штрафа за темноту</em> ).</li>
+                            </ol>
+                        </li>
+                        <li><strong>Результаты</strong>:
+                            <ul>
+                                <li><u>Успехи/провалы</u> — определяют, достигнута ли цель.</li>
+                                <li><u>Преимущества/осложнения</u> — добавляют дополнительные эффекты (например, <em>противник теряет оружие</em> ).</li>
+                                <li><u>Триумфы/крахи</u> — критические успехи или провалы.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Интеграция с Discord</strong>:
+                        <ul>
+                            <li class="no-li">Вставьте ссылку на вебхук в разделе <u>Настройки</u> → результаты бросков будут отправляться в чат.</li>
+                        </ul>
+                    </ul>
+                
+                    <div class="wiki-note">
+                        Вам также доступна возможность совершить бросок десятигранного или стогранного кубика, пользуйтесь!
+                    </div>
+                
+                    <h3 class="section-title">1.8. Настройки</h3>
+                    <p>Персонализация и управление данными.</p>
+                
+                    <ul>
+                        <li><strong>Сохранение/загрузка</strong></li>
+                        <ul>
+                            <li><u>Скачать лист</u> → сохраняет данные в формате JSON.</li>
+                            <li><u>Загрузить лист</u> → импортирует данные из JSON-файла.</li>
+                        </ul>
+                    </ul>
+                    <div class="wiki-note">
+                        Ручное редактирование JSON-файла может привести к ошибкам и не рекомендуется.
+                    </div>
+                    <ul>
+                        <li><strong>Безопасность</strong></li>
+                        <ul>
+                            <li><u>Редактирование</u> → разрешает редактирование полей (активируется галочкой).</li>
+                        </ul>
+                    </ul>
+                    <div class="wiki-note">
+                        Если вы не можете понять, почему у вас не получается ввести информацию в лист — обратите внимание на этот пункт!
+                    </div>
+                    <ul>
+                        <li><strong>Темы оформления</strong></li>
+                        <ul>
+                            <li class="no-li">Выберите из списка (например, светлая <u>Monochrome</u> или тёмная <u>Blueberry</u>).</li>
+                        </ul>
+                    </ul>
+                    <div class="wiki-note">
+                        Лист имеет множество разных тем — экспериментируйте!
+                    </div>
+                </div>
             </div>
+            <div class="document-section" id="settings">
+                <h3 class="section-title">Настройки</h3>
+                <h4 class="block-subtitle">Тема приложения</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Выбрать тему : </label>
+    					<select id="themeSelect">
+    					</select>
+    					<div class="themes-colortest-container" id="settings-colortest">
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+				        </div>
+				    </div>
+				</div>
+			</div>
         </div>
-    </body>
+    </div>
+</body>
 </html>

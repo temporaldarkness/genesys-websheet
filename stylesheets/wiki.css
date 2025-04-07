@@ -1,0 +1,31 @@
+.wiki-note {
+    border-left: 4px solid var(--clr-accent);
+    padding: 10px;
+    background-color: var(--clr-element-muted);
+    border-radius: 1px;
+}
+
+.section .section-title {
+    margin-bottom: 0px;
+}
+
+.section {
+    text-transform: none;
+}
+
+ul li {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+ul .no-li {
+    list-style-type: none;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+h1 {
+    margin: 0;
+}
