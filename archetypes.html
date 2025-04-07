@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генезис - Архетипы</title>
+    <link rel="stylesheet" href="./stylesheets/common.css">
+    <link rel="stylesheet" href="./stylesheets/settings.css">
+	<link rel="stylesheet" href="./stylesheets/wiki.css">
+    <link rel="stylesheet" href="./stylesheets/themes/Monochrome.css" data-thematic="mainTheme">
+    <script type="text/javascript" src="./scripts/navigation.js"></script>
+    <script type="text/javascript" src="./scripts/archetypePresets.js"></script>
+    <script type="text/javascript" src="./scripts/themes.js"></script>
+</head>
+<body>
+    <div class="windowContainer">
+        <nav class="sidebar">
+            <div class="nav-item outerlink" data-link=".">Лист персонажа</div>
+            <div class="nav-item outerlink" data-link="instruction.html">Инструкция</div>
+            <div class="nav-item outerlink" data-link="instruction.html">Создание персонажа</div>
+            <div class="nav-item link" id="nav-index">Архетипы</div>
+            <div class="nav-item outerlink" data-link="careers.html">Карьеры</div>
+            <div class="nav-item outerlink" data-link="skills.html">Навыки</div>
+            <div class="nav-item outerlink" data-link="talents.html">Таланты</div>
+            <div class="nav-item outerlink" data-link="equipment.html">Снаряжение</div>
+            <div class="nav-item outerlink" data-link="motivation.html">Мотивация</div>
+            <div class="nav-item link" id="nav-settings">Настройки</div>
+        </nav>
+        <div class="content">
+            <div class="document-section active" id="index">
+                <h3 class="section-title">Архетипы</h3>
+                <div class="section">
+                    <h3 class="section-title">Что такое архетип?</h3>
+                    <p>
+                        Архетип — это фундамент вашего персонажа, определяющий его врождённые способности, физические/ментальные особенности и место в игровом мире. 
+                        Это не «класс» в традиционном понимании, а скорее базовая концепция, которая:
+                    </p>
+                    <ul>
+                        <li>Задаёт стартовые характеристики.</li>
+                        <li>Влияет на уникальные способности.</li>
+                        <li>Отражает происхождение или природу персонажа (раса, социальная роль).</li>
+                    </ul>
+                    <div class="wiki-note">
+                        Архетип нельзя изменить после выбора — он становится частью истории персонажа.
+                    </div>
+                    
+                    <h3 class="section-title">Зачем нужен архетип?</h3>
+                    <ul>
+                        <li><strong>Баланс</strong>: 
+                        <br>
+                        Архетипы предотвращают создание имбовых персонажей, распределяя характеристики и способности равномерно.</li>
+                        <li><strong>Концепция</strong>: 
+                        <br>
+                        Архетипы помогают игрокам и ведущим «вписать» персонажа в сеттинг.</li>
+                        <li><strong>Уникальность</strong>: 
+                        <br>
+                        Архетипы дают доступ к особым умениям, которые нельзя получить иным путём.</li>
+                    </ul>
+                    
+                    <h3 class="section-title">Механика архетипов</h3>
+                    <ul>
+                        <li>
+                            <strong>Стартовые характеристики</strong>: 
+                            <br>
+                            Каждый архетип задаёт начальные значения для шести характеристик:
+                            <ul>
+                                <li>Сила (физическая мощь),</li>
+                                <li>Ловкость (скорость и точность),</li>
+                                <li>Интеллект (знания и логика),</li>
+                                <li>Смекалка (интуиция и восприятие),</li>
+                                <li>Воля (ментальная устойчивость),</li>
+                                <li>Харизма (общительность и влияние).</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Производные характеристики</strong>:
+                            <ul>
+                                <li>Порог ран = Значение архетипа + Сила</li>
+                                <li>Порог усталости = Значение архетипа + Воля</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Уникальные особенности</strong>: 
+                            <br>
+                            Каждый архетип свои дополнительные преимущества.
+                            <br>
+                            Некоторые дают персонажу бесплатный талант, бесплатные ранги в определённых навыках или уникальные способности.
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="section-title">Список архетипов</h3>
+                
+                <div class="section wiki-note">
+                    Представленный список напрямую привязан к доступным в листе архетипам и обновляется автоматически.
+                    Продвинутые игроки могут игнорировать его или даже создавать свои архетипы с позволения ведущего.
+                </div>
+                <div id="archetypes-container"></div>
+            </div>
+            
+            <div class="document-section" id="settings">
+                <h3 class="section-title">Настройки</h3>
+                <h4 class="block-subtitle">Тема приложения</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Выбрать тему : </label>
+    					<select id="themeSelect">
+    					</select>
+    					<div class="themes-colortest-container" id="settings-colortest">
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+        </div>
+    </div>
+</body>
+</html>
