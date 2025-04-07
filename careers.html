@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генезис - Руководство</title>
+    <link rel="stylesheet" href="./stylesheets/common.css">
+    <link rel="stylesheet" href="./stylesheets/settings.css">
+	<link rel="stylesheet" href="./stylesheets/wiki.css">
+    <link rel="stylesheet" href="./stylesheets/themes/Monochrome.css" data-thematic="mainTheme">
+    <script type="text/javascript" src="./scripts/navigation.js"></script>
+    <script type="text/javascript" src="./scripts/skills.js"></script>
+    <script type="text/javascript" src="./scripts/careerPresets.js"></script>
+    <script type="text/javascript" src="./scripts/themes.js"></script>
+</head>
+<body>
+    <div class="windowContainer">
+        <nav class="sidebar">
+            <div class="nav-item outerlink" data-link=".">Лист персонажа</div>
+            <div class="nav-item outerlink" data-link="instruction.html">Инструкция</div>
+            <div class="nav-item outerlink" data-link="instruction.html">Создание персонажа</div>
+            <div class="nav-item outerlink" data-link="archetypes.html">Архетипы</div>
+            <div class="nav-item link" id="nav-index">Карьеры</div>
+            <div class="nav-item outerlink" data-link="skills.html">Навыки</div>
+            <div class="nav-item outerlink" data-link="talents.html">Таланты</div>
+            <div class="nav-item outerlink" data-link="equipment.html">Снаряжение</div>
+            <div class="nav-item outerlink" data-link="motivation.html">Мотивация</div>
+            <div class="nav-item link" id="nav-settings">Настройки</div>
+        </nav>
+        <div class="content">
+            <div class="document-section active" id="index">
+                <h3 class="section-title">Карьеры</h3>
+                <div class="section">
+                    <h3 class="section-title">Что такое карьеры?</h3>
+                    <p>
+                        Карьера — это профессия, призвание или роль, которую ваш персонаж освоил до начала приключений.
+                        Она определяет:
+                    </p>
+                    <ul>
+                        <li>Какие навыки даются персонажу «по умолчанию».</li>
+                        <li>Как быстро он может развивать те или иные умения.</li>
+                        <li>Его место в группе (боец, лекарь, дипломат и т.д.).</li>
+                    </ul>
+                    <div class="wiki-note">
+                        Карьера не ограничивает персонажа в развитии, но делает одни навыки дешевле, а другие — дороже. Её нельзя изменить после выбора.
+                    </div>
+                    
+                    <h3 class="section-title">Зачем нужны карьеры?</h3>
+                    <ul>
+                        <li><strong>Баланс</strong>: 
+                        <br>
+                        Делают прокачку некарьерных навыков дороже, поощряя развивать «профильные» умения.</li>
+                        <li><strong>Концепция</strong>: 
+                        <br>
+                        Связывают персонажа с миром через его прошлое (например, «Бывший солдат» или «Ученик мага»).</li>
+                        <li><strong>Специализация</strong>: 
+                        <br>
+                        Помогают создать уникального персонажа с конкретными умениями (например, «Лучник» или «Алхимик»).</li>
+                    </ul>
+                    
+                    <h3 class="section-title">Механика карьер</h3>
+                    <ul>
+                        <li>
+                            <strong>Карьерные навыки</strong>: 
+                            <br>
+                            Каждая Карьера даёт 8 навыков, из которых вы выбираете 4 и получаете по 1 рангу в каждом бесплатно.
+                            <br>
+                            Остальные 4 навыка остаются карьерными, но без стартовых рангов.
+                        </li>
+                        <li>
+                            <strong>Стоимость тренировки</strong>:
+                            <ul>
+                                <li>Для карьерных навыков:</li>
+                                <ul>
+                                    <li class="no-li">Ранг 0 → 1: 5 очков опыта</li>
+                                    <li class="no-li">Ранг 1 → 2: 10 очков опыта</li>
+                                    <li class="no-li">Ранг 2 → 3: 15 очков опыта</li>
+                                    <li class="no-li">Ранг 3 → 4: 20 очков опыта</li>
+                                    <li class="no-li">Ранг 4 → 5: 25 очков опыта</li>
+                                </ul>
+                                <li>Для некарьерных навыков:</li>
+                                <ul>
+                                    <li class="no-li">Ранг 0 → 1: 10 очков опыта</li>
+                                    <li class="no-li">Ранг 1 → 2: 15 очков опыта</li>
+                                    <li class="no-li">Ранг 2 → 3: 20 очков опыта</li>
+                                    <li class="no-li">Ранг 3 → 4: 25 очков опыта</li>
+                                    <li class="no-li">Ранг 4 → 5: 30 очков опыта</li>
+                                </ul>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="wiki-note">
+                        <strong>Пример для карьеры «Охотник»</strong>: 
+                        <br>
+                        Карьерные навыки: <em>Бдительность, Внимание, Выживание, Ближний бой (Лёгкое), Грубая сила, Дальний бой, Скрытность, Природа</em>.
+                        <br>
+                        Из них в навыках <em>Дальний бой, Внимание, Скрытность, Выживание</em> игрок выбирает получить по 1 рангу. 
+                        <br>
+                        Это рисует персонажа как скрытного стрелка, предпочитающего засады и тактики.
+                    </div>
+                </div>
+                <h3 class="section-title">Список карьер</h3>
+                
+                <div class="section wiki-note">
+                    Представленный список напрямую привязан к доступным в листе карьерам и обновляется автоматически.
+                    Продвинутые игроки могут игнорировать его или даже создавать свои карьеры с позволения ведущего.
+                </div>
+                <div id="careers-container"></div>
+            </div>
+            
+            <div class="document-section" id="settings">
+                <h3 class="section-title">Настройки</h3>
+                <h4 class="block-subtitle">Тема приложения</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Выбрать тему : </label>
+    					<select id="themeSelect">
+    					</select>
+    					<div class="themes-colortest-container" id="settings-colortest">
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+        </div>
+    </div>
+</body>
+</html>
