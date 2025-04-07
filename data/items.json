@@ -9,12 +9,12 @@
       "crit": 4,
       "distance": 0,
       "weight": 5,
-      "price": 228,
+      "price": 220,
       "rarity": 3,
       "attributes": [ {"id": 14, "rank": 1}, {"id": 23, "rank": 3} ]
     },
     {
-      "id": 3,
+      "id": 2,
       "name": "Кастет",
       "hands": 1,
       "skill": 183,
@@ -34,7 +34,7 @@
       "distance": 0,
       "weight": 1,
       "rarity": 1,
-      "price": 23,
+      "price": 25,
       "crit": 3,
       "damage": "+1",
       "attributes": []
@@ -47,7 +47,7 @@
       "distance": 0,
       "weight": 2,
       "rarity": 1,
-      "price": 128,
+      "price": 130,
       "crit": 3,
       "damage": "+3",
       "attributes": [ {"id": 3, "rank": 1} ]
