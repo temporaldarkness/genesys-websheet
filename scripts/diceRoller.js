@@ -421,12 +421,12 @@ function dicerollerRollSimple(n)
     let side = cryptoRandom(1, n)[0];
     
     let result = createRollResultSimple();
-    result.querySelector('.diceroller-resultdice').firstElementChild.innerHTML += side;
+    result.querySelector('.diceroller-resultdice').firstElementChild.innerHTML += n;
     let resultSpan = document.createElement('div');
     resultSpan.className = 'text-icon icon-splitter';
     let span = document.createElement('span');
     span.ClassName = 'icon';
-    span.innerHTML = n;
+    span.innerHTML = side;
     resultSpan.appendChild(span);
     result.querySelector('[data-type="rollresults"]').appendChild(resultSpan);
     result.querySelector('.block-subtitle').innerHTML += `Бросок d${n} — ${side}`;
