@@ -5,6 +5,9 @@ availableSkills = [];
 function generateHTML(categories) 
 {
 	const container = document.querySelector('.skills-container');
+	if (!container)
+	    return;
+	
 	container.innerHTML = '';
 	
 	const sortedSkills = availableSkills.reduce((acc, skill) => {
@@ -87,43 +90,56 @@ function generateHTML(categories)
 	});
 }
 
-async function loadSkillsData() 
+function loadSkillsData() 
 {
-    try {
-        const response = await fetch('./data/skills.json');
-        if (!response.ok)
-            throw new Error(`Ошибка загрузки данных: ${response.status}`);
-		
-        const data = await response.json();
-        
-        data.characteristics.forEach(char => {
-            availableChars.push({
-                'name': char.name,
-                'shortcut': char.shortcut,
-                'uid': char.uid
-            });
-        });
-        
-        select = document.getElementById('dice-skillSelect');
-        data.skills.forEach(skill => {
-            if (skill.display)
+    return new Promise(async (resolve, reject) => {
+        try {
+            const response = await fetch('./data/skills.json');
+            if (!response.ok)
             {
-                let option = document.createElement('option');
-                option.value = skill.id;
-                option.innerHTML = skill.name;
-                
-                select.appendChild(option);
+                reject(new Error(`Ошибка загрузки данных: ${response.status}`));
+                return;
             }
-        });
-        
-        availableSkills = data.skills;
-        
-        generateHTML(data.categories);
-    } catch (error) {
-        console.error('Ошибка:', error);
-    }
+    		
+            const data = await response.json();
+            
+            data.characteristics.forEach(char => {
+                availableChars.push({
+                    'name': char.name,
+                    'shortcut': char.shortcut,
+                    'uid': char.uid
+                });
+            });
+            
+            const select = document.getElementById('dice-skillSelect');
+            if (select)
+            {
+                data.skills.forEach(skill => {
+                    if (skill.display)
+                    {
+                        let option = document.createElement('option');
+                        option.value = skill.id;
+                        option.innerHTML = skill.name;
+                        
+                        select.appendChild(option);
+                    }
+                });
+            }
+            
+            availableSkills = data.skills;
+            
+            resolve();
+            
+            generateHTML(data.categories);
+            
+            
+        } catch (error) {
+            reject(error);
+            console.error('Ошибка:', error);
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadSkillsData();
+    skillDataLoading = loadSkillsData();
 });

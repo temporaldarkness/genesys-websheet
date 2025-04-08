@@ -1,0 +1,591 @@
+{
+  "weapons": [
+    {
+      "id": 1,
+      "name": "Алебарда",
+      "skill": 202,
+      "hands": 2,
+      "damage": "+3",
+      "crit": 4,
+      "distance": 0,
+      "weight": 5,
+      "price": 220,
+      "rarity": 3,
+      "attributes": [ {"id": 14, "rank": 1}, {"id": 23, "rank": 3} ],
+      "display": true
+    },
+    {
+      "id": 2,
+      "name": "Кастет",
+      "hands": 1,
+      "skill": 203,
+      "distance": 0,
+      "weight": 1,
+      "rarity": 1,
+      "price": 40,
+      "crit": 4,
+      "damage": "+1",
+      "attributes": [ {"id": 3, "rank": 3} ],
+      "display": true
+    },
+    {
+      "id": 3,
+      "name": "Нож",
+      "hands": 1,
+      "skill": 201,
+      "distance": 0,
+      "weight": 1,
+      "rarity": 1,
+      "price": 25,
+      "crit": 3,
+      "damage": "+1",
+      "attributes": [],
+      "display": true
+    },
+    {
+      "id": 4,
+      "name": "Топор",
+      "hands": 1,
+      "skill": 201,
+      "distance": 0,
+      "weight": 2,
+      "rarity": 1,
+      "price": 130,
+      "crit": 3,
+      "damage": "+3",
+      "attributes": [ {"id": 3, "rank": 1} ],
+      "display": true
+    },
+    {
+      "id": 5,
+      "name": "Секира",
+      "hands": 2,
+      "skill": 202,
+      "distance": 0,
+      "weight": 4,
+      "rarity": 4,
+      "price": 280,
+      "crit": 3,
+      "damage": "+4",
+      "attributes": [
+        {"id":  3, "rank": 1},
+        {"id":  4, "rank": 3},
+        {"id": 23, "rank": 2}
+      ],
+      "display": true
+    },
+    {
+      "id": 6,
+      "name": "Копьё",
+      "hands": 1,
+      "skill": 201,
+      "distance": 0,
+      "weight": 2,
+      "rarity": 1,
+      "price": 90,
+      "crit": 4,
+      "damage": "+2",
+      "attributes": [ {"id": 14, "rank": 1}, {"id": 26, "rank": 1} ],
+      "display": true
+    },
+    {
+      "id": 7,
+      "name": "Булава",
+      "hands": 1,
+      "skill": 201,
+      "distance": 0,
+      "weight": 2,
+      "rarity": 1,
+      "price": 75,
+      "crit": 4,
+      "damage": "+3",
+      "attributes": [],
+      "display": true
+    },
+    {
+      "id": 8,
+      "name": "Меч",
+      "hands": 1,
+      "skill": 201,
+      "distance": 0,
+      "weight": 1,
+      "rarity": 2,
+      "price": 180,
+      "crit": 2,
+      "damage": "+3",
+      "attributes": [ {"id": 14, "rank": 1} ],
+      "display": true
+    },
+    {
+      "name": "Двуручный меч",
+      "id": 9,
+      "rarity": 4,
+      "price": 280,
+      "weight": 3,
+      "distance": 0,
+      "crit": 2,
+      "hands": 2,
+      "skill": 202,
+      "damage": "+4",
+      "attributes": [
+        {"id": 14, "rank": 1},
+        {"id": 23, "rank": 1},
+        {"id": 25, "rank": 3}
+      ],
+      "display": true
+    },
+    {
+      "id": 10,
+      "name": "Щит",
+      "hands": 1,
+      "skill": 201,
+      "distance": 0,
+      "weight": 2,
+      "rarity": 1,
+      "price": 80,
+      "crit": 6,
+      "damage": "+0",
+      "attributes": [
+        {"id": 11, "rank": 1},
+        {"id": 13, "rank": 0},
+        {"id": 14, "rank": 1},
+        {"id": 18, "rank": 1}
+      ],
+      "display": true
+    },
+    {
+      "id": 11,
+      "name": "Арбалет",
+      "hands": 2,
+      "skill": 204,
+      "distance": 2,
+      "weight": 3,
+      "rarity": 4,
+      "price": 600,
+      "crit": 2,
+      "damage": 7,
+      "attributes": [ {"id": 21, "rank": 1}, {"id": 23, "rank": 2} ],
+      "display": true
+    },
+    {
+      "id": 12,
+      "name": "Лук",
+      "hands": 2,
+      "skill": 204,
+      "distance": 2,
+      "weight": 2,
+      "rarity": 2,
+      "price": 450,
+      "crit": 3,
+      "damage": 8,
+      "attributes": [ {"id": 25, "rank": 2} ],
+      "display": true
+    },
+    {
+      "id": 11,
+      "name": "Длинный лук",
+      "hands": 2,
+      "skill": 204,
+      "distance": 3,
+      "weight": 3,
+      "rarity": 4,
+      "price": 255,
+      "crit": 3,
+      "damage": 7,
+      "attributes": [ {"id": 25, "rank": 3} ],
+      "display": true
+    },
+    {
+      "id": 12,
+      "name": "Праща",
+      "hands": 1,
+      "skill": 204,
+      "distance": 2,
+      "weight": 1,
+      "rarity": 1,
+      "price": 28,
+      "crit": 4,
+      "damage": 4,
+      "attributes": [ {"id": 11, "rank": 1}, {"id": 25, "rank": 3} ],
+      "display": true
+    }
+  ],
+  "armor": [
+    {
+      "id": 0,
+      "name": "Кожаный доспех",
+      "defense": 0,
+      "absorption": "+1",
+      "weight": 2,
+      "rarity": 3,
+      "price": 100,
+      "display": true
+    },
+    {
+      "id": 1,
+      "name": "Кольчуга",
+      "defense": 0,
+      "absorption": "+2",
+      "weight": 3,
+      "rarity": 4,
+      "price": 550,
+      "display": true,
+      "description": "Кольчуга зачастую гремит, поэтому ваш персонаж добавляет &#9670; к проверкам Скрытости, пока носит её."
+    },
+    {
+      "id": 2,
+      "name": "Латы",
+      "defense": 1,
+      "absorption": "+2",
+      "weight": 4,
+      "rarity": 6,
+      "price": 1250,
+      "display": true,
+      "description": "Латы тяжёлые и очень шумные. Ваш персонаж добавляет &#9670;&#9670; к проверкам Скрытости, пока носит их."
+    },
+    {
+      "id": 3,
+      "name": "Магические латы",
+      "defense": 2,
+      "absorption": "+2",
+      "weight": 3,
+      "rarity": 8,
+      "price": 2400,
+      "display": true
+    },
+    {
+      "id": 4,
+      "name": "Плотная мантия",
+      "defense": 1,
+      "absorption": "+0",
+      "weight": 1,
+      "rarity": 1,
+      "price": 50,
+      "display": true
+    }
+  ],
+  "items": [
+    {
+      "id": 0,
+      "name": "Воровские инструменты",
+      "weight": 1,
+      "rarity": 5,
+      "price": 75,
+      "description": "&emsp;Воровские инструменты позволяют вашему персонажу пытаться открыть любой засов или механический замок, даже сложный. <br>&emsp;Кроме того, при совершении проверки Жульничества для открывания засова или замка ваш персонаж автоматически добавляет к результату ⋀ .",
+      "display": true
+    },
+    {
+      "id": 1,
+      "name": "Зимняя одежда",
+      "weight": 4,
+      "rarity": 3,
+      "price": 100,
+      "description": "&emsp;При ношении зимней одежды ваш персонаж убирает &#9670;&#9670; из всех проверок Выживания и Стойкости, совершаемых из-за холодной погоды. <br>&emsp;Когда эта одежда надета на вас, её показатель нагрузки равен 1.",
+      "display": true
+    },
+    {
+      "id": 3,
+      "name": "Бездонный рюкзак",
+      "weight": 2,
+      "rarity": 8,
+      "price": 600,
+      "description": "&emsp;В бездонном рюкзаке можно переносить предметы с суммарной нагрузкой 12. <br>&emsp;Сам рюкзак всегда имеет показатель нагрузки 2, что бы в нём ни лежало.",
+      "display": true
+    },
+    {
+      "name": "Прекрасный плащ",
+      "weight": 1,
+      "id": 4,
+      "rarity": 4,
+      "price": 90,
+      "description": "&emsp;Пока ваш персонаж носит прекрасный плащ, он убирает &#9670; из всех совершаемых им проверок Лидерства, Обаяния, Обмана. <br>&emsp;Когда плащ на вас надет, его показатель нагрузки равен 0.",
+      "display": true
+    },
+    {
+      "id": 5,
+      "name": "Целебные травы",
+      "weight": 0,
+      "rarity": 6,
+      "price": 50,
+      "description": "&emsp;При совершении проверки Медицины ваш персонаж может использовать целебные травы, чтобы автоматически добавить к результату ✓⋀ . <br>&emsp;Для использования вы должны потратить целебные травы.",
+      "display": true
+    },
+    {
+      "id": 6,
+      "name": "Факел",
+      "weight": 1,
+      "rarity": 0,
+      "price": 1,
+      "description": "&emsp;Зажжённый факел предоставляет свет и убирает &#9670; , добавленную к проверкам из-за темноты (если важно, насколько исходит свет, то факел может осветить всё в пределах короткой дистанции).",
+      "display": true
+    },
+    {
+      "id": 7,
+      "name": "Верёвка",
+      "weight": 1,
+      "price": 5,
+      "rarity": 2,
+      "display": true
+    },
+    {
+      "name": "Рюкзак",
+      "id": 8,
+      "weight": 0,
+      "description": "&emsp;Нося рюкзак, персонаж увеличивает порог нагрузки на 4.",
+      "price": 50,
+      "rarity": 3,
+      "display": true
+    },
+    {
+      "id": 9,
+      "name": "Болеутоляющее",
+      "weight": 0,
+      "rarity": 2,
+      "price": 40,
+      "description": "&emsp;Для применения болеутоляющего на вашего персонажа или на персонажа вплотную с вами вы должны потратить один манёвр. При совершении манёвра болеутоляющее тратится, а персонаж немедленно восстанавливает 5 ран.<br>&emsp;Несмотря на то, что персонаж может использовать его несколько раз, его эффект постепенно снижается. Каждое последующее болеутоляющее исцеляет на одну рану меньше. Второе исцеляет 4 раны, третье — 3 и так далее. Применение шестого болеутоляющего за один день уже не даёт никакого эффекта.<br>&emsp;Через один день остаточный эффект проходит и персонаж снова может использовать болеутоляющее. (Это значит, что персонаж может принять до 5 болеутоляющих за день, каждый день).",
+      "display": true
+    },
+    {
+      "id": 10,
+      "name": "Полевая аптечка",
+      "weight": 2,
+      "price": 202,
+      "rarity": 4,
+      "description": "&emsp;Полевая аптечка позволяет персонажу совершать без штрафов проверки Медицины для лечения ран и критических травм, а также дают автоматический ⋀ к результатам проверки.",
+      "display": true
+    },
+    {
+      "id": 11,
+      "name": "Бурдюк",
+      "weight": 1,
+      "rarity": 0,
+      "price": 15,
+      "display": true
+    },
+    {
+      "weight": 1,
+      "rarity": 1,
+      "price": 30,
+      "name": "Дорожная фляга",
+      "id": 12,
+      "display": true
+    },
+    {
+      "id": 13,
+      "name": "Кандалы",
+      "weight": 2,
+      "rarity": 2,
+      "price": 85,
+      "display": true
+    },
+    {
+      "id": 14,
+      "name": "Походный котелок",
+      "weight": 2,
+      "rarity": 2,
+      "price": 60,
+      "display": true
+    },
+    {
+      "id": 15,
+      "name": "Масляная лампа",
+      "weight": 1,
+      "rarity": 1,
+      "price": 40,
+      "display": true
+    },
+    {
+      "id": 16,
+      "name": "Шахтёрский фонарь",
+      "weight": 2,
+      "rarity": 3,
+      "price": 120,
+      "display": true
+    },
+    {
+      "id": 17,
+      "name": "Складная палатка",
+      "weight": 4,
+      "rarity": 3,
+      "price": 190,
+      "display": true
+    },
+    {
+      "id": 18,
+      "name": "Спальник",
+      "weight": 2,
+      "rarity": 2,
+      "price": 90,
+      "display": true
+    },
+    {
+      "id": 19,
+      "name": "Капкан",
+      "weight": 3,
+      "rarity": 2,
+      "price": 90,
+      "display": true
+    },
+    {
+      "id": 20,
+      "name": "Дорожный компас",
+      "weight": 0,
+      "rarity": 4,
+      "price": 150,
+      "display": true
+    },
+    {
+      "name": "Кузнечный молот",
+      "id": 21,
+      "weight": 3,
+      "rarity": 2,
+      "price": 110,
+      "display": true
+    },
+    {
+      "name": "Лом",
+      "id": 22,
+      "weight": 2,
+      "rarity": 1,
+      "price": 40,
+      "display": true
+    },
+    {
+      "name": "Походный рацион",
+      "id": 23,
+      "weight": 3,
+      "rarity": 1,
+      "price": 20,
+      "display": true
+    },
+    {
+      "name": "Геральдический пергамент",
+      "id": 24,
+      "weight": 0,
+      "rarity": 3,
+      "price": 100,
+      "display": true
+    },
+    {
+      "name": "Дорожный флакон с чернилами",
+      "id": 25,
+      "weight": 0,
+      "rarity": 2,
+      "price": 55,
+      "display": true
+    },
+    {
+      "name": "Набор для шитья",
+      "id": 26,
+      "weight": 2,
+      "rarity": 2,
+      "price": 65,
+      "display": true
+    },
+    {
+      "name": "Игральные кости",
+      "id": 27,
+      "weight": 0,
+      "rarity": 1,
+      "price": 15,
+      "display": true
+    },
+    {
+      "name": "Солонина",
+      "id": 28,
+      "weight": 3,
+      "rarity": 1,
+      "price": 25,
+      "display": true
+    },
+    {
+      "name": "Эль",
+      "id": 29,
+      "weight": 1,
+      "rarity": 2,
+      "price": 20,
+      "display": true
+    },
+    {
+      "name": "Свеча",
+      "id": 30,
+      "weight": 0,
+      "rarity": 0,
+      "price": 2,
+      "display": true
+    },
+    {
+      "name": "Лопата",
+      "id": 31,
+      "weight": 3,
+      "rarity": 1,
+      "price": 50,
+      "display": true
+    },
+    {
+      "name": "Простая одежда",
+      "id": 32,
+      "weight": 2,
+      "rarity": 0,
+      "price": 25,
+      "display": true
+    },
+    {
+      "name": "Плащ путника",
+      "id": 33,
+      "weight": 1,
+      "rarity": 1,
+      "price": 40,
+      "display": true
+    },
+    {
+      "name": "Книга",
+      "id": 34,
+      "weight": 3,
+      "rarity": 1,
+      "price": 120,
+      "display": true
+    },
+    {
+      "name": "Пустой журнал",
+      "id": 35,
+      "weight": 1,
+      "rarity": 1,
+      "price": 30,
+      "display": true
+    },
+    {
+      "name": "Кисет",
+      "id": 36,
+      "weight": 0,
+      "rarity": 1,
+      "price": 5,
+      "display": true
+    },
+    {
+      "id": 37,
+      "name": "Холщовый мешок",
+      "weight": 1,
+      "rarity": 0,
+      "price": 10,
+      "description": "&emsp;Вмещает предметы суммарной нагрузкой до 5 единиц.",
+      "display": true
+    },
+    {
+      "id": 38,
+      "name": "Дорожные сухари",
+      "weight": 1,
+      "rarity": 0,
+      "price": 8,
+      "display": true
+    },
+    {
+      "id": 39,
+      "name": "Зольное мыло",
+      "weight": 0,
+      "rarity": 1,
+      "price": 12,
+      "display": true
+    }
+  ]
+}

@@ -23,8 +23,6 @@ function generateCareerHTML()
     	    
     	    section.innerHTML = `
     	        <h3 class="section-title">${preset.name}</h3>
-                <div class="block-subtitle">Описание</div>
-                <div class="section">${infoPreset.desc}</div>
                 <div class="block-subtitle">Карьерные навыки</div>
                 <div class="section">
                     <ul>${list}</ul>
@@ -32,6 +30,9 @@ function generateCareerHTML()
                         Перед распределением очков опыта ${preset.name} может выбрать четыре разных карьерных навыка и повысить каждый из них на 1 ранг.
                     </div>
                 </div>
+                <div class="block-subtitle">Описание</div>
+                <div class="section">${infoPreset.desc}</div>
+                
     	    `;
     	    container.appendChild(section);
         }

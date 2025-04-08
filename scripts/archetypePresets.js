@@ -2,7 +2,7 @@ archetypePresets = {};
 archetypeInfo = {};
 archetypeIds = [];
 
-function generateArchetypeHTML(categories) 
+function generateArchetypeHTML() 
 {
 	const container = document.getElementById('archetypes-container');
 	container.innerHTML = '';
@@ -17,12 +17,7 @@ function generateArchetypeHTML(categories)
     	    
     	    section.innerHTML = `
     	        <h3 class="section-title">${preset.name}</h3>
-    	        
-    	        <div class="block-subtitle">Описание</div>
-                <div class="section">
-                    ${infoPreset.desc}
-                </div>
-                <table>
+                <table class="stylized">
                     <tr>
                         <th>Сила</th>
                         <th>Ловкость</th>
@@ -51,6 +46,10 @@ function generateArchetypeHTML(categories)
                     <div class="field bottomline">
                         <label>Стартовый опыт : <u>${preset.experience}</u></label>
                     </div>
+                </div>
+                <div class="block-subtitle">Описание</div>
+                <div class="section">
+                    ${infoPreset.desc}
                 </div>
                 <div class="block-subtitle">Стартовые навыки</div>
                 <div class="section">

@@ -9,8 +9,13 @@
     margin-bottom: 0px;
 }
 
-.section {
+.section, .case-sensitive {
     text-transform: none;
+}
+
+body .h3-aligned {
+    margin-bottom: 0;
+    vertical-align: text-bottom;
 }
 
 ul li {
@@ -28,4 +33,44 @@ p {
 
 h1 {
     margin: 0;
+}
+
+table.stylized {
+    background: var(--clr-background);
+    color: var(--clr-text);
+    margin: 20px auto;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table.stylized.autolayout {
+    table-layout: auto;
+}
+
+.stylized th, .stylized td {
+    background: var(--clr-element-bg);
+    padding: 12px;
+}
+
+th, td {
+    padding: 5px;
+}
+
+th.centered, td.centered {
+    text-align: center;
+}
+
+.stylized tr:first-child {
+    color: var(--clr-subtitle);
+}
+
+.wiki-spawnablegrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: auto;
+}
+
+.wiki-spawnablegrid .section {
+    height: auto;
 }

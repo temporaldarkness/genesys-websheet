@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генезис - Руководство</title>
+    <link rel="stylesheet" href="./stylesheets/common.css">
+    <link rel="stylesheet" href="./stylesheets/settings.css">
+	<link rel="stylesheet" href="./stylesheets/wiki.css">
+    <link rel="stylesheet" href="./stylesheets/themes/Monochrome.css" data-thematic="mainTheme">
+    <script type="text/javascript" src="./scripts/navigation.js"></script>
+    <script type="text/javascript" src="./scripts/skills.js"></script>
+    <script type="text/javascript" src="./scripts/equipmentPresets.js"></script>
+    <script type="text/javascript" src="./scripts/themes.js"></script>
+</head>
+<body>
+    <div class="windowContainer">
+        <nav class="sidebar">
+            <div class="nav-item outerlink" data-link=".">Лист персонажа</div>
+            <div class="nav-item outerlink" data-link="instruction.html">Инструкция</div>
+            <div class="nav-item outerlink" data-link="instruction.html">Создание персонажа</div>
+            <div class="nav-item outerlink" data-link="archetypes.html">Архетипы</div>
+            <div class="nav-item outerlink" data-link="careers.html">Карьеры</div>
+            <div class="nav-item outerlink" data-link="skills.html">Навыки</div>
+            <div class="nav-item outerlink" data-link="talents.html">Таланты</div>
+            <div class="nav-item link" id="nav-index">Снаряжение</div>
+            <div class="nav-item outerlink" data-link="motivation.html">Мотивация</div>
+            <div class="nav-item link" id="nav-settings">Настройки</div>
+        </nav>
+        <div class="content">
+            <div class="document-section active" id="index">
+                <h3 class="section-title">Снаряжение</h3>
+                <div class="section">
+                    <h3 class="section-title">Что такое снаряжение?</h3>
+                    <p>
+                        Снаряжение — это предметы, инструменты и экипировка, которые персонаж использует для выживания, боя и взаимодействия с миром. 
+                        Оно влияет на:
+                    </p>
+                    <ul>
+                        <li>Боевую эффективность (урон, защиту).</li>
+                        <li>Проверки навыков (например, воровские инструменты для взлома).</li>
+                        <li>Сюжетные возможности (ключи, карты, магические артефакты).</li>
+                    </ul>
+                    <div class="wiki-note">
+                        Многие предметы экипировки имеют исключительно повествовательное значение.
+                        <br>
+                        Набор инструментов может не иметь механического бонуса, но без него вы не сможете начать починку сложного устройства!
+                    </div>
+                    
+                    <h3 class="section-title">Какая бывает экипировка?</h3>
+                    <ul>
+                        <li>
+                            <strong>Оружие</strong>: 
+                            <br>
+                            Используется в бою. Определяет тип, количество, объем урона и сложность атак. Имеет дополнительные особенности.
+                            <br>
+                            <em>Примеры:</em>
+                            <ul>
+                                <li><strong>Кинжал</strong> — ближний бой вплотную, небольшой рубящий урон, зависит от силы, легко скрыть (маленькое одноручное оружие).</li>
+                                <li><strong>Длинный лук</strong> — дальний бой на средней дистанции, колющий урон фиксированной величины, требуется высокая ловкость и запас стрел (сложное двуручное оружие).</li>
+                                <li><strong>Меч</strong> — ближний бой вплотную, рубящий урон, зависит от силы, повышает сложность попадания по вам в ближнем бою (одноручное оборонительное оружие).</li>
+                            </ul>
+                            Особенности:
+                            <ul>
+                                <li>Может требовать проверок разных навыков.</li>
+                                <li>Может иметь различные свойства.</li>
+                                <li>Урон может зависеть от рейтинга характеристики.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Броня</strong>: 
+                            <br>
+                            Защищает от ран. Даёт защиту и поглощение.
+                            <br>
+                            <em>Примеры:</em>
+                            <ul>
+                                <li><strong>Латы</strong> — +1 к защите, +2 к поглощению (поглощает значительную часть урона, пластины могут отвести удар целиком).</li>
+                                <li><strong>Кольчуга</strong> — +2 к поглощению (сдерживает попадание, но не отводит удар).</li>
+                                <li><strong>Плотная мантия</strong> — +1 к защите (ткань опутывает оружие и осложняет попадание, но не рассеивает удар).</li>
+                                </ul>
+                            Особенности:
+                            <ul>
+                                <li>Может иметь различные свойства.</li>
+                                <li>Защита и поглощение могут варьироваться от брони к броне.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Инструменты и расходники</strong>: 
+                            <br>
+                            Помогают в решении большого класса специализированных задач.
+                            <br>
+                            <em>Примеры:</em>
+                            <ul>
+                                <li><strong>Полевая аптечка</strong> — облегчают проверки Медицины для лечения.</li>
+                                <li><strong>Зимняя одежда</strong> — облегчает выживание в условиях холода.</li>
+                                <li><strong>Факел</strong> — освещает территорию, может поджечь врага.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Прочее</strong>:
+                            <ul>
+                                <li><strong>Деньги</strong>: Стартовый капитал — <u>500 единиц</u> (монеты, слитки, драгоценности).</li>
+                                <li><strong>Карманные деньги</strong>: После покупки снаряжения <u>бросьте стогранный кубик 1d100</u> — это дополнительные средства, которые нельзя потратить сразу.</li>
+                                <li><strong>Артефакты</strong>: Редкие магические предметы. <u>Их можно найти только в приключениях</u>.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <h3 class="section-title">Механика снаряжения</h3>
+                    <ul>
+                        <li>
+                            <strong>Защита и Поглощение</strong>: 
+                            <br>
+                            <strong>Защита</strong> снижает шанс попадания по персонажу. Проверки попадания по вам получают дополнительные кости штрафа за каждый пункт защиты соответствующего типа (ближняя защита, дальняя защита).
+                            <br>
+                            <em>Пример: Персонаж в латах (Защита +1 Поглощение +2) сражается с мечником. Все проверки попадания по нему будут получать <u>дополнительную кость штрафа</u>.</em>
+                            <br>
+                            <strong>Поглощение</strong> уменьшает получаемый урон от попадания.
+                            <br>
+                            <em>Пример: Персонаж в латах (Защита +1 Поглощение +2) сражается с мечником и получает удар на 5 ран. Итоговый урон: 5 – 2 = <u>3 раны</u>.</em>
+                        </li>
+                        <li>
+                            <strong>Использование навыков</strong>:
+                            <br>
+                            Некоторые предметы могут использоваться только через проверки навыков. <em>(Аптечка → Медицина, Лук → Дальний бой)</em>
+                        </li>
+                        <li>
+                            <strong>Ремонт и износ</strong>:
+                            <br>
+                            Снаряжение может ломаться. После критического провала проверки или из-за других особых свойств ведущий может назначить поломку снаряжения.
+                            <br>
+                            Степень повреждения может быть <u>слабой, средней или сильной</u>. Это отражает штрафы и сложность ремонта.
+                        </li>
+                    </ul>
+                    <div class="wiki-note">
+                        <strong>Ремонт снаряжения</strong>: 
+                        <table>
+                            <tr>
+                                <th>Степень повреждения</th>
+                                <th>Сложность ремонта</th>
+                                <th>Цена ремонта</th>
+                                <th>Штраф при использовании</th>
+                            </tr>
+                            <tr>
+                                <td>Слабая</td>
+                                <td>Лёгкая</td>
+                                <td>25% базовой стоимости</td>
+                                <td>Добавьте 1 кость штрафа</td>
+                            </tr>
+                            <tr>
+                                <td>Средняя</td>
+                                <td>Обычная</td>
+                                <td>50% базовой стоимости</td>
+                                <td>Увеличьте сложность на 1</td>
+                            </tr>
+                            <tr>
+                                <td>Сильная</td>
+                                <td>Сложная</td>
+                                <td>100% базовой стоимости</td>
+                                <td>Использование невозможно</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <h3 class="section-title">Список свойств снаряжения</h3>
+                
+                <div class="section wiki-note">
+                    Разное снаряжение может иметь разные особые свойства.
+                    Представленые список исчерпывающе описывает самые частые модификации, встречающихся среди различной экипировки.
+                </div>
+                <div id="traits-container" class="wiki-spawnablegrid"></div>
+                
+                <h3 class="section-title">Список снаряжения</h3>
+                
+                <div class="section wiki-note">
+                    Ниже приведён список снаряжения, возможный для сеттинга в жанре низкого фэнтези.
+                    Продвинутые игроки могут игнорировать его или даже создавать своё снаряжение с позволения ведущего.
+                </div>
+                <table id="weapons-container" class="stylized autolayout">
+                    <tr>
+                        <th>Название оружия</th>
+                        <th>Вес</th>
+                        <th>Цена</th>
+                        <th>Редкость</th>
+                        <th>Навык</th>
+                        <th>Урон</th>
+                        <th>Крит</th>
+                        <th>Дистанция</th>
+                        <th>Особенности</th>
+                    </tr>
+                </table>
+                <table id="armor-container" class="stylized autolayout">
+                    <tr>
+                        <th>Название брони</th>
+                        <th>Вес</th>
+                        <th>Цена</th>
+                        <th>Редкость</th>
+                        <th>Поглощение</th>
+                        <th>Защита</th>
+                        <th>Особенности</th>
+                    </tr>
+                </table>
+                <table id="equipment-container" class="stylized autolayout">
+                    <tr>
+                        <th>Название предмета</th>
+                        <th>Вес</th>
+                        <th>Цена</th>
+                        <th>Редкость</th>
+                        <th>Особенности</th>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="document-section" id="settings">
+                <h3 class="section-title">Настройки</h3>
+                <h4 class="block-subtitle">Тема приложения</h4>
+				<div class="section">
+				    <div class="field">
+				        <label>Выбрать тему : </label>
+    					<select id="themeSelect">
+    					</select>
+    					<div class="themes-colortest-container" id="settings-colortest">
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+    				        <div class="themes-colortest"></div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+        </div>
+    </div>
+</body>
+</html>
