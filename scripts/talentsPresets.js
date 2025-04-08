@@ -14,7 +14,7 @@ function generateTalentsHTML()
             tier = document.createElement('div');
             tier.classList.add('wiki-spawnablegrid');
             title = document.createElement('h4');
-            title.classList.add('block-subtitle');
+            title.classList.add('block-title');
             title.innerHTML = `Уровень ${tierId+1}`;
             tiers[tierId] = tier;
             container.appendChild(title);
@@ -24,7 +24,7 @@ function generateTalentsHTML()
 	    section = document.createElement('div');
 	    section.classList.add('section');
 	    section.classList.add('data-segment');
-	    section.innerHTML = `<span style="display:flex;"><strong style="margin-right:auto;">${preset.name}${preset.ranked ? ', Ранговый' : ''}</strong><em>${preset.active ?? 'Пассивный'}</em></span><span>${preset.description}</span>`;
+	    section.innerHTML = `<span style="display:flex;" class="block-subtitle"><strong style="margin-right:auto;">${preset.name}${preset.ranked ? ', Ранговый' : ''}</strong><em>${preset.active ?? 'Пассивный'}</em></span><span>${preset.description}</span>`;
 	   
 	   tier.appendChild(section);
 	});
