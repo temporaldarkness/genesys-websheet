@@ -56,7 +56,7 @@ th, td {
     padding: 5px;
 }
 
-th.centered, td.centered {
+.centered {
     text-align: center;
 }
 
@@ -69,6 +69,10 @@ th.centered, td.centered {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 20px;
     row-gap: auto;
+}
+
+.wiki-spawnablegrid.five-grid {
+    grid-template-columns:repeat(5, 1fr);
 }
 
 .wiki-spawnablegrid .section {
