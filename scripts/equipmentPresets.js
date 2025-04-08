@@ -48,14 +48,16 @@ function generateWeaponsHTML()
     	    attributes = preset.attributes
                 .map(attr => `${traitPresets[parseInt(attr.id)].name} ${attr.rank}`)
                 .join(', <br>');
+            
+            let skill = availableSkills.find(item => item.id == preset.skill);
     	    
     	    section.innerHTML = `
     	        <td>${preset.name}</td>
                 <td class="centered">${preset.weight}</td>
                 <td class="centered">${preset.price}</td>
                 <td class="centered">${preset.rarity}</td>
-                <td>${availableSkills.find(item => item.id == preset.skill).name}</td>
-                <td>${preset.damage}</td>
+                <td>${skill.name}</td>
+                <td class="centered">${preset.damage[0] == '+' ? availableChars[skill.attribute].name : ''} ${preset.damage}</td>
                 <td class="centered">${preset.crit}</td>
                 <td>${distanceMeasures[preset.distance]}</td>
                 <td>${attributes}</td>
