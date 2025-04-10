@@ -2,7 +2,9 @@ availableChars = [];
 
 availableSkills = [];
 
-function generateHTML(categories) 
+availableCategories = [];
+
+function generateHTML() 
 {
 	const container = document.querySelector('.skills-container');
 	if (!container)
@@ -31,7 +33,7 @@ function generateHTML(categories)
 		header = document.createElement('div');
 		header.classList.add('skill-header', 'bottomline');
 		header.innerHTML = `
-			<span>${categories[categoryId]}</span>
+			<span>${availableCategories[categoryId].name}</span>
 			<span>Карьерный?</span>
 			<span>Ранг</span>
 		`;
@@ -127,10 +129,11 @@ function loadSkillsData()
             }
             
             availableSkills = data.skills;
+            availableCategories = data.categories;
             
             resolve();
             
-            generateHTML(data.categories);
+            generateHTML();
             
             
         } catch (error) {

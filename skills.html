@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Генезис - Руководство</title>
+    <title>Генезис - Навыки</title>
     <link rel="stylesheet" href="./stylesheets/common.css">
     <link rel="stylesheet" href="./stylesheets/settings.css">
 	<link rel="stylesheet" href="./stylesheets/wiki.css">
     <link rel="stylesheet" href="./stylesheets/themes/Monochrome.css" data-thematic="mainTheme">
     <script type="text/javascript" src="./scripts/navigation.js"></script>
+    <script type="text/javascript" src="./scripts/skillsPresets.js"></script>
     <script type="text/javascript" src="./scripts/themes.js"></script>
 </head>
 <body>
@@ -27,9 +28,40 @@
         </nav>
         <div class="content">
             <div class="document-section active" id="index">
-                <h3 class="section-title">Инструкция</h3>
+                <h3 class="section-title">Карьеры</h3>
                 <div class="section">
+                    <h3 class="section-title">Что такое навыки?</h3>
+                    <p>
+                        Навыки — это практические умения, которые персонаж приобретает через обучение, опыт или природные способности.
+                        Они определяют, насколько эффективно он выполняет действия: от удара мечом до убеждения королей.
+                    </p>
+                    <div class="wiki-note">
+                        Чем выше ранг навыка, тем больше шансов на успех и критические эффекты.
+                        <br>
+                        При совершении проверки навыка большее из двух чисел (рейтинг характеристики, ранг навыка) определяет количество костей способности и мастерства. Меньшее из двух чисел определяет, какое количество костей из них будут костями мастерства.
+                        <em>Пример: Персонаж с Ловкостью 3 и Скрытностью 2 получает одну кость способности и две кости мастерства при проверке Скрытности.</em>
+                    </div>
+                    
+                    <h3 class="section-title">Какие бывают навыки?</h3>
+                    <ul>
+                        <li><strong>Боевые навыки</strong> – для физических столкновений.</li>
+                        <li><strong>Социальные навыки</strong> – для взаимодействия с персонажами.</li>
+                        <li><strong>Общие навыки</strong> – для действий вне боя.</li>
+                        <li><strong>Навыки знаний</strong> – для доступа к информации.</li>
+                        <li><strong>Магические навыки</strong> – для изменения реальности.</li>
+                    </ul>
+                        
+                    <div class="wiki-note">
+                        В зависимости от выбранной карьеры, навыки могут быть карьерными и некарьерными. Это влияет на стоимость повышения ранга навыка.
+                    </div>
                 </div>
+                <h3 class="section-title">Список навыков</h3>
+                
+                <div class="section wiki-note">
+                    Представленный список напрямую привязан к доступным в листе навыкам и обновляется автоматически.
+                    Этот список не является исчерпывающим. В зависимости от игровых миров, список доступных навыков может меняться.
+                </div>
+                <div id="skills-container"></div>
             </div>
             
             <div class="document-section" id="settings">
