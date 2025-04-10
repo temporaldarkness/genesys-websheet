@@ -331,4 +331,5 @@ body .file-name {
     font-size: 20px;
     margin-left: 5px;
     display: flex;
+    line-height: 1.2;
 }
