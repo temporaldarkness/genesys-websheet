@@ -418,7 +418,7 @@ function dicerollerRoll()
 
 function dicerollerRollSimple(n)
 {
-    let side = cryptoRandom(1, n)[0];
+    let side = cryptoRandom(1, n, 1)[0];
     
     let result = createRollResultSimple();
     result.querySelector('.diceroller-resultdice').firstElementChild.innerHTML += n;
