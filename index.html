@@ -29,6 +29,14 @@
 	<script type="text/javascript" src="./scripts/diceRoller.js"></script>
 	<script type="text/javascript" src="./scripts/themes.js"></script>
 	<script type="text/javascript" src="./scripts/editMode.js"></script>
+	<script type="text/javascript">
+		window.addEventListener('beforeunload', function (e) {
+			e.preventDefault();
+			e.returnValue = '';
+			
+			return '';
+		});
+	</script>
 </head>
 <body>
 	<div class="windowContainer">
