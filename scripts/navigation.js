@@ -10,10 +10,14 @@ function displaySection(sectionId)
 	document.getElementById(sectionId).classList.add('active');
 }
 
-function openLink(url)
+function openLink(url, inNewWindow = false)
 {
-    const newWindow = window.open(url, '_blank');
-    if (newWindow) newWindow.focus();
+	if (inNewWindow) {
+		const newWindow = window.open(url, '_blank');
+		if (newWindow) newWindow.focus();
+	} else {
+		window.location.href = url;
+	}
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -25,7 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	document.querySelectorAll('.nav-item.outerlink').forEach(item => {
 		item.addEventListener('click', function(){
-		    openLink(this.dataset.link);
+			const inNewWindow = this.classList.contains('newwindow');
+			openLink(this.dataset.link, inNewWindow);
 		});
 	});
 	
