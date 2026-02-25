@@ -1,5 +1,11 @@
 [
   {
+    "name": "Магическое Фэнтези",
+    "id": "Fantasy",
+    "display": true,
+    "folder": "fantasy"
+  },
+  {
     "name": "Разрушенная Аркадия",
     "id": "Broken Arcadia",
     "display": true,
