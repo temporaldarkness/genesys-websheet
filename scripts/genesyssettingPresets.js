@@ -25,7 +25,10 @@ async function retrieveGenesyssettingPresets()
 	} catch (error) {
 		console.error('Ошибка:', error);
 	}
-	select = document.getElementById('genesyssettingSelect');
+	if (!genesyssettingPresets[genesyssettingSelected])
+		genesyssettingSelected = 'Fantasy';
+	
+	const select = document.getElementById('genesyssettingSelect');
 	if (select)
 	{
 		genesyssettingIds.forEach(presetId => {
@@ -40,8 +43,6 @@ async function retrieveGenesyssettingPresets()
 				select.appendChild(option);
 			}
 		});
-		if (!genesyssettingPresets[genesyssettingSelected])
-			genesyssettingSelected = 'Fantasy';
 		
 		select.value = genesyssettingSelected;
 		
