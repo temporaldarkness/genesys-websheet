@@ -1,7 +1,8 @@
 [
   {
-    "id": 0,
     "name": "Разрушенная Аркадия",
-    "display": true
+    "id": "Broken Arcadia",
+    "display": true,
+    "folder": "arcadia"
   }
 ]
