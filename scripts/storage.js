@@ -266,6 +266,12 @@ function collectDiceRoller()
 
 function loadData(data)
 {
+	if (data.designation.version != appVersion) {
+		const warning = confirm(`Загружаемый лист персонажа был создан в версии приложения ${data.designation.version}. Текущая версия листа: ${appVersion}. Продолжить?`)
+		if (!warning)
+			return;
+	}
+	
 	document.getElementById('downloadinput-name').innerHTML = `${sanitize(data['index'].charname) || 'data'}.json`;
 	
 	const genesyssettingSelect = document.getElementById('genesyssettingSelect');
