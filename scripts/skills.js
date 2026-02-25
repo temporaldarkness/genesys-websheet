@@ -26,11 +26,11 @@ function generateHTML()
 	Object.entries(sortedSkills).forEach(([categoryId, skills]) => {
 	    if (skills.length === 0)
 	        return;
-	    category = document.createElement('div');
+	    let category = document.createElement('div');
 		category.classList.add('skill-category');
 		category.dataset.categoryId = categoryId;
 		
-		header = document.createElement('div');
+		let header = document.createElement('div');
 		header.classList.add('skill-header', 'bottomline');
 		header.innerHTML = `
 			<span>${availableCategories[categoryId].name}</span>
@@ -39,11 +39,11 @@ function generateHTML()
 		`;
 		category.appendChild(header);
 		
-		grid = document.createElement('div');
+		let grid = document.createElement('div');
 		grid.classList.add('skills-grid');
 		
     	skills.forEach(skill => {
-    	    item = document.createElement('div');
+    	    let item = document.createElement('div');
 			item.classList.add('skill-item');
 		    item.dataset.skillId = skill.id;
 			item.innerHTML = `
@@ -51,7 +51,7 @@ function generateHTML()
 				<input type="checkbox">
 			`;
 			
-			selector = document.createElement('div');
+			let selector = document.createElement('div');
 			selector.classList.add('rank-selector');
 			selector.dataset.rank = '0';
 			selector.innerHTML = `
@@ -70,7 +70,7 @@ function generateHTML()
     		        return;
 			    const dot = e.target.closest('.rank-dot');
 				if (!dot) return;
-				currentRank = parseInt(dot.dataset.value) + 1;
+				let currentRank = parseInt(dot.dataset.value) + 1;
 				if (parseInt(this.dataset.rank) === currentRank)
 					currentRank = 0;
 				
@@ -92,11 +92,11 @@ function generateHTML()
 	});
 }
 
-function loadSkillsData() 
+function loadSkillsData(folder) 
 {
-    return new Promise(async (resolve, reject) => {
-        try {
-            const response = await fetch('./data/skills.json');
+	return new Promise(async (resolve, reject) => {
+		try {
+			const response = await fetch(`./data/${folder}/skills.json`);
             if (!response.ok)
             {
                 reject(new Error(`Ошибка загрузки данных: ${response.status}`));
@@ -104,6 +104,7 @@ function loadSkillsData()
             }
     		
             const data = await response.json();
+			availableChars = [];
             
             data.characteristics.forEach(char => {
                 availableChars.push({
@@ -116,7 +117,8 @@ function loadSkillsData()
             const select = document.getElementById('dice-skillSelect');
             if (select)
             {
-                data.skills.forEach(skill => {
+                select.innerHTML = '<option value="-1">- - Отсутствует - -</option>';
+				data.skills.forEach(skill => {
                     if (skill.display)
                     {
                         let option = document.createElement('option');
@@ -143,6 +145,6 @@ function loadSkillsData()
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    skillDataLoading = loadSkillsData();
+document.addEventListener('settingLoaded', (e) => {
+    skillDataLoading = loadSkillsData(e.detail.folder);
 });

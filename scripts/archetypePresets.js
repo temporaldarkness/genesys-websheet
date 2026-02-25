@@ -68,14 +68,18 @@ function generateArchetypeHTML()
 	});
 }
 
-async function retrieveArchetypePresets() 
+async function retrieveArchetypePresets(folder) 
 {
     try {
-        const response = await fetch('./data/archetypes.json');
+        const folder = genesyssettingPresets[genesyssettingSelected].folder;
+		
+		const response = await fetch(`./data/${folder}/archetypes.json`);
         if (!response.ok)
             throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
         const data = await response.json();
+		archetypePresets = [];
+		
         data.forEach(preset => {
            archetypePresets[preset.id] = {
                'name': preset.name,
@@ -96,7 +100,8 @@ async function retrieveArchetypePresets()
     select = document.getElementById('archetypeSelect');
     if (select)
     {
-        archetypeIds.forEach(presetId => {
+        select.innerHTML = '<option value="-1">- - Отсутствует - -</option>';
+		archetypeIds.forEach(presetId => {
            let preset = archetypePresets[presetId];
            if (preset.display)
            {
@@ -109,23 +114,25 @@ async function retrieveArchetypePresets()
            }
         });
         
-        select.addEventListener('change', function(){
+        select.onchange = function(){
             setArchetypePreset(parseInt(this.value));
-        });
+        };
     }
     
     if (document.getElementById('archetypes-container'))
-        retrieveArchetypeInfo();
+        retrieveArchetypeInfo(folder);
 }
 
-async function retrieveArchetypeInfo() 
+async function retrieveArchetypeInfo(folder) 
 {
     try {
-        const response = await fetch('./data/archetypes.json');
+		const response = await fetch(`./data/${folder}/archetypes.json`);
         if (!response.ok)
             throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
         const data = await response.json();
+		archetypeInfo = [];
+		
         data.forEach(preset => {
            archetypeInfo[preset.id] = {
                'startingSkills': preset.startingSkills,
@@ -178,6 +185,6 @@ function setArchetypePreset(preset)
     loadArchetypePreset(archetypePresets[preset]);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    retrieveArchetypePresets();
+document.addEventListener('settingLoaded', (e) => {
+    retrieveArchetypePresets(e.detail.folder);
 });

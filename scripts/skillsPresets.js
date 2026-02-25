@@ -74,15 +74,16 @@ function generateSkillsHTML(categories)
 	});
 }
 
-async function retrieveSkillsPresets() 
+async function retrieveSkillsPresets(folder) 
 {
 	try {
-		const response = await fetch('./data/skills.json');
+		const response = await fetch(`./data/${folder}/skills.json`);
 		
 		if (!response.ok)
 			throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
 		const data = await response.json();
+		skillCategoryPresets = [];
 		
 		skillCategoryPresets = data.skills.reduce((acc, skill) => {
 			const categoryLocalId = skill['category'];
@@ -117,6 +118,6 @@ async function retrieveSkillsPresets()
 		generateSkillsHTML();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-	retrieveSkillsPresets();
+document.addEventListener('settingLoaded', (e) => {
+    retrieveSkillsPresets(e.detail.folder);
 });

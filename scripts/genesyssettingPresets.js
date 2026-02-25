@@ -17,6 +17,7 @@ async function retrieveGenesyssettingPresets()
 				'name': preset.name,
 				'display': preset.display,
 				'id': preset.id,
+				'folder': preset.folder,
 			};
 			genesyssettingIds.push(preset.id);
 		});
@@ -55,7 +56,10 @@ function loadGenesyssettingPreset(preset)
 {
 	document.getElementById('genesyssetting').value = preset.name;
 	
-	// Здесь будет соответствующая логика.
+	document.dispatchEvent(new CustomEvent('settingLoaded', {
+		detail: { preset: preset, folder: preset.folder },
+		bubbles: true
+	}));
 }
 
 

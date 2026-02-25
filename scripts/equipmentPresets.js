@@ -115,14 +115,16 @@ function generateItemsHTML()
 	});
 }
 
-async function retrieveTraitPresets() 
+async function retrieveTraitPresets(folder) 
 {
     try {
-        const response = await fetch('./data/attributes.json');
+        const response = await fetch(`./data/${folder}/attributes.json`);
         if (!response.ok)
             throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
         const data = await response.json();
+		traitPresets = [];
+		
         data.forEach(preset => {
             traitPresets[preset.id] = {
                 'name': preset.name,
@@ -133,7 +135,7 @@ async function retrieveTraitPresets()
             };
         });
         
-        retrieveEquipmentPresets();
+        retrieveEquipmentPresets(folder);
         generateTraitHTML();
         
     } catch (error) {
@@ -141,10 +143,10 @@ async function retrieveTraitPresets()
     }
 }
 
-async function retrieveEquipmentPresets() 
+async function retrieveEquipmentPresets(folder) 
 {
     try {
-        const response = await fetch('./data/equipment.json');
+        const response = await fetch(`./data/${folder}/equipment.json`);
         if (!response.ok)
             throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
@@ -207,6 +209,6 @@ async function retrieveEquipmentPresets()
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    retrieveTraitPresets();
+document.addEventListener('settingLoaded', (e) => {
+    retrieveTraitPresets(e.detail.folder);
 });

@@ -30,13 +30,14 @@ function generateTalentsHTML()
 	});
 }
 
-async function retrieveTalentsPresets() 
+async function retrieveTalentsPresets(folder) 
 {
     try {
-        const response = await fetch('./data/talents.json');
+        const response = await fetch(`./data/${folder}/talents.json`);
         if (!response.ok)
             throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
+		talentsPresets = {};
         talentsPresets = await response.json();
         talentsPresets.sort((a, b) => {
             return Math.floor(a.id / 100) - Math.floor(b.id / 100) || a.name > b.name;
@@ -48,6 +49,6 @@ async function retrieveTalentsPresets()
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    retrieveTalentsPresets();
+document.addEventListener('settingLoaded', (e) => {
+    retrieveTalentsPresets(e.detail.folder);
 });

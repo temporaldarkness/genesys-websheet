@@ -39,14 +39,16 @@ function generateCareerHTML()
 	});
 }
 
-async function retrieveCareerPresets() 
+async function retrieveCareerPresets(folder) 
 {
     try {
-        const response = await fetch('./data/careers.json');
+		const response = await fetch(`./data/${folder}/careers.json`);
         if (!response.ok)
             throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
         const data = await response.json();
+		careerPresets = [];
+		
         data.forEach(preset => {
            careerPresets[preset.id] = {
                'name': preset.name,
@@ -63,7 +65,8 @@ async function retrieveCareerPresets()
     select = document.getElementById('careerSelect');
     if (select)
     {
-        careerIds.forEach(presetId => {
+        select.innerHTML = '<option value="-1">- - Отсутствует - -</option>';
+		careerIds.forEach(presetId => {
            let preset = careerPresets[presetId];
            if (preset.display)
            {
@@ -76,23 +79,25 @@ async function retrieveCareerPresets()
            }
         });
         
-        select.addEventListener('change', function(){
+        select.onchange = function(){
             setCareerPreset(parseInt(this.value));
-        });
+        };
     }
     
     if (document.getElementById('careers-container'))
-        retrieveCareerInfo();
+        retrieveCareerInfo(folder);
 }
 
-async function retrieveCareerInfo() 
+async function retrieveCareerInfo(folder) 
 {
     try {
-        const response = await fetch('./data/careers.json');
+		const response = await fetch(`./data/${folder}/careers.json`);
         if (!response.ok)
             throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
         const data = await response.json();
+		careerInfo = [];
+		
         data.forEach(preset => {
            careerInfo[preset.id] = {
                'desc': preset.desc
@@ -126,6 +131,6 @@ function setCareerPreset(preset)
     loadCareerPreset(careerPresets[preset]);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    retrieveCareerPresets();
+document.addEventListener('settingLoaded', (e) => {
+    retrieveCareerPresets(e.detail.folder);
 });
