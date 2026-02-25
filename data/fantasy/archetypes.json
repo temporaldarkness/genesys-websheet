@@ -1,5 +1,28 @@
 [
   {
+    "id": -1,
+    "name": "",
+    "display": false,
+    "stats": {
+      "strength"    : 2,
+      "agility"     : 2,
+      "intelligence": 2,
+      "wits"        : 2,
+      "willpower"   : 2,
+      "charisma"    : 2
+    },
+    "wounds": 10,
+    "fatigue": 10,
+    "experience": 100,
+    "display": false,
+    "talent": {
+      "name": "",
+      "desc": ""
+    },
+    "startingSkills": "",
+    "desc": "&emsp;"
+  },
+  {
     "id": 0,
     "name": "Обыватель",
     "stats": {
