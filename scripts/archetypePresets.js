@@ -78,7 +78,8 @@ async function retrieveArchetypePresets(folder)
             throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
         const data = await response.json();
-		archetypePresets = [];
+		archetypePresets = {};
+		archetypeIds = [];
 		
         data.forEach(preset => {
            archetypePresets[preset.id] = {

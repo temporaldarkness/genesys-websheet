@@ -47,7 +47,8 @@ async function retrieveCareerPresets(folder)
             throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
         const data = await response.json();
-		careerPresets = [];
+		careerPresets = {};
+		archetypeIds = [];
 		
         data.forEach(preset => {
            careerPresets[preset.id] = {
