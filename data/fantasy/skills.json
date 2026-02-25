@@ -135,7 +135,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": 5,
       "name": "Выдержка",
       "nameP": "Выдержки",
       "attribute": 4,
@@ -154,7 +154,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": 6,
       "name": "Выживание",
       "nameP": "Выживания",
       "attribute": 3,
@@ -175,7 +175,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": 7,
       "name": "Жульничество",
       "nameP": "Жульничества",
       "attribute": 3,
@@ -565,9 +565,31 @@
       ]
     },
     {
-      "id": 513,
-      "name": "Аспект Тумана",
-      "nameP": "Аспекта Тумана",
+      "id": 500,
+      "name": "Магия",
+      "nameP": "Магии",
+      "attribute": 2,
+      "display": false,
+      "category": 5,
+      "description": "&emsp;",
+      "useCases": [],
+      "misuseCases": []
+    },
+    {
+      "id": 501,
+      "name": "Вера",
+      "nameP": "Веры",
+      "attribute": 2,
+      "display": false,
+      "category": 5,
+      "description": "&emsp;",
+      "useCases": [],
+      "misuseCases": []
+    },
+    {
+      "id": 502,
+      "name": "Природа",
+      "nameP": "Природа",
       "attribute": 2,
       "display": false,
       "category": 5,
