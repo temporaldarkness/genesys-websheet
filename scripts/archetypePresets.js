@@ -119,6 +119,9 @@ async function retrieveArchetypePresets(folder)
         };
     }
     
+	document.dispatchEvent(new CustomEvent('charsheetArchetypesFinished', {
+		bubbles: true
+	}));
     if (document.getElementById('archetypes-container'))
         retrieveArchetypeInfo(folder);
 }

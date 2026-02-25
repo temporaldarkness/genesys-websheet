@@ -265,7 +265,28 @@ function collectDiceRoller()
 
 function loadData(data)
 {
-    aknowledgeData(data);
+	document.getElementById('downloadinput-name').innerHTML = `${sanitize(data['index'].charname) || 'data'}.json`;
+	
+	document.getElementById('genesyssettingSelect').value = data['index'].genesyssettingSelected ?? 'Broken Arcadia';
+	
+	const promise1 = new Promise(resolve => {
+		document.addEventListener('charsheetSkillsFinished', resolve, { once: true });
+	});
+	const promise2 = new Promise(resolve => {
+		document.addEventListener('charsheetArchetypesFinished', resolve, { once: true });
+	});
+	const promise3 = new Promise(resolve => {
+		document.addEventListener('charsheetCareersFinished', resolve, { once: true });
+	});
+	
+	document.getElementById('genesyssettingSelect').dispatchEvent(new Event('change', {
+		detail: {},
+		bubbles: true
+	}));
+	
+	Promise.all([promise1, promise2, promise3]).then(() => {
+		aknowledgeData(data);
+	});
 }
 
 function aknowledgeData(data)
@@ -282,12 +303,9 @@ function aknowledgeData(data)
 
 function setIndex(data)
 {
-	document.getElementById('downloadinput-name').innerHTML = `${sanitize(data.charname) || 'data'}.json`;
-	
 	indexIDs.forEach(field => {
 		document.getElementById(field).value = data[field];
 	});
-	document.getElementById('genesyssettingSelect').value = data.genesyssettingSelected ?? 'Broken Arcadia';
 	
 	document.getElementById('careerSelect').value = data.careerSelected ?? -1;
 	document.getElementById('archetypeSelect').value = data.archetypeSelected ?? -1;

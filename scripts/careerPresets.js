@@ -83,7 +83,10 @@ async function retrieveCareerPresets(folder)
             setCareerPreset(parseInt(this.value));
         };
     }
-    
+	
+	document.dispatchEvent(new CustomEvent('charsheetCareersFinished', {
+		bubbles: true
+	}));
     if (document.getElementById('careers-container'))
         retrieveCareerInfo(folder);
 }

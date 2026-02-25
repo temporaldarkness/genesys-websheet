@@ -90,6 +90,9 @@ function generateHTML()
 		category.appendChild(grid);
 		container.appendChild(category);
 	});
+	document.dispatchEvent(new CustomEvent('charsheetSkillsFinished', {
+		bubbles: true
+	}));
 }
 
 function loadSkillsData(folder) 
