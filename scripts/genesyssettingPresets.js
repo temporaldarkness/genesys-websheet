@@ -49,16 +49,18 @@ async function retrieveGenesyssettingPresets()
 			localStorage.setItem('genesyssetting', genesyssettingSelected);
 			setGenesyssettingPreset(genesyssettingSelected);
 		});
+	} else {
+		setGenesyssettingPreset(genesyssettingSelected);
 	}
 }
 
 function loadGenesyssettingPreset(preset)
 {
-	document.getElementById('genesyssetting').value = preset.name;
 	document.dispatchEvent(new CustomEvent('settingLoaded', {
 		detail: { preset: preset, folder: preset.folder },
 		bubbles: true
 	}));
+	document.getElementById('genesyssetting').value = preset.name;
 }
 
 
