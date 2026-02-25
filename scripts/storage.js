@@ -363,7 +363,7 @@ function setSkills(data)
 function setEquipment(data)
 {
 	equipmentIDs.forEach(field => {
-		document.getElementById(field).value = data[field];
+		document.getElementById(field).value = data[field] ?? '';
 	});
 	
 	document.getElementById('weapons-table').replaceChildren(document.querySelector('#weapons-table .weapon-header'));
