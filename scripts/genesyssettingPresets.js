@@ -2,6 +2,8 @@ genesyssettingPresets = {};
 genesyssettingInfo = {};
 genesyssettingIds = [];
 
+genesyssettingSelected = 'Broken Arcadia';
+
 async function retrieveGenesyssettingPresets() 
 {
 	try {
@@ -11,10 +13,10 @@ async function retrieveGenesyssettingPresets()
 		
 		const data = await response.json();
 		data.forEach(preset => {
-		   genesyssettingPresets[preset.id] = {
-			   'name': preset.name,
-			   'display': preset.display,
-			   'id': preset.id,
+			genesyssettingPresets[preset.id] = {
+				'name': preset.name,
+				'display': preset.display,
+				'id': preset.id,
 			};
 			genesyssettingIds.push(preset.id);
 		});
@@ -26,20 +28,25 @@ async function retrieveGenesyssettingPresets()
 	if (select)
 	{
 		genesyssettingIds.forEach(presetId => {
-		   let preset = genesyssettingPresets[presetId];
-		   if (preset.display)
-		   {
-			   let option = document.createElement('option');
-			   
-			   option.value = preset.id;
-			   option.innerHTML = preset.name;
-			   
-			   select.appendChild(option);
-		   }
+			let preset = genesyssettingPresets[presetId];
+			if (preset.display)
+			{
+				let option = document.createElement('option');
+				
+				option.value = preset.id;
+				option.innerHTML = preset.name;
+				
+				select.appendChild(option);
+			}
 		});
 		
+		select.value = genesyssettingSelected;
+		setGenesyssettingPreset(genesyssettingSelected);
+		
 		select.addEventListener('change', function(){
-			setGenesyssettingPreset(parseInt(this.value));
+			genesyssettingSelected = this.value;
+			localStorage.setItem('genesyssetting', genesyssettingSelected);
+			setGenesyssettingPreset(genesyssettingSelected);
 		});
 	}
 }
@@ -56,6 +63,13 @@ function setGenesyssettingPreset(preset)
 {
 	loadGenesyssettingPreset(genesyssettingPresets[preset]);
 }
+
+async function genesyssettingSetup()
+{
+    genesyssettingSelected = localStorage.getItem('genesyssetting') || genesyssettingSelected;
+}
+
+genesyssettingSetup();
 
 document.addEventListener('DOMContentLoaded', () => {
 	retrieveGenesyssettingPresets();
