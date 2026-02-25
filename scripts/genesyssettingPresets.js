@@ -45,9 +45,14 @@ async function retrieveGenesyssettingPresets()
 		setGenesyssettingPreset(genesyssettingSelected);
 		
 		select.addEventListener('change', function(){
-			genesyssettingSelected = this.value;
-			localStorage.setItem('genesyssetting', genesyssettingSelected);
-			setGenesyssettingPreset(genesyssettingSelected);
+			const warning = confirm('Изменение выбранного для персонажа сеттинга приведёт к сбросу всех несохранённых данных и полей. Продолжить?');
+			if (warning) {
+				genesyssettingSelected = this.value;
+				localStorage.setItem('genesyssetting', genesyssettingSelected);
+				setGenesyssettingPreset(genesyssettingSelected);
+			} else {
+				this.value = genesyssettingSelected;
+			}
 		});
 	} else {
 		setGenesyssettingPreset(genesyssettingSelected);
