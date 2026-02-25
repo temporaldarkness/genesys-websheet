@@ -1,5 +1,12 @@
 [
   {
+    "id": -1,
+    "name": "",
+    "display": false,
+    "values": [],
+    "desc": ""
+  },
+  {
     "id": 0,
     "name": "Артист",
     "display": true,
