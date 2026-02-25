@@ -105,6 +105,7 @@ function collectIndex()
 		data[field] = document.getElementById(field).value;
 	});
 	
+	data.genesyssettingSelected = document.getElementById('genesyssettingSelect').value;
 	data.careerSelected = document.getElementById('careerSelect').value;
 	data.archetypeSelected = document.getElementById('archetypeSelect').value;
 	
