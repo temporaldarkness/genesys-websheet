@@ -270,7 +270,7 @@ function loadData(data)
 	
 	const genesyssettingSelect = document.getElementById('genesyssettingSelect');
 	
-	genesyssettingSelect.value = data['index'].genesyssettingSelected ?? 'Broken Arcadia';
+	genesyssettingSelect.value = data['index'].genesyssettingSelected ?? 'Fantasy';
 	
 	const promise1 = new Promise(resolve => {
 		document.addEventListener('charsheetSkillsFinished', resolve, { once: true });
@@ -304,7 +304,7 @@ function aknowledgeData(data)
 function setIndex(data)
 {
 	indexIDs.forEach(field => {
-		document.getElementById(field).value = data[field];
+		document.getElementById(field).value = data[field] ?? '';
 	});
 	
 	document.getElementById('careerSelect').value = data.careerSelected ?? -1;
@@ -332,7 +332,7 @@ function setIndex(data)
 function setSkills(data)
 {
 	skillsIDs.forEach(field => {
-		document.getElementById(field).value = data[field];
+		document.getElementById(field).value = data[field] ?? '';
 	});
 	
 	container = document.getElementById('skills-container');
@@ -417,7 +417,7 @@ function setPyramid(data)
 function setBio(data)
 {
 	bioIDs.forEach(field => {
-		document.getElementById(field).value = data[field];
+		document.getElementById(field).value = data[field] ?? '';
 	});
 	
 	document.getElementById('character-image').src = data['character-image'];
@@ -445,7 +445,7 @@ function setNotes(data)
 function setDiceRoller(data)
 {
     diceRollerIDs.forEach(field => {
-		document.getElementById(field).value = data[field];
+		document.getElementById(field).value = data[field] ?? '';
 	});
 }
 
