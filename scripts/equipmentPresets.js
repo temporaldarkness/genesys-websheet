@@ -37,6 +37,19 @@ function generateTraitHTML()
 function generateWeaponsHTML() 
 {
 	const container = document.getElementById('weapons-container');
+	container.innerHTML = `
+		<tr>
+			<th>Название оружия</th>
+			<th>Вес</th>
+			<th>Цена</th>
+			<th>Редкость</th>
+			<th>Навык</th>
+			<th>Урон</th>
+			<th>Крит</th>
+			<th>Дистанция</th>
+			<th>Особенности</th>
+        </tr>
+	`;
 	
 	equipmentPresets.weapons.forEach(preset => {
         if (preset.display)
@@ -70,6 +83,17 @@ function generateWeaponsHTML()
 function generateArmorHTML() 
 {
 	const container = document.getElementById('armor-container');
+	container.innerHTML = `
+		<tr>
+			<th>Название брони</th>
+			<th>Вес</th>
+			<th>Цена</th>
+			<th>Редкость</th>
+			<th>Поглощение</th>
+			<th>Защита</th>
+			<th>Особенности</th>
+        </tr>
+	`;
 	
 	equipmentPresets.armor.forEach(preset => {
         if (preset.display)
@@ -95,6 +119,15 @@ function generateArmorHTML()
 function generateItemsHTML() 
 {
 	const container = document.getElementById('equipment-container');
+	container.innerHTML = `
+		<tr>
+			<th>Название предмета</th>
+			<th>Вес</th>
+			<th>Цена</th>
+			<th>Редкость</th>
+			<th>Особенности</th>
+        </tr>
+	`;
 	
 	equipmentPresets.items.forEach(preset => {
         if (preset.display)
