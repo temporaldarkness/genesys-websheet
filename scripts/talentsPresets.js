@@ -4,6 +4,7 @@ function generateTalentsHTML()
 {
     container = document.getElementById('talents-container')
     
+	container.innerHTML = '';
     tiers = [];
     
     talentsPresets.forEach(preset => {
