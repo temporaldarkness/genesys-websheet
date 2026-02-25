@@ -321,15 +321,16 @@ function setSkills(data)
 	
 	data['skills'].forEach(msg => {
 	    skill = container.querySelector(`.skill-item[data-skill-id="${msg.id}"]`);
-	    skill.querySelector('input').checked = msg.set;
-	    
-	    selector = skill.querySelector('.rank-selector');
-		selector.dataset.rank = msg.rank;
-		selector.dispatchEvent(new CustomEvent('update', {
-			detail: {},
-			bubbles: true
-		}));
-	    
+		if (skill) {
+			skill.querySelector('input').checked = msg.set;
+			
+			selector = skill.querySelector('.rank-selector');
+			selector.dataset.rank = msg.rank;
+			selector.dispatchEvent(new CustomEvent('update', {
+				detail: {},
+				bubbles: true
+			}));
+	    }
 	});
 	
 	return data;
