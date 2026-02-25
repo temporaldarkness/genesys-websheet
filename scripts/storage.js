@@ -281,7 +281,7 @@ function aknowledgeData(data)
 
 function setIndex(data)
 {
-	document.getElementById('downloadinput-name').innerHTML = `${sanitize(data.charname) ?? 'data'}.json`;
+	document.getElementById('downloadinput-name').innerHTML = `${sanitize(data.charname) || 'data'}.json`;
 	
 	indexIDs.forEach(field => {
 		document.getElementById(field).value = data[field];
