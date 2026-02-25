@@ -2,7 +2,7 @@ genesyssettingPresets = {};
 genesyssettingInfo = {};
 genesyssettingIds = [];
 
-genesyssettingSelected = 'Broken Arcadia';
+genesyssettingSelected = 'Fantasy';
 
 async function retrieveGenesyssettingPresets() 
 {
@@ -40,8 +40,11 @@ async function retrieveGenesyssettingPresets()
 				select.appendChild(option);
 			}
 		});
+		if (!genesyssettingPresets[genesyssettingSelected])
+			genesyssettingSelected = 'Fantasy';
 		
 		select.value = genesyssettingSelected;
+		
 		setGenesyssettingPreset(genesyssettingSelected);
 		
 		select.addEventListener('change', function(){
