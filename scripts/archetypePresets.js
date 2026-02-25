@@ -13,8 +13,18 @@ function generateArchetypeHTML()
         if (preset.display)
         {
     	    section = document.createElement('div');
-    	    section.classList.add('data-segment')
-    	    
+    	    section.classList.add('data-segment');
+			
+			let specialsSection = '';
+			
+			preset.talents.forEach(talent => {
+				specialsSection += `
+					<div class="section">
+						<strong class="block-subtitle">${talent.name} : </strong>
+						${talent.desc}
+					</div>
+				`
+			});
     	    section.innerHTML = `
     	        <h3 class="section-title">${preset.name}</h3>
                 <table class="stylized">
@@ -57,11 +67,8 @@ function generateArchetypeHTML()
                         ${infoPreset.startingSkills}
                     </span>
                 </div>
-                <div class="block-subtitle">Особое свойство</div>
-                <div class="section">
-                    <strong class="block-subtitle">${preset.talent.name} : </strong>
-                    ${preset.talent.desc}
-                </div>
+                <div class="block-subtitle">Особые свойства</div>
+                ${specialsSection}
     	    `;
     	    container.appendChild(section);
         }
@@ -73,7 +80,7 @@ async function retrieveArchetypePresets(folder)
     try {
         const folder = genesyssettingPresets[genesyssettingSelected].folder;
 		
-		const response = await fetch(`./data/${folder}/archetypes.json`);
+		const response = await fetch(`https://temporaldarkness.ru/genesys/data/${folder}/archetypes.json`);
         if (!response.ok)
             throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
@@ -90,7 +97,7 @@ async function retrieveArchetypePresets(folder)
                'experience': preset.experience,
                'display': preset.display,
                'id': preset.id,
-               'talent': preset.talent
+               'talents': preset.talents
             };
             archetypeIds.push(preset.id);
         });
@@ -130,7 +137,7 @@ async function retrieveArchetypePresets(folder)
 async function retrieveArchetypeInfo(folder) 
 {
     try {
-		const response = await fetch(`./data/${folder}/archetypes.json`);
+		const response = await fetch(`https://temporaldarkness.ru/genesys/data/${folder}/archetypes.json`);
         if (!response.ok)
             throw new Error(`Ошибка загрузки пресетов: ${response.status}`);
 		
@@ -172,15 +179,23 @@ function loadArchetypePreset(preset)
     
     container = document.querySelector('.talents');
     talent = container.querySelector('[data-source="archetype"]');
-    if (!talent)
+    if (!talent && preset.talents.length > 0)
     {
         talent = container.lastElementChild;
         createTalent();
     }
-    talent.classList.add('filled');
-    talent.querySelector('.talent-name').value = preset.talent.name;
-    talent.querySelector('.talent-desc').value = preset.talent.desc;
-    talent.dataset.source = "archetype";
+	if (preset.talents.length > 0)
+	{
+		talent.classList.add('filled');
+		talent.querySelector('.talent-name').value = preset.talents[0].name;
+		talent.querySelector('.talent-desc').value = preset.talents[0].desc;
+		talent.dataset.source = "archetype";
+	} else {
+		talent.querySelector('.talent-name').value = "";
+		talent.querySelector('.talent-desc').value = "";
+		talent.classList.remove('filled');
+		talent.dataset.source = "archetype";
+	}
 }
 
 
