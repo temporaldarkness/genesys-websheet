@@ -48,7 +48,7 @@ async function retrieveCareerPresets(folder)
 		
         const data = await response.json();
 		careerPresets = {};
-		archetypeIds = [];
+		careerIds = [];
 		
         data.forEach(preset => {
            careerPresets[preset.id] = {
