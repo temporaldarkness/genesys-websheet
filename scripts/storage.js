@@ -2,6 +2,7 @@ const appVersion = 0.66;
 
 const indexIDs = [
 	'charname', 
+	'genesyssetting'
 	'archetype', 
 	'career', 
 	'player', 
