@@ -267,7 +267,9 @@ function loadData(data)
 {
 	document.getElementById('downloadinput-name').innerHTML = `${sanitize(data['index'].charname) || 'data'}.json`;
 	
-	document.getElementById('genesyssettingSelect').value = data['index'].genesyssettingSelected ?? 'Broken Arcadia';
+	const genesyssettingSelect = document.getElementById('genesyssettingSelect');
+	
+	genesyssettingSelect.value = data['index'].genesyssettingSelected ?? 'Broken Arcadia';
 	
 	const promise1 = new Promise(resolve => {
 		document.addEventListener('charsheetSkillsFinished', resolve, { once: true });
@@ -279,10 +281,7 @@ function loadData(data)
 		document.addEventListener('charsheetCareersFinished', resolve, { once: true });
 	});
 	
-	document.getElementById('genesyssettingSelect').dispatchEvent(new Event('change', {
-		detail: {},
-		bubbles: true
-	}));
+	updateGenesyssettingFromSelect(genesyssettingSelect);
 	
 	Promise.all([promise1, promise2, promise3]).then(() => {
 		aknowledgeData(data);

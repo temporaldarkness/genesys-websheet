@@ -47,9 +47,7 @@ async function retrieveGenesyssettingPresets()
 		select.addEventListener('change', function(){
 			const warning = confirm('Изменение выбранного для персонажа сеттинга приведёт к сбросу всех несохранённых данных и полей. Продолжить?');
 			if (warning) {
-				genesyssettingSelected = this.value;
-				localStorage.setItem('genesyssetting', genesyssettingSelected);
-				setGenesyssettingPreset(genesyssettingSelected);
+				updateGenesyssettingFromSelect(select)
 			} else {
 				this.value = genesyssettingSelected;
 			}
@@ -57,6 +55,12 @@ async function retrieveGenesyssettingPresets()
 	} else {
 		setGenesyssettingPreset(genesyssettingSelected);
 	}
+}
+
+function updateGenesyssettingFromSelect(select) {
+	genesyssettingSelected = select.value;
+	localStorage.setItem('genesyssetting', genesyssettingSelected);
+	setGenesyssettingPreset(genesyssettingSelected);
 }
 
 function loadGenesyssettingPreset(preset)
