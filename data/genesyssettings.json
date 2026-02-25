@@ -4,5 +4,11 @@
     "id": "Broken Arcadia",
     "display": true,
     "folder": "arcadia"
+  },
+  {
+    "name": "Разрушенная Аркадия2",
+    "id": "Broken Arcadia2",
+    "display": true,
+    "folder": "second"
   }
 ]
