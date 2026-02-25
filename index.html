@@ -24,6 +24,7 @@
 	<script type="text/javascript" src="./scripts/notes.js"></script>
 	<script type="text/javascript" src="./scripts/skills.js"></script>
 	<script type="text/javascript" src="./scripts/storage.js"></script>
+	<script type="text/javascript" src="./scripts/genesyssettingPresets.js"></script>
 	<script type="text/javascript" src="./scripts/careerPresets.js"></script>
 	<script type="text/javascript" src="./scripts/archetypePresets.js"></script>
 	<script type="text/javascript" src="./scripts/diceRoller.js"></script>
@@ -58,25 +59,32 @@
 				<div class="section">
 					<div class="field bottomline">
 						<label for="charname">Имя Персонажа : </label>
-						<input type="text" id="charname" placeholder="Введите имя">
+						<input type="text" id="charname" placeholder="Выберите имя">
+					</div>
+					<div class="field bottomline">
+						<label for="genesyssetting">Сеттинг : </label>
+						<input type="text" id="genesyssetting" placeholder="Выберите сеттинг">
+						<select id="genesyssettingSelect">
+						    <option value="-1">- - Отсутствует - -</option>
+						</select>
 					</div>
 					<div class="field bottomline">
 						<label for="archetype">Архетип : </label>
-						<input type="text" id="archetype" placeholder="Введите архетип">
+						<input type="text" id="archetype" placeholder="Выберите архетип">
 						<select id="archetypeSelect">
 						    <option value="-1">- - Отсутствует - -</option>
 						</select>
 					</div>
 					<div class="field bottomline">
 						<label for="career">Карьера : </label>
-						<input type="text" id="career" placeholder="Введите карьеру">
+						<input type="text" id="career" placeholder="Выберите карьеру">
 						<select id="careerSelect">
 						    <option value="-1">- - Отсутствует - -</option>
 						</select>
 					</div>
 					<div class="field bottomline">
 						<label for="player">Игрок : </label>
-						<input type="text" id="player" placeholder="Введите игрока">
+						<input type="text" id="player" placeholder="Выберите игрока">
 					</div>
 				</div>
 

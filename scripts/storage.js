@@ -286,9 +286,10 @@ function setIndex(data)
 	indexIDs.forEach(field => {
 		document.getElementById(field).value = data[field];
 	});
+	document.getElementById('genesyssettingSelect').value = data.genesyssettingSelected ?? -1;
 	
-	document.getElementById('careerSelect').value = data.careerSelected;
-	document.getElementById('archetypeSelect').value = data.archetypeSelected;
+	document.getElementById('careerSelect').value = data.careerSelected ?? -1;
+	document.getElementById('archetypeSelect').value = data.archetypeSelected ?? -1;
 	
 	document.getElementById('injuries').replaceChildren();
 	
