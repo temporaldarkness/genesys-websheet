@@ -1,4 +1,4 @@
-const appVersion = 0.5;
+const appVersion = 0.66;
 
 const indexIDs = [
 	'charname', 
